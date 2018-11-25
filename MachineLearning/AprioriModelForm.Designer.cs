@@ -34,6 +34,9 @@
             this.aprioriTabPage = new System.Windows.Forms.TabPage();
             this.rulesGroupBox = new System.Windows.Forms.GroupBox();
             this.rulesDataGridView = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.learningGroupBox = new System.Windows.Forms.GroupBox();
             this.learnButton = new System.Windows.Forms.Button();
             this.confidenceNumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -42,9 +45,6 @@
             this.thresholdLabel = new System.Windows.Forms.Label();
             this.mainStatusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.inputDataGroupBox.SuspendLayout();
             this.mainTabControl.SuspendLayout();
             this.aprioriTabPage.SuspendLayout();
@@ -64,7 +64,7 @@
             this.inputDataGroupBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.inputDataGroupBox.Name = "inputDataGroupBox";
             this.inputDataGroupBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.inputDataGroupBox.Size = new System.Drawing.Size(450, 518);
+            this.inputDataGroupBox.Size = new System.Drawing.Size(450, 513);
             this.inputDataGroupBox.TabIndex = 0;
             this.inputDataGroupBox.TabStop = false;
             this.inputDataGroupBox.Text = "Input Data";
@@ -74,10 +74,10 @@
             this.inputDataListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.inputDataListBox.FormattingEnabled = true;
             this.inputDataListBox.HorizontalScrollbar = true;
-            this.inputDataListBox.ItemHeight = 20;
-            this.inputDataListBox.Location = new System.Drawing.Point(4, 24);
+            this.inputDataListBox.ItemHeight = 25;
+            this.inputDataListBox.Location = new System.Drawing.Point(4, 28);
             this.inputDataListBox.Name = "inputDataListBox";
-            this.inputDataListBox.Size = new System.Drawing.Size(442, 489);
+            this.inputDataListBox.Size = new System.Drawing.Size(442, 480);
             this.inputDataListBox.TabIndex = 0;
             // 
             // mainTabControl
@@ -95,10 +95,10 @@
             this.aprioriTabPage.Controls.Add(this.rulesGroupBox);
             this.aprioriTabPage.Controls.Add(this.learningGroupBox);
             this.aprioriTabPage.Controls.Add(this.inputDataGroupBox);
-            this.aprioriTabPage.Location = new System.Drawing.Point(4, 29);
+            this.aprioriTabPage.Location = new System.Drawing.Point(4, 34);
             this.aprioriTabPage.Name = "aprioriTabPage";
             this.aprioriTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.aprioriTabPage.Size = new System.Drawing.Size(976, 524);
+            this.aprioriTabPage.Size = new System.Drawing.Size(976, 519);
             this.aprioriTabPage.TabIndex = 0;
             this.aprioriTabPage.Text = "Apriori Model";
             this.aprioriTabPage.UseVisualStyleBackColor = true;
@@ -109,7 +109,7 @@
             this.rulesGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rulesGroupBox.Location = new System.Drawing.Point(453, 73);
             this.rulesGroupBox.Name = "rulesGroupBox";
-            this.rulesGroupBox.Size = new System.Drawing.Size(520, 448);
+            this.rulesGroupBox.Size = new System.Drawing.Size(520, 443);
             this.rulesGroupBox.TabIndex = 2;
             this.rulesGroupBox.TabStop = false;
             this.rulesGroupBox.Text = "Rules";
@@ -125,13 +125,36 @@
             this.Column3});
             this.rulesDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rulesDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.rulesDataGridView.Location = new System.Drawing.Point(3, 22);
+            this.rulesDataGridView.Location = new System.Drawing.Point(3, 26);
             this.rulesDataGridView.Name = "rulesDataGridView";
             this.rulesDataGridView.ReadOnly = true;
             this.rulesDataGridView.RowHeadersVisible = false;
             this.rulesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.rulesDataGridView.Size = new System.Drawing.Size(514, 423);
+            this.rulesDataGridView.Size = new System.Drawing.Size(514, 414);
             this.rulesDataGridView.TabIndex = 0;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Rule";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column1.Width = 300;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Support";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column2.Width = 80;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Confidence";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // learningGroupBox
             // 
@@ -173,7 +196,7 @@
             0,
             0});
             this.confidenceNumericUpDown.Name = "confidenceNumericUpDown";
-            this.confidenceNumericUpDown.Size = new System.Drawing.Size(100, 26);
+            this.confidenceNumericUpDown.Size = new System.Drawing.Size(100, 30);
             this.confidenceNumericUpDown.TabIndex = 1;
             this.confidenceNumericUpDown.Value = new decimal(new int[] {
             5,
@@ -186,7 +209,7 @@
             this.confidenceLabel.AutoSize = true;
             this.confidenceLabel.Location = new System.Drawing.Point(198, 31);
             this.confidenceLabel.Name = "confidenceLabel";
-            this.confidenceLabel.Size = new System.Drawing.Size(90, 20);
+            this.confidenceLabel.Size = new System.Drawing.Size(112, 25);
             this.confidenceLabel.TabIndex = 0;
             this.confidenceLabel.Text = "Confidence";
             // 
@@ -199,15 +222,15 @@
             0,
             0});
             this.thresholdNumericUpDown.Minimum = new decimal(new int[] {
-            1,
+            2,
             0,
             0,
             0});
             this.thresholdNumericUpDown.Name = "thresholdNumericUpDown";
-            this.thresholdNumericUpDown.Size = new System.Drawing.Size(100, 26);
+            this.thresholdNumericUpDown.Size = new System.Drawing.Size(100, 30);
             this.thresholdNumericUpDown.TabIndex = 0;
             this.thresholdNumericUpDown.Value = new decimal(new int[] {
-            2,
+            3,
             0,
             0,
             0});
@@ -217,7 +240,7 @@
             this.thresholdLabel.AutoSize = true;
             this.thresholdLabel.Location = new System.Drawing.Point(7, 31);
             this.thresholdLabel.Name = "thresholdLabel";
-            this.thresholdLabel.Size = new System.Drawing.Size(79, 20);
+            this.thresholdLabel.Size = new System.Drawing.Size(100, 25);
             this.thresholdLabel.TabIndex = 0;
             this.thresholdLabel.Text = "Threshold";
             // 
@@ -237,32 +260,9 @@
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(0, 17);
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Rule";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Column1.Width = 300;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Support";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Column2.Width = 80;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Confidence";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
             // AprioriModelForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 579);
             this.Controls.Add(this.mainTabControl);

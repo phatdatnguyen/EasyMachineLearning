@@ -14,13 +14,13 @@ namespace MachineLearning
         //Fields
         private DataTable inputData = new DataTable();
         private string[] classificationModels = new string[] { "Support Vector Machine (SVM)", "Naive-Bayes", "k-Nearest Neighbors (kNN)",
-            "Decision Tree", "Logistic Regression", "Multinomial Logistic Regression", "Artificial Neural Network (ANN)", "Deep Neural Network (DNN)" };
-        private string[] regressionModels = new string[] { "Support Vector Machine (SVM)", "Artificial Neural Network (ANN)",
-            "Restricted Boltzmann Machine (RBM)" };
+            "Decision Tree", "Logistic Regression", "Multinomial Logistic Regression", "Artificial Neural Network (ANN)",
+            "Deep Neural Network (DNN)" };
+        private string[] regressionModels = new string[] { "Support Vector Machine (SVM)", "Artificial Neural Network (ANN)" };
         private string[] clusteringModels = new string[] { "k-Means", "Balanced k-Means", "Binary Split", "k-Medoids", "k-Modes", "Mean-Shift",
             "Gaussian Mixture", "Restricted Boltzmann Machine (RBM)", "Deep Belief Network (DBN)" };
-        private string[] ruleLearningModels = new string[] { "Apriori" };
         private string[] ensembleLearningModels = new string[] { "Random Forest", "AdaBoost" };
+        private string[] ruleLearningModels = new string[] { "Apriori" };
         //Contructor
         public MainForm()
         {
@@ -453,12 +453,6 @@ namespace MachineLearning
             }
         }
 
-        private void openRuleLearningForm(string model)
-        {
-            AprioriModelForm aprioriModelForm = new AprioriModelForm(inputData);
-            aprioriModelForm.ShowDialog(this);
-        }
-
         private void openEnsembleLearningForm(string model)
         {
             List<string> inputColumnNames = new List<string>();
@@ -513,6 +507,12 @@ namespace MachineLearning
                     }
                     break;
             }
+        }
+
+        private void openRuleLearningForm(string model)
+        {
+            AprioriModelForm aprioriModelForm = new AprioriModelForm(inputData);
+            aprioriModelForm.ShowDialog(this);
         }
     }
 }
