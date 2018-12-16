@@ -36,7 +36,6 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.Location = new System.Drawing.Point(18, 175);
             this.cancelButton.Margin = new System.Windows.Forms.Padding(5);
@@ -48,7 +47,6 @@
             // 
             // okButton
             // 
-            this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.okButton.Location = new System.Drawing.Point(128, 175);
             this.okButton.Margin = new System.Windows.Forms.Padding(5);
@@ -60,9 +58,6 @@
             // 
             // tablesListBox
             // 
-            this.tablesListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tablesListBox.ItemHeight = 17;
             this.tablesListBox.Location = new System.Drawing.Point(14, 40);
             this.tablesListBox.Margin = new System.Windows.Forms.Padding(5);

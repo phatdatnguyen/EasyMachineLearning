@@ -16,7 +16,7 @@ using Accord.Statistics.Kernels;
 
 namespace MachineLearning
 {
-    public partial class DNNClassifierModelForm : Form
+    public partial class DBNClassifierModelForm : Form
     {
         //Enum
         private enum LearningMethod { LevenbergMarquardt, Backpropagation, ResilientBackpropagation, ParallelResilientBackpropagation }
@@ -55,7 +55,7 @@ namespace MachineLearning
         private delegate void EnableCallback(bool enable);
 
         //Constructor
-        public DNNClassifierModelForm(DataTable inputData, string[] inputColumnNames, string outputColumnName)
+        public DBNClassifierModelForm(DataTable inputData, string[] inputColumnNames, string outputColumnName)
         {
             InitializeComponent();
 
@@ -132,13 +132,16 @@ namespace MachineLearning
                 testingDataGridView.Columns.Add(inputColumnName, inputColumnName + "\n(Input)");
             testingDataGridView.Columns.Add(outputColumnName, outputColumnName + "\n(Expected Output)");
             testingDataGridView.Columns.Add(outputColumnName, outputColumnName + "\n(Output)");
-            cells = new string[inputColumnNames.Length + 2];
+            testingDataGridView.Columns.Add("OutputVector", "Output Vector\n[" + String.Join("; ", outputGroupValues) + "]");
+            testingDataGridView.Columns[testingDataGridView.Columns.Count - 1].Width = 300;
+            cells = new string[inputColumnNames.Length + 3];
             foreach (DataRow row in this.inputData.Rows)
             {
                 for (int columnIndex = 0; columnIndex < numberOfInputFields; columnIndex++)
                     cells[columnIndex] = row[inputColumnNames[columnIndex]].ToString();
                 cells[numberOfInputFields] = outputColumn[this.inputData.Rows.IndexOf(row)].ToString();
                 cells[numberOfInputFields + 1] = "(...)";
+                cells[numberOfInputFields + 2] = "(...)";
                 testingDataGridView.Rows.Add(cells);
             }
             testingFromNumericUpDown.Maximum = inputData.Rows.Count;
@@ -149,10 +152,14 @@ namespace MachineLearning
                 predictionDataGridView.Columns.Add(inputColumnName, inputColumnName + "\n(Input)");
             predictionDataGridView.Columns.Add(outputColumnName, outputColumnName + "\n(Output)");
             predictionDataGridView.Columns[inputColumnNames.Length].ReadOnly = true;
-            cells = new string[inputColumnNames.Length + 1];
+            predictionDataGridView.Columns.Add("OutputVector", "Output Vector\n[" + String.Join("; ", outputGroupValues) + "]");
+            predictionDataGridView.Columns[inputColumnNames.Length + 1].Width = 300;
+            predictionDataGridView.Columns[inputColumnNames.Length + 1].ReadOnly = true;
+            cells = new string[inputColumnNames.Length + 2];
             for (int columnIndex = 0; columnIndex < numberOfInputFields; columnIndex++)
                 cells[columnIndex] = "";
             cells[inputColumnNames.Length] = "(...)";
+            cells[inputColumnNames.Length + 1] = "(...)";
             predictionDataGridView.Rows.Add(cells);
 
             foreach (string inputColumnName in inputColumnNames)
@@ -502,10 +509,11 @@ namespace MachineLearning
             {
                 layerTextBox.Text = e.Node.Parent.Text;
                 neuronTextBox.Text = e.Node.Text;
-                Neuron neuron = (Neuron)e.Node.Tag;
+                StochasticNeuron neuron = (StochasticNeuron)e.Node.Tag;
                 weightsListBox.Items.Clear();
                 foreach (double weight in neuron.Weights)
                     weightsListBox.Items.Add(weight.ToString());
+                biasTextBox.Text = neuron.Threshold.ToString();
                 outputTextBox.Text = neuron.Output.ToString();
             }
         }
@@ -528,13 +536,14 @@ namespace MachineLearning
             Cursor = Cursors.WaitCursor;
             toolStripStatusLabel.Text = "Computing...";
 
+            double[][] outputs = new double[inputColumns.Get(testingIndexes).Length][];
             int[] computedGroupIndexes = new int[inputColumns.Get(testingIndexes).Length];
             try
             {
                 for (int rowIndex = 0; rowIndex < inputColumns.Get(testingIndexes).Length; rowIndex++)
                 {
-                    double[] outputs = dbn.Compute(inputColumns.Get(testingIndexes)[rowIndex]);
-                    computedGroupIndexes[rowIndex] = outputs.IndexOf(outputs.Max());
+                    outputs[rowIndex] = dbn.Compute(inputColumns.Get(testingIndexes)[rowIndex]);
+                    computedGroupIndexes[rowIndex] = outputs[rowIndex].IndexOf(outputs[rowIndex].Max());
                 }
             }
             catch (Exception exception)
@@ -558,15 +567,25 @@ namespace MachineLearning
             int numberOfMatches = 0;
             foreach (DataRow row in this.inputData.Rows)
             {
-                string[] cells = new string[inputColumnNames.Length + 2];
+                string[] cells = new string[inputColumnNames.Length + 3];
                 for (int columnIndex = 0; columnIndex < numberOfInputFields; columnIndex++)
                     cells[columnIndex] = row[inputColumnNames[columnIndex]].ToString();
                 cells[numberOfInputFields] = outputColumn[this.inputData.Rows.IndexOf(row)].ToString();
                 int rowIndex = this.inputData.Rows.IndexOf(row);
                 if (testingIndexes.Contains(rowIndex))
+                {
                     cells[numberOfInputFields + 1] = computedOutputs[rowIndex - fromRowIndex].ToString();
+                    string[] roundedOutputs = new string[outputs[rowIndex - fromRowIndex].Length];
+                    for (int groupIndex = 0; groupIndex < roundedOutputs.Length; groupIndex++)
+                        roundedOutputs[groupIndex] = Math.Round(outputs[rowIndex - fromRowIndex][groupIndex], 4).ToString();
+                    cells[numberOfInputFields + 2] = "[" + String.Join("; ", roundedOutputs) + "]";
+                }
                 else
+                {
                     cells[numberOfInputFields + 1] = "(...)";
+                    cells[numberOfInputFields + 2] = "(...)";
+                }
+                
                 testingDataGridView.Rows.Add(cells);
 
                 if (cells[numberOfInputFields].ToString() == cells[numberOfInputFields + 1].ToString())
@@ -607,17 +626,26 @@ namespace MachineLearning
 
         private void predictButton_Click(object sender, EventArgs e)
         {
-            double[] inputValues = new double[predictionDataGridView.Columns.Count - 1];
-            for (int columnIndex = 0; columnIndex < predictionDataGridView.Columns.Count - 1; columnIndex++)
-                inputValues[columnIndex] = Convert.ToDouble(predictionDataGridView.Rows[0].Cells[columnIndex].Value);
+            double[] inputValues = new double[predictionDataGridView.Columns.Count - 2];
+            try
+            {
+                for (int columnIndex = 0; columnIndex < predictionDataGridView.Columns.Count - 2; columnIndex++)
+                    inputValues[columnIndex] = Convert.ToDouble(predictionDataGridView.Rows[0].Cells[columnIndex].Value);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(this, exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             Cursor = Cursors.WaitCursor;
             toolStripStatusLabel.Text = "Computing...";
-            
+
+            double[] outputs = null;
             int computedGroupIndex;
             try
             {
-                double[] outputs = dbn.Compute(inputValues);
+                outputs = dbn.Compute(inputValues);
                 computedGroupIndex = outputs.IndexOf(outputs.Max());
             }
             catch (Exception exception)
@@ -628,7 +656,11 @@ namespace MachineLearning
                 return;
             }
 
-            predictionDataGridView.Rows[0].Cells[predictionDataGridView.Columns.Count - 1].Value = outputGroupValues[computedGroupIndex];
+            predictionDataGridView.Rows[0].Cells[predictionDataGridView.Columns.Count - 2].Value = outputGroupValues[computedGroupIndex];
+            string[] roundedOutputs = new string[outputGroupValues.Length];
+            for (int groupIndex = 0; groupIndex < roundedOutputs.Length; groupIndex++)
+                roundedOutputs[groupIndex] = Math.Round(outputs[groupIndex], 4).ToString();
+            predictionDataGridView.Rows[0].Cells[predictionDataGridView.Columns.Count - 1].Value = "[" + String.Join("; ", roundedOutputs) + "]";
 
             toolStripStatusLabel.Text = "";
             Cursor = Cursors.Arrow;

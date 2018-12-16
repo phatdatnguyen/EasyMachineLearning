@@ -112,17 +112,23 @@
     <Compile Include="AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="DNNClassifierModelForm.cs">
+    <Compile Include="DBNClassifierModelForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DNNClassifierModelForm.Designer.cs">
-      <DependentUpon>DNNClassifierModelForm.cs</DependentUpon>
+    <Compile Include="DBNClassifierModelForm.Designer.cs">
+      <DependentUpon>DBNClassifierModelForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DBNModelForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DBNModelForm.Designer.cs">
       <DependentUpon>DBNModelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PolynomialRegressionModelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PolynomialRegressionModelForm.Designer.cs">
+      <DependentUpon>PolynomialRegressionModelForm.cs</DependentUpon>
     </Compile>
     <Compile Include="RBMModelForm.cs">
       <SubType>Form</SubType>
@@ -184,6 +190,12 @@
     <Compile Include="RandomForestModelForm.Designer.cs">
       <DependentUpon>RandomForestModelForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="LinearRegressionModelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LinearRegressionModelForm.Designer.cs">
+      <DependentUpon>LinearRegressionModelForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SVMRegressionModelForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,11 +249,14 @@
     <EmbeddedResource Include="AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DNNClassifierModelForm.resx">
-      <DependentUpon>DNNClassifierModelForm.cs</DependentUpon>
+    <EmbeddedResource Include="DBNClassifierModelForm.resx">
+      <DependentUpon>DBNClassifierModelForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DBNModelForm.resx">
       <DependentUpon>DBNModelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PolynomialRegressionModelForm.resx">
+      <DependentUpon>PolynomialRegressionModelForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RBMModelForm.resx">
       <DependentUpon>RBMModelForm.cs</DependentUpon>
@@ -272,6 +287,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RandomForestModelForm.resx">
       <DependentUpon>RandomForestModelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LinearRegressionModelForm.resx">
+      <DependentUpon>LinearRegressionModelForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SVMRegressionModelForm.resx">
       <DependentUpon>SVMRegressionModelForm.cs</DependentUpon>
@@ -316,7 +334,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="readme.md" />
     <None Include="SampleDatabases\BinaryClassification.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

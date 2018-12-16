@@ -1,6 +1,6 @@
 ﻿namespace MachineLearning
 {
-    partial class DNNClassifierModelForm
+    partial class DBNClassifierModelForm
     {
         /// <summary>
         /// Required designer variable.
@@ -86,6 +86,8 @@
             this.alphaLabel = new System.Windows.Forms.Label();
             this.networkTabPage = new System.Windows.Forms.TabPage();
             this.neuronInfoGroupBox = new System.Windows.Forms.GroupBox();
+            this.biasTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.weightsListBox = new System.Windows.Forms.ListBox();
             this.outputTextBox = new System.Windows.Forms.TextBox();
             this.weightsLabel = new System.Windows.Forms.Label();
@@ -175,7 +177,7 @@
             this.inputDataGroupBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.inputDataGroupBox.Name = "inputDataGroupBox";
             this.inputDataGroupBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.inputDataGroupBox.Size = new System.Drawing.Size(468, 518);
+            this.inputDataGroupBox.Size = new System.Drawing.Size(468, 513);
             this.inputDataGroupBox.TabIndex = 0;
             this.inputDataGroupBox.TabStop = false;
             this.inputDataGroupBox.Text = "Input Data";
@@ -187,7 +189,7 @@
             this.inputDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.inputDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.inputDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.inputDataGridView.Location = new System.Drawing.Point(4, 24);
+            this.inputDataGridView.Location = new System.Drawing.Point(4, 28);
             this.inputDataGridView.Name = "inputDataGridView";
             this.inputDataGridView.ReadOnly = true;
             this.inputDataGridView.RowHeadersVisible = false;
@@ -196,7 +198,7 @@
             this.inputDataGridView.ShowCellErrors = false;
             this.inputDataGridView.ShowEditingIcon = false;
             this.inputDataGridView.ShowRowErrors = false;
-            this.inputDataGridView.Size = new System.Drawing.Size(460, 489);
+            this.inputDataGridView.Size = new System.Drawing.Size(460, 480);
             this.inputDataGridView.TabIndex = 0;
             // 
             // mainTabControl
@@ -216,10 +218,10 @@
             // 
             this.inputDataTabPage.Controls.Add(this.inputDataVisualizationGroupBox);
             this.inputDataTabPage.Controls.Add(this.inputDataGroupBox);
-            this.inputDataTabPage.Location = new System.Drawing.Point(4, 29);
+            this.inputDataTabPage.Location = new System.Drawing.Point(4, 34);
             this.inputDataTabPage.Name = "inputDataTabPage";
             this.inputDataTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.inputDataTabPage.Size = new System.Drawing.Size(976, 524);
+            this.inputDataTabPage.Size = new System.Drawing.Size(976, 519);
             this.inputDataTabPage.TabIndex = 0;
             this.inputDataTabPage.Text = "Input Data";
             this.inputDataTabPage.UseVisualStyleBackColor = true;
@@ -231,7 +233,7 @@
             this.inputDataVisualizationGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.inputDataVisualizationGroupBox.Location = new System.Drawing.Point(471, 3);
             this.inputDataVisualizationGroupBox.Name = "inputDataVisualizationGroupBox";
-            this.inputDataVisualizationGroupBox.Size = new System.Drawing.Size(502, 518);
+            this.inputDataVisualizationGroupBox.Size = new System.Drawing.Size(502, 513);
             this.inputDataVisualizationGroupBox.TabIndex = 1;
             this.inputDataVisualizationGroupBox.TabStop = false;
             this.inputDataVisualizationGroupBox.Text = "2D Visualization";
@@ -239,7 +241,7 @@
             // inputDataZedGraphControl
             // 
             this.inputDataZedGraphControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.inputDataZedGraphControl.Location = new System.Drawing.Point(3, 77);
+            this.inputDataZedGraphControl.Location = new System.Drawing.Point(3, 81);
             this.inputDataZedGraphControl.Margin = new System.Windows.Forms.Padding(8);
             this.inputDataZedGraphControl.Name = "inputDataZedGraphControl";
             this.inputDataZedGraphControl.ScrollGrace = 0D;
@@ -249,7 +251,7 @@
             this.inputDataZedGraphControl.ScrollMinX = 0D;
             this.inputDataZedGraphControl.ScrollMinY = 0D;
             this.inputDataZedGraphControl.ScrollMinY2 = 0D;
-            this.inputDataZedGraphControl.Size = new System.Drawing.Size(496, 438);
+            this.inputDataZedGraphControl.Size = new System.Drawing.Size(496, 429);
             this.inputDataZedGraphControl.TabIndex = 1;
             this.inputDataZedGraphControl.UseExtendedPrintDialog = true;
             // 
@@ -260,7 +262,7 @@
             this.inputDataVisualizationPanel.Controls.Add(this.inputDataYLabel);
             this.inputDataVisualizationPanel.Controls.Add(this.inputDataXLabel);
             this.inputDataVisualizationPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.inputDataVisualizationPanel.Location = new System.Drawing.Point(3, 22);
+            this.inputDataVisualizationPanel.Location = new System.Drawing.Point(3, 26);
             this.inputDataVisualizationPanel.Name = "inputDataVisualizationPanel";
             this.inputDataVisualizationPanel.Size = new System.Drawing.Size(496, 55);
             this.inputDataVisualizationPanel.TabIndex = 0;
@@ -270,7 +272,7 @@
             this.inputDataXComboBox.FormattingEnabled = true;
             this.inputDataXComboBox.Location = new System.Drawing.Point(38, 11);
             this.inputDataXComboBox.Name = "inputDataXComboBox";
-            this.inputDataXComboBox.Size = new System.Drawing.Size(200, 28);
+            this.inputDataXComboBox.Size = new System.Drawing.Size(200, 33);
             this.inputDataXComboBox.TabIndex = 0;
             this.inputDataXComboBox.SelectedIndexChanged += new System.EventHandler(this.inputDataComboBox_SelectedIndexChanged);
             // 
@@ -279,7 +281,7 @@
             this.inputDataYComboBox.FormattingEnabled = true;
             this.inputDataYComboBox.Location = new System.Drawing.Point(278, 11);
             this.inputDataYComboBox.Name = "inputDataYComboBox";
-            this.inputDataYComboBox.Size = new System.Drawing.Size(200, 28);
+            this.inputDataYComboBox.Size = new System.Drawing.Size(200, 33);
             this.inputDataYComboBox.TabIndex = 1;
             this.inputDataYComboBox.SelectedIndexChanged += new System.EventHandler(this.inputDataComboBox_SelectedIndexChanged);
             // 
@@ -288,7 +290,7 @@
             this.inputDataYLabel.AutoSize = true;
             this.inputDataYLabel.Location = new System.Drawing.Point(252, 14);
             this.inputDataYLabel.Name = "inputDataYLabel";
-            this.inputDataYLabel.Size = new System.Drawing.Size(20, 20);
+            this.inputDataYLabel.Size = new System.Drawing.Size(28, 25);
             this.inputDataYLabel.TabIndex = 0;
             this.inputDataYLabel.Text = "y:";
             // 
@@ -297,7 +299,7 @@
             this.inputDataXLabel.AutoSize = true;
             this.inputDataXLabel.Location = new System.Drawing.Point(12, 14);
             this.inputDataXLabel.Name = "inputDataXLabel";
-            this.inputDataXLabel.Size = new System.Drawing.Size(20, 20);
+            this.inputDataXLabel.Size = new System.Drawing.Size(28, 25);
             this.inputDataXLabel.TabIndex = 0;
             this.inputDataXLabel.Text = "x:";
             // 
@@ -306,10 +308,10 @@
             this.learningTabPage.Controls.Add(this.learningVisualizationGroupBox);
             this.learningTabPage.Controls.Add(this.leanrningPanel);
             this.learningTabPage.Controls.Add(this.networkPanel);
-            this.learningTabPage.Location = new System.Drawing.Point(4, 29);
+            this.learningTabPage.Location = new System.Drawing.Point(4, 34);
             this.learningTabPage.Name = "learningTabPage";
             this.learningTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.learningTabPage.Size = new System.Drawing.Size(976, 524);
+            this.learningTabPage.Size = new System.Drawing.Size(976, 519);
             this.learningTabPage.TabIndex = 3;
             this.learningTabPage.Text = "Learning";
             this.learningTabPage.UseVisualStyleBackColor = true;
@@ -320,7 +322,7 @@
             this.learningVisualizationGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.learningVisualizationGroupBox.Location = new System.Drawing.Point(344, 143);
             this.learningVisualizationGroupBox.Name = "learningVisualizationGroupBox";
-            this.learningVisualizationGroupBox.Size = new System.Drawing.Size(629, 378);
+            this.learningVisualizationGroupBox.Size = new System.Drawing.Size(629, 373);
             this.learningVisualizationGroupBox.TabIndex = 2;
             this.learningVisualizationGroupBox.TabStop = false;
             this.learningVisualizationGroupBox.Text = "2D Visualization";
@@ -329,10 +331,11 @@
             // 
             this.learningScatterplotView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.learningScatterplotView.LinesVisible = false;
-            this.learningScatterplotView.Location = new System.Drawing.Point(3, 22);
+            this.learningScatterplotView.Location = new System.Drawing.Point(3, 26);
+            this.learningScatterplotView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.learningScatterplotView.Name = "learningScatterplotView";
-            this.learningScatterplotView.ScaleTight = false;
-            this.learningScatterplotView.Size = new System.Drawing.Size(623, 353);
+            this.learningScatterplotView.ScaleTight = true;
+            this.learningScatterplotView.Size = new System.Drawing.Size(623, 344);
             this.learningScatterplotView.SymbolSize = 7F;
             this.learningScatterplotView.TabIndex = 0;
             // 
@@ -368,7 +371,7 @@
             this.elapsedTextBox.Location = new System.Drawing.Point(89, 87);
             this.elapsedTextBox.Name = "elapsedTextBox";
             this.elapsedTextBox.ReadOnly = true;
-            this.elapsedTextBox.Size = new System.Drawing.Size(122, 26);
+            this.elapsedTextBox.Size = new System.Drawing.Size(122, 30);
             this.elapsedTextBox.TabIndex = 2;
             // 
             // errorTextBox
@@ -377,7 +380,7 @@
             this.errorTextBox.Location = new System.Drawing.Point(89, 56);
             this.errorTextBox.Name = "errorTextBox";
             this.errorTextBox.ReadOnly = true;
-            this.errorTextBox.Size = new System.Drawing.Size(122, 26);
+            this.errorTextBox.Size = new System.Drawing.Size(122, 30);
             this.errorTextBox.TabIndex = 1;
             // 
             // iterationTextBox
@@ -386,7 +389,7 @@
             this.iterationTextBox.Location = new System.Drawing.Point(89, 24);
             this.iterationTextBox.Name = "iterationTextBox";
             this.iterationTextBox.ReadOnly = true;
-            this.iterationTextBox.Size = new System.Drawing.Size(122, 26);
+            this.iterationTextBox.Size = new System.Drawing.Size(122, 30);
             this.iterationTextBox.TabIndex = 0;
             // 
             // elapsedLabel
@@ -394,7 +397,7 @@
             this.elapsedLabel.AutoSize = true;
             this.elapsedLabel.Location = new System.Drawing.Point(17, 90);
             this.elapsedLabel.Name = "elapsedLabel";
-            this.elapsedLabel.Size = new System.Drawing.Size(67, 20);
+            this.elapsedLabel.Size = new System.Drawing.Size(83, 25);
             this.elapsedLabel.TabIndex = 0;
             this.elapsedLabel.Text = "Elapsed";
             // 
@@ -403,7 +406,7 @@
             this.errorLabel.AutoSize = true;
             this.errorLabel.Location = new System.Drawing.Point(39, 59);
             this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(44, 20);
+            this.errorLabel.Size = new System.Drawing.Size(54, 25);
             this.errorLabel.TabIndex = 0;
             this.errorLabel.Text = "Error";
             // 
@@ -412,7 +415,7 @@
             this.iterationLabel.AutoSize = true;
             this.iterationLabel.Location = new System.Drawing.Point(16, 27);
             this.iterationLabel.Name = "iterationLabel";
-            this.iterationLabel.Size = new System.Drawing.Size(68, 20);
+            this.iterationLabel.Size = new System.Drawing.Size(81, 25);
             this.iterationLabel.TabIndex = 0;
             this.iterationLabel.Text = "Iteration";
             // 
@@ -450,7 +453,7 @@
             0,
             0});
             this.iterationsNumericUpDown.Name = "iterationsNumericUpDown";
-            this.iterationsNumericUpDown.Size = new System.Drawing.Size(100, 26);
+            this.iterationsNumericUpDown.Size = new System.Drawing.Size(100, 30);
             this.iterationsNumericUpDown.TabIndex = 3;
             this.iterationsNumericUpDown.Value = new decimal(new int[] {
             100,
@@ -488,7 +491,7 @@
             "Parallel Resilient Backpropagation"});
             this.learningMethodComboBox.Location = new System.Drawing.Point(85, 25);
             this.learningMethodComboBox.Name = "learningMethodComboBox";
-            this.learningMethodComboBox.Size = new System.Drawing.Size(270, 28);
+            this.learningMethodComboBox.Size = new System.Drawing.Size(270, 33);
             this.learningMethodComboBox.TabIndex = 0;
             // 
             // learningToNumericUpDown
@@ -500,7 +503,7 @@
             0,
             0});
             this.learningToNumericUpDown.Name = "learningToNumericUpDown";
-            this.learningToNumericUpDown.Size = new System.Drawing.Size(100, 26);
+            this.learningToNumericUpDown.Size = new System.Drawing.Size(100, 30);
             this.learningToNumericUpDown.TabIndex = 2;
             this.learningToNumericUpDown.Value = new decimal(new int[] {
             1,
@@ -513,7 +516,7 @@
             this.learningToLabel.AutoSize = true;
             this.learningToLabel.Location = new System.Drawing.Point(200, 61);
             this.learningToLabel.Name = "learningToLabel";
-            this.learningToLabel.Size = new System.Drawing.Size(27, 20);
+            this.learningToLabel.Size = new System.Drawing.Size(36, 25);
             this.learningToLabel.TabIndex = 0;
             this.learningToLabel.Text = "To";
             // 
@@ -526,7 +529,7 @@
             0,
             0});
             this.learningFromNumericUpDown.Name = "learningFromNumericUpDown";
-            this.learningFromNumericUpDown.Size = new System.Drawing.Size(100, 26);
+            this.learningFromNumericUpDown.Size = new System.Drawing.Size(100, 30);
             this.learningFromNumericUpDown.TabIndex = 1;
             this.learningFromNumericUpDown.Value = new decimal(new int[] {
             1,
@@ -539,7 +542,7 @@
             this.methodLabel.AutoSize = true;
             this.methodLabel.Location = new System.Drawing.Point(16, 28);
             this.methodLabel.Name = "methodLabel";
-            this.methodLabel.Size = new System.Drawing.Size(63, 20);
+            this.methodLabel.Size = new System.Drawing.Size(78, 25);
             this.methodLabel.TabIndex = 0;
             this.methodLabel.Text = "Method";
             // 
@@ -548,7 +551,7 @@
             this.iterationsLabel.AutoSize = true;
             this.iterationsLabel.Location = new System.Drawing.Point(3, 93);
             this.iterationsLabel.Name = "iterationsLabel";
-            this.iterationsLabel.Size = new System.Drawing.Size(76, 20);
+            this.iterationsLabel.Size = new System.Drawing.Size(91, 25);
             this.iterationsLabel.TabIndex = 0;
             this.iterationsLabel.Text = "Iterations";
             // 
@@ -557,7 +560,7 @@
             this.learningFromLabel.AutoSize = true;
             this.learningFromLabel.Location = new System.Drawing.Point(33, 61);
             this.learningFromLabel.Name = "learningFromLabel";
-            this.learningFromLabel.Size = new System.Drawing.Size(46, 20);
+            this.learningFromLabel.Size = new System.Drawing.Size(57, 25);
             this.learningFromLabel.TabIndex = 0;
             this.learningFromLabel.Text = "From";
             // 
@@ -569,7 +572,7 @@
             this.networkPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.networkPanel.Location = new System.Drawing.Point(3, 3);
             this.networkPanel.Name = "networkPanel";
-            this.networkPanel.Size = new System.Drawing.Size(341, 518);
+            this.networkPanel.Size = new System.Drawing.Size(341, 513);
             this.networkPanel.TabIndex = 0;
             // 
             // networkSettingsGroupBox
@@ -582,7 +585,7 @@
             this.networkSettingsGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.networkSettingsGroupBox.Location = new System.Drawing.Point(0, 353);
             this.networkSettingsGroupBox.Name = "networkSettingsGroupBox";
-            this.networkSettingsGroupBox.Size = new System.Drawing.Size(341, 165);
+            this.networkSettingsGroupBox.Size = new System.Drawing.Size(341, 160);
             this.networkSettingsGroupBox.TabIndex = 2;
             this.networkSettingsGroupBox.TabStop = false;
             this.networkSettingsGroupBox.Text = "Network Setting";
@@ -592,7 +595,7 @@
             this.nguyenWidrowCheckBox.AutoSize = true;
             this.nguyenWidrowCheckBox.Location = new System.Drawing.Point(70, 96);
             this.nguyenWidrowCheckBox.Name = "nguyenWidrowCheckBox";
-            this.nguyenWidrowCheckBox.Size = new System.Drawing.Size(234, 24);
+            this.nguyenWidrowCheckBox.Size = new System.Drawing.Size(292, 29);
             this.nguyenWidrowCheckBox.TabIndex = 2;
             this.nguyenWidrowCheckBox.Text = "Use Nguyen-Widrow Weights";
             this.nguyenWidrowCheckBox.UseVisualStyleBackColor = true;
@@ -603,7 +606,7 @@
             this.bayesianRegularizationCheckBox.AutoSize = true;
             this.bayesianRegularizationCheckBox.Location = new System.Drawing.Point(70, 66);
             this.bayesianRegularizationCheckBox.Name = "bayesianRegularizationCheckBox";
-            this.bayesianRegularizationCheckBox.Size = new System.Drawing.Size(232, 24);
+            this.bayesianRegularizationCheckBox.Size = new System.Drawing.Size(283, 29);
             this.bayesianRegularizationCheckBox.TabIndex = 1;
             this.bayesianRegularizationCheckBox.Text = "Use Bayesian Regularization";
             this.bayesianRegularizationCheckBox.UseVisualStyleBackColor = true;
@@ -614,7 +617,7 @@
             this.sameWeightsCheckBox.Enabled = false;
             this.sameWeightsCheckBox.Location = new System.Drawing.Point(70, 126);
             this.sameWeightsCheckBox.Name = "sameWeightsCheckBox";
-            this.sameWeightsCheckBox.Size = new System.Drawing.Size(236, 24);
+            this.sameWeightsCheckBox.Size = new System.Drawing.Size(291, 29);
             this.sameWeightsCheckBox.TabIndex = 3;
             this.sameWeightsCheckBox.Text = "Use always same initialization";
             this.sameWeightsCheckBox.UseVisualStyleBackColor = true;
@@ -629,7 +632,7 @@
             0,
             0});
             this.learningRateNumericUpDown.Name = "learningRateNumericUpDown";
-            this.learningRateNumericUpDown.Size = new System.Drawing.Size(100, 26);
+            this.learningRateNumericUpDown.Size = new System.Drawing.Size(100, 30);
             this.learningRateNumericUpDown.TabIndex = 0;
             this.learningRateNumericUpDown.Value = new decimal(new int[] {
             1,
@@ -642,7 +645,7 @@
             this.learningRateLabel.AutoSize = true;
             this.learningRateLabel.Location = new System.Drawing.Point(26, 27);
             this.learningRateLabel.Name = "learningRateLabel";
-            this.learningRateLabel.Size = new System.Drawing.Size(103, 20);
+            this.learningRateLabel.Size = new System.Drawing.Size(126, 25);
             this.learningRateLabel.TabIndex = 0;
             this.learningRateLabel.Text = "Learning rate";
             // 
@@ -688,11 +691,11 @@
             this.Column1,
             this.Column2});
             this.networkStructureDataGridView.Dock = System.Windows.Forms.DockStyle.Left;
-            this.networkStructureDataGridView.Location = new System.Drawing.Point(3, 22);
+            this.networkStructureDataGridView.Location = new System.Drawing.Point(3, 26);
             this.networkStructureDataGridView.Name = "networkStructureDataGridView";
             this.networkStructureDataGridView.RowHeadersVisible = false;
             this.networkStructureDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.networkStructureDataGridView.Size = new System.Drawing.Size(246, 161);
+            this.networkStructureDataGridView.Size = new System.Drawing.Size(246, 157);
             this.networkStructureDataGridView.TabIndex = 0;
             // 
             // Column1
@@ -742,7 +745,7 @@
             0,
             -2147483648});
             this.upperLimitNumericUpDown.Name = "upperLimitNumericUpDown";
-            this.upperLimitNumericUpDown.Size = new System.Drawing.Size(100, 26);
+            this.upperLimitNumericUpDown.Size = new System.Drawing.Size(100, 30);
             this.upperLimitNumericUpDown.TabIndex = 3;
             this.upperLimitNumericUpDown.Value = new decimal(new int[] {
             1,
@@ -755,7 +758,7 @@
             this.upperLimitLabel.AutoSize = true;
             this.upperLimitLabel.Location = new System.Drawing.Point(54, 126);
             this.upperLimitLabel.Name = "upperLimitLabel";
-            this.upperLimitLabel.Size = new System.Drawing.Size(84, 20);
+            this.upperLimitLabel.Size = new System.Drawing.Size(103, 25);
             this.upperLimitLabel.TabIndex = 0;
             this.upperLimitLabel.Text = "Upper limit";
             // 
@@ -775,7 +778,7 @@
             0,
             -2147483648});
             this.lowerLimitNumericUpDown.Name = "lowerLimitNumericUpDown";
-            this.lowerLimitNumericUpDown.Size = new System.Drawing.Size(100, 26);
+            this.lowerLimitNumericUpDown.Size = new System.Drawing.Size(100, 30);
             this.lowerLimitNumericUpDown.TabIndex = 2;
             this.lowerLimitNumericUpDown.Value = new decimal(new int[] {
             1,
@@ -788,7 +791,7 @@
             this.lowerLimitLabel.AutoSize = true;
             this.lowerLimitLabel.Location = new System.Drawing.Point(55, 94);
             this.lowerLimitLabel.Name = "lowerLimitLabel";
-            this.lowerLimitLabel.Size = new System.Drawing.Size(83, 20);
+            this.lowerLimitLabel.Size = new System.Drawing.Size(103, 25);
             this.lowerLimitLabel.TabIndex = 0;
             this.lowerLimitLabel.Text = "Lower limit";
             // 
@@ -801,7 +804,7 @@
             "Bernoulli"});
             this.activationFunctionComboBox.Location = new System.Drawing.Point(124, 25);
             this.activationFunctionComboBox.Name = "activationFunctionComboBox";
-            this.activationFunctionComboBox.Size = new System.Drawing.Size(120, 28);
+            this.activationFunctionComboBox.Size = new System.Drawing.Size(120, 33);
             this.activationFunctionComboBox.TabIndex = 0;
             this.activationFunctionComboBox.SelectedIndexChanged += new System.EventHandler(this.activationFunctionComboBox_SelectedIndexChanged);
             // 
@@ -810,7 +813,7 @@
             this.alphaNumericUpDown.DecimalPlaces = 1;
             this.alphaNumericUpDown.Location = new System.Drawing.Point(144, 59);
             this.alphaNumericUpDown.Name = "alphaNumericUpDown";
-            this.alphaNumericUpDown.Size = new System.Drawing.Size(100, 26);
+            this.alphaNumericUpDown.Size = new System.Drawing.Size(100, 30);
             this.alphaNumericUpDown.TabIndex = 1;
             this.alphaNumericUpDown.Value = new decimal(new int[] {
             10,
@@ -823,7 +826,7 @@
             this.activationFunctionLabel.AutoSize = true;
             this.activationFunctionLabel.Location = new System.Drawing.Point(47, 28);
             this.activationFunctionLabel.Name = "activationFunctionLabel";
-            this.activationFunctionLabel.Size = new System.Drawing.Size(71, 20);
+            this.activationFunctionLabel.Size = new System.Drawing.Size(87, 25);
             this.activationFunctionLabel.TabIndex = 0;
             this.activationFunctionLabel.Text = "Function";
             // 
@@ -832,7 +835,7 @@
             this.alphaLabel.AutoSize = true;
             this.alphaLabel.Location = new System.Drawing.Point(120, 61);
             this.alphaLabel.Name = "alphaLabel";
-            this.alphaLabel.Size = new System.Drawing.Size(18, 20);
+            this.alphaLabel.Size = new System.Drawing.Size(23, 25);
             this.alphaLabel.TabIndex = 0;
             this.alphaLabel.Text = "α";
             // 
@@ -841,16 +844,18 @@
             this.networkTabPage.Controls.Add(this.neuronInfoGroupBox);
             this.networkTabPage.Controls.Add(this.layerInfoGroupBox);
             this.networkTabPage.Controls.Add(this.networkViewGroupBox);
-            this.networkTabPage.Location = new System.Drawing.Point(4, 29);
+            this.networkTabPage.Location = new System.Drawing.Point(4, 34);
             this.networkTabPage.Name = "networkTabPage";
             this.networkTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.networkTabPage.Size = new System.Drawing.Size(976, 524);
+            this.networkTabPage.Size = new System.Drawing.Size(976, 519);
             this.networkTabPage.TabIndex = 4;
             this.networkTabPage.Text = "Network";
             this.networkTabPage.UseVisualStyleBackColor = true;
             // 
             // neuronInfoGroupBox
             // 
+            this.neuronInfoGroupBox.Controls.Add(this.biasTextBox);
+            this.neuronInfoGroupBox.Controls.Add(this.label1);
             this.neuronInfoGroupBox.Controls.Add(this.weightsListBox);
             this.neuronInfoGroupBox.Controls.Add(this.outputTextBox);
             this.neuronInfoGroupBox.Controls.Add(this.weightsLabel);
@@ -862,42 +867,58 @@
             this.neuronInfoGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.neuronInfoGroupBox.Location = new System.Drawing.Point(503, 136);
             this.neuronInfoGroupBox.Name = "neuronInfoGroupBox";
-            this.neuronInfoGroupBox.Size = new System.Drawing.Size(470, 385);
+            this.neuronInfoGroupBox.Size = new System.Drawing.Size(470, 380);
             this.neuronInfoGroupBox.TabIndex = 2;
             this.neuronInfoGroupBox.TabStop = false;
             this.neuronInfoGroupBox.Text = "Neuron Info";
             // 
+            // biasTextBox
+            // 
+            this.biasTextBox.Location = new System.Drawing.Point(314, 89);
+            this.biasTextBox.Name = "biasTextBox";
+            this.biasTextBox.Size = new System.Drawing.Size(150, 30);
+            this.biasTextBox.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(268, 92);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 25);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Bias";
+            // 
             // weightsListBox
             // 
             this.weightsListBox.FormattingEnabled = true;
-            this.weightsListBox.ItemHeight = 20;
+            this.weightsListBox.ItemHeight = 25;
             this.weightsListBox.Location = new System.Drawing.Point(90, 89);
             this.weightsListBox.Name = "weightsListBox";
-            this.weightsListBox.Size = new System.Drawing.Size(150, 284);
+            this.weightsListBox.Size = new System.Drawing.Size(150, 279);
             this.weightsListBox.TabIndex = 2;
             // 
             // outputTextBox
             // 
-            this.outputTextBox.Location = new System.Drawing.Point(314, 89);
+            this.outputTextBox.Location = new System.Drawing.Point(314, 121);
             this.outputTextBox.Name = "outputTextBox";
-            this.outputTextBox.Size = new System.Drawing.Size(150, 26);
-            this.outputTextBox.TabIndex = 3;
+            this.outputTextBox.Size = new System.Drawing.Size(150, 30);
+            this.outputTextBox.TabIndex = 4;
             // 
             // weightsLabel
             // 
             this.weightsLabel.AutoSize = true;
             this.weightsLabel.Location = new System.Drawing.Point(17, 92);
             this.weightsLabel.Name = "weightsLabel";
-            this.weightsLabel.Size = new System.Drawing.Size(67, 20);
+            this.weightsLabel.Size = new System.Drawing.Size(84, 25);
             this.weightsLabel.TabIndex = 0;
             this.weightsLabel.Text = "Weights";
             // 
             // outputLabel
             // 
             this.outputLabel.AutoSize = true;
-            this.outputLabel.Location = new System.Drawing.Point(250, 92);
+            this.outputLabel.Location = new System.Drawing.Point(250, 124);
             this.outputLabel.Name = "outputLabel";
-            this.outputLabel.Size = new System.Drawing.Size(58, 20);
+            this.outputLabel.Size = new System.Drawing.Size(71, 25);
             this.outputLabel.TabIndex = 0;
             this.outputLabel.Text = "Output";
             // 
@@ -905,7 +926,7 @@
             // 
             this.neuronTextBox.Location = new System.Drawing.Point(90, 57);
             this.neuronTextBox.Name = "neuronTextBox";
-            this.neuronTextBox.Size = new System.Drawing.Size(150, 26);
+            this.neuronTextBox.Size = new System.Drawing.Size(150, 30);
             this.neuronTextBox.TabIndex = 1;
             // 
             // neuronLabel
@@ -913,7 +934,7 @@
             this.neuronLabel.AutoSize = true;
             this.neuronLabel.Location = new System.Drawing.Point(23, 60);
             this.neuronLabel.Name = "neuronLabel";
-            this.neuronLabel.Size = new System.Drawing.Size(61, 20);
+            this.neuronLabel.Size = new System.Drawing.Size(76, 25);
             this.neuronLabel.TabIndex = 0;
             this.neuronLabel.Text = "Neuron";
             // 
@@ -921,7 +942,7 @@
             // 
             this.layerTextBox.Location = new System.Drawing.Point(90, 25);
             this.layerTextBox.Name = "layerTextBox";
-            this.layerTextBox.Size = new System.Drawing.Size(150, 26);
+            this.layerTextBox.Size = new System.Drawing.Size(150, 30);
             this.layerTextBox.TabIndex = 0;
             // 
             // layerLabel
@@ -929,7 +950,7 @@
             this.layerLabel.AutoSize = true;
             this.layerLabel.Location = new System.Drawing.Point(36, 28);
             this.layerLabel.Name = "layerLabel";
-            this.layerLabel.Size = new System.Drawing.Size(48, 20);
+            this.layerLabel.Size = new System.Drawing.Size(61, 25);
             this.layerLabel.TabIndex = 0;
             this.layerLabel.Text = "Layer";
             // 
@@ -953,14 +974,14 @@
             // 
             this.layerNameTextBox.Location = new System.Drawing.Point(222, 26);
             this.layerNameTextBox.Name = "layerNameTextBox";
-            this.layerNameTextBox.Size = new System.Drawing.Size(150, 26);
+            this.layerNameTextBox.Size = new System.Drawing.Size(150, 30);
             this.layerNameTextBox.TabIndex = 0;
             // 
             // numberOfInputsTextBox
             // 
             this.numberOfInputsTextBox.Location = new System.Drawing.Point(222, 90);
             this.numberOfInputsTextBox.Name = "numberOfInputsTextBox";
-            this.numberOfInputsTextBox.Size = new System.Drawing.Size(150, 26);
+            this.numberOfInputsTextBox.Size = new System.Drawing.Size(150, 30);
             this.numberOfInputsTextBox.TabIndex = 2;
             // 
             // layerNameLabel
@@ -968,7 +989,7 @@
             this.layerNameLabel.AutoSize = true;
             this.layerNameLabel.Location = new System.Drawing.Point(168, 29);
             this.layerNameLabel.Name = "layerNameLabel";
-            this.layerNameLabel.Size = new System.Drawing.Size(48, 20);
+            this.layerNameLabel.Size = new System.Drawing.Size(61, 25);
             this.layerNameLabel.TabIndex = 0;
             this.layerNameLabel.Text = "Layer";
             // 
@@ -977,7 +998,7 @@
             this.numberOfNeuronsLabel.AutoSize = true;
             this.numberOfNeuronsLabel.Location = new System.Drawing.Point(69, 61);
             this.numberOfNeuronsLabel.Name = "numberOfNeuronsLabel";
-            this.numberOfNeuronsLabel.Size = new System.Drawing.Size(147, 20);
+            this.numberOfNeuronsLabel.Size = new System.Drawing.Size(181, 25);
             this.numberOfNeuronsLabel.TabIndex = 0;
             this.numberOfNeuronsLabel.Text = "Number of Neurons";
             // 
@@ -986,7 +1007,7 @@
             this.numberOfInputsLabel.AutoSize = true;
             this.numberOfInputsLabel.Location = new System.Drawing.Point(84, 93);
             this.numberOfInputsLabel.Name = "numberOfInputsLabel";
-            this.numberOfInputsLabel.Size = new System.Drawing.Size(132, 20);
+            this.numberOfInputsLabel.Size = new System.Drawing.Size(160, 25);
             this.numberOfInputsLabel.TabIndex = 0;
             this.numberOfInputsLabel.Text = "Number of Inputs";
             // 
@@ -994,7 +1015,7 @@
             // 
             this.numberOfNeuronsTextBox.Location = new System.Drawing.Point(222, 58);
             this.numberOfNeuronsTextBox.Name = "numberOfNeuronsTextBox";
-            this.numberOfNeuronsTextBox.Size = new System.Drawing.Size(150, 26);
+            this.numberOfNeuronsTextBox.Size = new System.Drawing.Size(150, 30);
             this.numberOfNeuronsTextBox.TabIndex = 1;
             // 
             // networkViewGroupBox
@@ -1003,7 +1024,7 @@
             this.networkViewGroupBox.Dock = System.Windows.Forms.DockStyle.Left;
             this.networkViewGroupBox.Location = new System.Drawing.Point(3, 3);
             this.networkViewGroupBox.Name = "networkViewGroupBox";
-            this.networkViewGroupBox.Size = new System.Drawing.Size(500, 518);
+            this.networkViewGroupBox.Size = new System.Drawing.Size(500, 513);
             this.networkViewGroupBox.TabIndex = 0;
             this.networkViewGroupBox.TabStop = false;
             this.networkViewGroupBox.Text = "Network View";
@@ -1011,9 +1032,9 @@
             // networkTreeView
             // 
             this.networkTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.networkTreeView.Location = new System.Drawing.Point(3, 22);
+            this.networkTreeView.Location = new System.Drawing.Point(3, 26);
             this.networkTreeView.Name = "networkTreeView";
-            this.networkTreeView.Size = new System.Drawing.Size(494, 493);
+            this.networkTreeView.Size = new System.Drawing.Size(494, 484);
             this.networkTreeView.TabIndex = 0;
             this.networkTreeView.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.networkTreeView_NodeMouseClick);
             // 
@@ -1022,10 +1043,10 @@
             this.modelTestingTabPage.Controls.Add(this.testingVisualizationGroupBox);
             this.modelTestingTabPage.Controls.Add(this.predictionGroupBox);
             this.modelTestingTabPage.Controls.Add(this.testingDataGroupBox);
-            this.modelTestingTabPage.Location = new System.Drawing.Point(4, 29);
+            this.modelTestingTabPage.Location = new System.Drawing.Point(4, 34);
             this.modelTestingTabPage.Name = "modelTestingTabPage";
             this.modelTestingTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.modelTestingTabPage.Size = new System.Drawing.Size(976, 524);
+            this.modelTestingTabPage.Size = new System.Drawing.Size(976, 519);
             this.modelTestingTabPage.TabIndex = 2;
             this.modelTestingTabPage.Text = "Model Testing";
             this.modelTestingTabPage.UseVisualStyleBackColor = true;
@@ -1037,7 +1058,7 @@
             this.testingVisualizationGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.testingVisualizationGroupBox.Location = new System.Drawing.Point(443, 153);
             this.testingVisualizationGroupBox.Name = "testingVisualizationGroupBox";
-            this.testingVisualizationGroupBox.Size = new System.Drawing.Size(530, 368);
+            this.testingVisualizationGroupBox.Size = new System.Drawing.Size(530, 363);
             this.testingVisualizationGroupBox.TabIndex = 2;
             this.testingVisualizationGroupBox.TabStop = false;
             this.testingVisualizationGroupBox.Text = "2D Visualization";
@@ -1045,7 +1066,7 @@
             // testingZedGraphControl
             // 
             this.testingZedGraphControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.testingZedGraphControl.Location = new System.Drawing.Point(3, 77);
+            this.testingZedGraphControl.Location = new System.Drawing.Point(3, 81);
             this.testingZedGraphControl.Margin = new System.Windows.Forms.Padding(8);
             this.testingZedGraphControl.Name = "testingZedGraphControl";
             this.testingZedGraphControl.ScrollGrace = 0D;
@@ -1055,7 +1076,7 @@
             this.testingZedGraphControl.ScrollMinX = 0D;
             this.testingZedGraphControl.ScrollMinY = 0D;
             this.testingZedGraphControl.ScrollMinY2 = 0D;
-            this.testingZedGraphControl.Size = new System.Drawing.Size(524, 288);
+            this.testingZedGraphControl.Size = new System.Drawing.Size(524, 279);
             this.testingZedGraphControl.TabIndex = 1;
             this.testingZedGraphControl.UseExtendedPrintDialog = true;
             // 
@@ -1066,7 +1087,7 @@
             this.testingVisualizationPanel.Controls.Add(this.testingYLabel);
             this.testingVisualizationPanel.Controls.Add(this.testingXLabel);
             this.testingVisualizationPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.testingVisualizationPanel.Location = new System.Drawing.Point(3, 22);
+            this.testingVisualizationPanel.Location = new System.Drawing.Point(3, 26);
             this.testingVisualizationPanel.Name = "testingVisualizationPanel";
             this.testingVisualizationPanel.Size = new System.Drawing.Size(524, 55);
             this.testingVisualizationPanel.TabIndex = 0;
@@ -1077,7 +1098,7 @@
             this.testingXComboBox.FormattingEnabled = true;
             this.testingXComboBox.Location = new System.Drawing.Point(38, 11);
             this.testingXComboBox.Name = "testingXComboBox";
-            this.testingXComboBox.Size = new System.Drawing.Size(200, 28);
+            this.testingXComboBox.Size = new System.Drawing.Size(200, 33);
             this.testingXComboBox.TabIndex = 0;
             this.testingXComboBox.SelectedIndexChanged += new System.EventHandler(this.testingComboBox_SelectedIndexChanged);
             // 
@@ -1087,7 +1108,7 @@
             this.testingYComboBox.FormattingEnabled = true;
             this.testingYComboBox.Location = new System.Drawing.Point(280, 11);
             this.testingYComboBox.Name = "testingYComboBox";
-            this.testingYComboBox.Size = new System.Drawing.Size(200, 28);
+            this.testingYComboBox.Size = new System.Drawing.Size(200, 33);
             this.testingYComboBox.TabIndex = 1;
             this.testingYComboBox.SelectedIndexChanged += new System.EventHandler(this.testingComboBox_SelectedIndexChanged);
             // 
@@ -1096,7 +1117,7 @@
             this.testingYLabel.AutoSize = true;
             this.testingYLabel.Location = new System.Drawing.Point(246, 14);
             this.testingYLabel.Name = "testingYLabel";
-            this.testingYLabel.Size = new System.Drawing.Size(20, 20);
+            this.testingYLabel.Size = new System.Drawing.Size(28, 25);
             this.testingYLabel.TabIndex = 0;
             this.testingYLabel.Text = "y:";
             // 
@@ -1105,7 +1126,7 @@
             this.testingXLabel.AutoSize = true;
             this.testingXLabel.Location = new System.Drawing.Point(4, 14);
             this.testingXLabel.Name = "testingXLabel";
-            this.testingXLabel.Size = new System.Drawing.Size(20, 20);
+            this.testingXLabel.Size = new System.Drawing.Size(28, 25);
             this.testingXLabel.TabIndex = 0;
             this.testingXLabel.Text = "x:";
             // 
@@ -1127,7 +1148,7 @@
             this.predictionDataGridView.AllowUserToDeleteRows = false;
             this.predictionDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.predictionDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.predictionDataGridView.Location = new System.Drawing.Point(3, 22);
+            this.predictionDataGridView.Location = new System.Drawing.Point(3, 26);
             this.predictionDataGridView.Name = "predictionDataGridView";
             this.predictionDataGridView.RowHeadersVisible = false;
             this.predictionDataGridView.RowTemplate.Height = 24;
@@ -1135,16 +1156,16 @@
             this.predictionDataGridView.ShowCellErrors = false;
             this.predictionDataGridView.ShowEditingIcon = false;
             this.predictionDataGridView.ShowRowErrors = false;
-            this.predictionDataGridView.Size = new System.Drawing.Size(444, 125);
+            this.predictionDataGridView.Size = new System.Drawing.Size(444, 121);
             this.predictionDataGridView.TabIndex = 0;
             // 
             // predictButton
             // 
             this.predictButton.Dock = System.Windows.Forms.DockStyle.Right;
             this.predictButton.Enabled = false;
-            this.predictButton.Location = new System.Drawing.Point(447, 22);
+            this.predictButton.Location = new System.Drawing.Point(447, 26);
             this.predictButton.Name = "predictButton";
-            this.predictButton.Size = new System.Drawing.Size(80, 125);
+            this.predictButton.Size = new System.Drawing.Size(80, 121);
             this.predictButton.TabIndex = 1;
             this.predictButton.Text = "Predict";
             this.predictButton.UseVisualStyleBackColor = true;
@@ -1159,7 +1180,7 @@
             this.testingDataGroupBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.testingDataGroupBox.Name = "testingDataGroupBox";
             this.testingDataGroupBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.testingDataGroupBox.Size = new System.Drawing.Size(440, 518);
+            this.testingDataGroupBox.Size = new System.Drawing.Size(440, 513);
             this.testingDataGroupBox.TabIndex = 0;
             this.testingDataGroupBox.TabStop = false;
             this.testingDataGroupBox.Text = "Testing Data";
@@ -1171,7 +1192,7 @@
             this.testingDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.testingDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.testingDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.testingDataGridView.Location = new System.Drawing.Point(4, 24);
+            this.testingDataGridView.Location = new System.Drawing.Point(4, 28);
             this.testingDataGridView.Name = "testingDataGridView";
             this.testingDataGridView.ReadOnly = true;
             this.testingDataGridView.RowHeadersVisible = false;
@@ -1180,7 +1201,7 @@
             this.testingDataGridView.ShowCellErrors = false;
             this.testingDataGridView.ShowEditingIcon = false;
             this.testingDataGridView.ShowRowErrors = false;
-            this.testingDataGridView.Size = new System.Drawing.Size(432, 413);
+            this.testingDataGridView.Size = new System.Drawing.Size(432, 404);
             this.testingDataGridView.TabIndex = 0;
             // 
             // testingPanel
@@ -1192,7 +1213,7 @@
             this.testingPanel.Controls.Add(this.testingToNumericUpDown);
             this.testingPanel.Controls.Add(this.testButton);
             this.testingPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.testingPanel.Location = new System.Drawing.Point(4, 437);
+            this.testingPanel.Location = new System.Drawing.Point(4, 432);
             this.testingPanel.Name = "testingPanel";
             this.testingPanel.Size = new System.Drawing.Size(432, 76);
             this.testingPanel.TabIndex = 4;
@@ -1202,7 +1223,7 @@
             this.testingFromLabel.AutoSize = true;
             this.testingFromLabel.Location = new System.Drawing.Point(14, 13);
             this.testingFromLabel.Name = "testingFromLabel";
-            this.testingFromLabel.Size = new System.Drawing.Size(46, 20);
+            this.testingFromLabel.Size = new System.Drawing.Size(57, 25);
             this.testingFromLabel.TabIndex = 0;
             this.testingFromLabel.Text = "From";
             // 
@@ -1211,7 +1232,7 @@
             this.numberOfMatchesLabel.AutoSize = true;
             this.numberOfMatchesLabel.Location = new System.Drawing.Point(14, 46);
             this.numberOfMatchesLabel.Name = "numberOfMatchesLabel";
-            this.numberOfMatchesLabel.Size = new System.Drawing.Size(152, 20);
+            this.numberOfMatchesLabel.Size = new System.Drawing.Size(187, 25);
             this.numberOfMatchesLabel.TabIndex = 0;
             this.numberOfMatchesLabel.Text = "Number of matches:";
             // 
@@ -1224,7 +1245,7 @@
             0,
             0});
             this.testingFromNumericUpDown.Name = "testingFromNumericUpDown";
-            this.testingFromNumericUpDown.Size = new System.Drawing.Size(100, 26);
+            this.testingFromNumericUpDown.Size = new System.Drawing.Size(100, 30);
             this.testingFromNumericUpDown.TabIndex = 1;
             this.testingFromNumericUpDown.Value = new decimal(new int[] {
             1,
@@ -1237,7 +1258,7 @@
             this.testingToLabel.AutoSize = true;
             this.testingToLabel.Location = new System.Drawing.Point(181, 13);
             this.testingToLabel.Name = "testingToLabel";
-            this.testingToLabel.Size = new System.Drawing.Size(27, 20);
+            this.testingToLabel.Size = new System.Drawing.Size(36, 25);
             this.testingToLabel.TabIndex = 0;
             this.testingToLabel.Text = "To";
             // 
@@ -1250,7 +1271,7 @@
             0,
             0});
             this.testingToNumericUpDown.Name = "testingToNumericUpDown";
-            this.testingToNumericUpDown.Size = new System.Drawing.Size(100, 26);
+            this.testingToNumericUpDown.Size = new System.Drawing.Size(100, 30);
             this.testingToNumericUpDown.TabIndex = 2;
             this.testingToNumericUpDown.Value = new decimal(new int[] {
             1,
@@ -1292,7 +1313,7 @@
             // 
             // DNNClassifierModelForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 579);
             this.Controls.Add(this.mainTabControl);
@@ -1305,7 +1326,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Deep Neural Network (DNN) Classifier";
+            this.Text = "Deep Belief Network (DBN) Classifier";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DNNBinaryClassifierModelForm_FormClosing);
             this.inputDataGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.inputDataGridView)).EndInit();
@@ -1459,5 +1480,7 @@
         private System.Windows.Forms.CheckBox sameWeightsCheckBox;
         private System.Windows.Forms.NumericUpDown learningRateNumericUpDown;
         private System.Windows.Forms.Label learningRateLabel;
+        private System.Windows.Forms.TextBox biasTextBox;
+        private System.Windows.Forms.Label label1;
     }
 }

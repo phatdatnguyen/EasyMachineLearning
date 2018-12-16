@@ -126,6 +126,8 @@
             this.mainStatusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
+            this.label1 = new System.Windows.Forms.Label();
+            this.biasTextBox = new System.Windows.Forms.TextBox();
             this.inputDataGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inputDataGridView)).BeginInit();
             this.mainTabControl.SuspendLayout();
@@ -331,7 +333,7 @@
             this.learningScatterplotView.LinesVisible = false;
             this.learningScatterplotView.Location = new System.Drawing.Point(3, 22);
             this.learningScatterplotView.Name = "learningScatterplotView";
-            this.learningScatterplotView.ScaleTight = false;
+            this.learningScatterplotView.ScaleTight = true;
             this.learningScatterplotView.Size = new System.Drawing.Size(623, 353);
             this.learningScatterplotView.SymbolSize = 7F;
             this.learningScatterplotView.TabIndex = 0;
@@ -858,7 +860,9 @@
             // neuronInfoGroupBox
             // 
             this.neuronInfoGroupBox.Controls.Add(this.weightsListBox);
+            this.neuronInfoGroupBox.Controls.Add(this.biasTextBox);
             this.neuronInfoGroupBox.Controls.Add(this.outputTextBox);
+            this.neuronInfoGroupBox.Controls.Add(this.label1);
             this.neuronInfoGroupBox.Controls.Add(this.weightsLabel);
             this.neuronInfoGroupBox.Controls.Add(this.outputLabel);
             this.neuronInfoGroupBox.Controls.Add(this.neuronTextBox);
@@ -884,10 +888,10 @@
             // 
             // outputTextBox
             // 
-            this.outputTextBox.Location = new System.Drawing.Point(314, 89);
+            this.outputTextBox.Location = new System.Drawing.Point(314, 121);
             this.outputTextBox.Name = "outputTextBox";
             this.outputTextBox.Size = new System.Drawing.Size(150, 26);
-            this.outputTextBox.TabIndex = 3;
+            this.outputTextBox.TabIndex = 4;
             // 
             // weightsLabel
             // 
@@ -901,7 +905,7 @@
             // outputLabel
             // 
             this.outputLabel.AutoSize = true;
-            this.outputLabel.Location = new System.Drawing.Point(250, 92);
+            this.outputLabel.Location = new System.Drawing.Point(250, 124);
             this.outputLabel.Name = "outputLabel";
             this.outputLabel.Size = new System.Drawing.Size(58, 20);
             this.outputLabel.TabIndex = 0;
@@ -1296,6 +1300,22 @@
             this.fileSystemWatcher1.EnableRaisingEvents = true;
             this.fileSystemWatcher1.SynchronizingObject = this;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(268, 92);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Bias";
+            // 
+            // biasTextBox
+            // 
+            this.biasTextBox.Location = new System.Drawing.Point(314, 89);
+            this.biasTextBox.Name = "biasTextBox";
+            this.biasTextBox.Size = new System.Drawing.Size(150, 26);
+            this.biasTextBox.TabIndex = 3;
+            // 
             // ANNClassifierModelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -1465,5 +1485,7 @@
         private System.Windows.Forms.Label numberOfInputsLabel;
         private System.Windows.Forms.TextBox numberOfNeuronsTextBox;
         private System.Windows.Forms.Panel leanrningPanel;
+        private System.Windows.Forms.TextBox biasTextBox;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -10,10 +10,12 @@ A simple machine learning software for educational purpose. This software is bas
   - k-Nearest Neighbors (kNN)
   - Naive Bayes
   - Decision Tree
+  - Linear Regression
+  - Polynomial Regression
   - Logistic Regression
   - Support Vector Machine (SVM)
   - Artificial Neural Network (ANN)
-  - Deep Neural Network (DNN)
+  - Deep Belief Network (DBN)
 - Clustering
   - k-Means
   - Binary Split

@@ -1,4 +1,1 @@
-﻿Restricted Boltzmann Machine (generate input)
-Binary Split
-Deep Belief Network
-Distance Network (elastic and SOM)
+﻿

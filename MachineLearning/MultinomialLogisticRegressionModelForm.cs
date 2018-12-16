@@ -82,7 +82,6 @@ namespace MachineLearning
             learningFromNumericUpDown.Maximum = inputData.Rows.Count;
             learningToNumericUpDown.Maximum = inputData.Rows.Count;
             learningToNumericUpDown.Value = inputData.Rows.Count;
-
             foreach (string inputColumnName in inputColumnNames)
             {
                 learningXComboBox.Items.Add(inputColumnName);
@@ -99,13 +98,16 @@ namespace MachineLearning
                 testingDataGridView.Columns.Add(inputColumnName, inputColumnName + "\n(Input)");
             testingDataGridView.Columns.Add(outputColumnName, outputColumnName + "\n(Expected Output)");
             testingDataGridView.Columns.Add(outputColumnName, outputColumnName + "\n(Output)");
-            cells = new string[inputColumnNames.Length + 2];
+            testingDataGridView.Columns.Add("probabilities", "Probabilities\n[" + String.Join("; ", outputGroupValues) + "]");
+            testingDataGridView.Columns[testingDataGridView.Columns.Count - 1].Width = 300;
+            cells = new string[inputColumnNames.Length + 3];
             foreach (DataRow row in this.inputData.Rows)
             {
                 for (int columnIndex = 0; columnIndex < numberOfInputFields; columnIndex++)
                     cells[columnIndex] = row[inputColumnNames[columnIndex]].ToString();
                 cells[numberOfInputFields] = outputColumn[this.inputData.Rows.IndexOf(row)].ToString();
                 cells[numberOfInputFields + 1] = "(...)";
+                cells[numberOfInputFields + 2] = "(...)";
                 testingDataGridView.Rows.Add(cells);
             }
             testingFromNumericUpDown.Maximum = inputData.Rows.Count;
@@ -116,10 +118,14 @@ namespace MachineLearning
                 predictionDataGridView.Columns.Add(inputColumnName, inputColumnName + "\n(Input)");
             predictionDataGridView.Columns.Add(outputColumnName, outputColumnName + "\n(Output)");
             predictionDataGridView.Columns[inputColumnNames.Length].ReadOnly = true;
-            cells = new string[inputColumnNames.Length + 1];
+            predictionDataGridView.Columns.Add("probabilities", "Probabilities\n[" + String.Join("; ", outputGroupValues) + "]");
+            predictionDataGridView.Columns[inputColumnNames.Length + 1].Width = 300;  
+            predictionDataGridView.Columns[inputColumnNames.Length + 1].ReadOnly = true;
+            cells = new string[inputColumnNames.Length + 2];
             for (int columnIndex = 0; columnIndex < numberOfInputFields; columnIndex++)
                 cells[columnIndex] = "";
             cells[inputColumnNames.Length] = "(...)";
+            cells[inputColumnNames.Length + 1] = "(...)";
             predictionDataGridView.Rows.Add(cells);
 
             foreach (string inputColumnName in inputColumnNames)
@@ -212,6 +218,20 @@ namespace MachineLearning
             if (inputData.Columns.Count == 2)
                 CreateSurface(learningXComboBox.SelectedItem.ToString(), learningYComboBox.SelectedItem.ToString());
 
+            int numberOfColumns = multinomialLogisticRegression.Coefficients[0].Length;
+            int numberOfRows = multinomialLogisticRegression.Coefficients.Length;
+            for (int columnIndex = 0; columnIndex < numberOfColumns; columnIndex++)
+                fittingDataGridView.Columns.Add("b" + columnIndex.ToString(), "b" + columnIndex.ToString());
+
+            for (int rowIndex = 0; rowIndex < numberOfRows; rowIndex++)
+            {
+                string[] row = new string[numberOfColumns];
+                for (int columnIndex = 0; columnIndex < numberOfColumns; columnIndex++)
+                    row[columnIndex] = multinomialLogisticRegression.Coefficients[rowIndex][columnIndex].ToString();
+                fittingDataGridView.Rows.Add(row);
+            }
+                
+
             testButton.Enabled = true;
             predictButton.Enabled = true;
 
@@ -295,9 +315,11 @@ namespace MachineLearning
             toolStripStatusLabel.Text = "Computing...";
 
             int[] computedOutputsGroupIndexes = null;
+            double[][] probabilities = null;
             try
             {
                 computedOutputsGroupIndexes = multinomialLogisticRegression.Decide(inputColumns.Get(testingIndexes));
+                probabilities = multinomialLogisticRegression.Probabilities(inputColumns.Get(testingIndexes));
             }
             catch (Exception exception)
             {
@@ -323,15 +345,24 @@ namespace MachineLearning
             int numberOfMatches = 0;
             foreach (DataRow row in this.inputData.Rows)
             {
-                string[] cells = new string[inputColumnNames.Length + 2];
+                string[] cells = new string[inputColumnNames.Length + 3];
                 for (int columnIndex = 0; columnIndex < numberOfInputFields; columnIndex++)
                     cells[columnIndex] = row[inputColumnNames[columnIndex]].ToString();
                 cells[numberOfInputFields] = outputColumn[this.inputData.Rows.IndexOf(row)].ToString();
                 int rowIndex = this.inputData.Rows.IndexOf(row);
                 if (testingIndexes.Contains(rowIndex))
+                {
                     cells[numberOfInputFields + 1] = computedOutputs[rowIndex - fromRowIndex].ToString();
+                    string[] roundedProbabilities = new string[outputGroupValues.Length];
+                    for (int groupIndex = 0; groupIndex < roundedProbabilities.Length; groupIndex++)
+                        roundedProbabilities[groupIndex] = Math.Round(probabilities[rowIndex][groupIndex], 4).ToString();
+                    cells[numberOfInputFields + 2] = "[" + String.Join("; ", roundedProbabilities) + "]";
+                }
                 else
+                {
                     cells[numberOfInputFields + 1] = "(...)";
+                    cells[numberOfInputFields + 2] = "(...)";
+                }
                 testingDataGridView.Rows.Add(cells);
 
                 if (cells[numberOfInputFields].ToString() == cells[numberOfInputFields + 1].ToString())
@@ -372,17 +403,27 @@ namespace MachineLearning
 
         private void predictButton_Click(object sender, EventArgs e)
         {
-            double[] inputValues = new double[predictionDataGridView.Columns.Count - 1];
-            for (int columnIndex = 0; columnIndex < predictionDataGridView.Columns.Count - 1; columnIndex++)
-                inputValues[columnIndex] = Convert.ToDouble(predictionDataGridView.Rows[0].Cells[columnIndex].Value);
+            double[] inputValues = new double[predictionDataGridView.Columns.Count - 2];
+            try
+            {
+                for (int columnIndex = 0; columnIndex < predictionDataGridView.Columns.Count - 2; columnIndex++)
+                    inputValues[columnIndex] = Convert.ToDouble(predictionDataGridView.Rows[0].Cells[columnIndex].Value);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(this, exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             Cursor = Cursors.WaitCursor;
             toolStripStatusLabel.Text = "Computing...";
 
             int outputGroupIndex = -1;
+            double[] probabilities = null;
             try
             {
                 outputGroupIndex = multinomialLogisticRegression.Decide(inputValues);
+                probabilities = multinomialLogisticRegression.Probabilities(inputValues);
             }
             catch (Exception exception)
             {
@@ -393,7 +434,11 @@ namespace MachineLearning
             }
 
             string output = outputGroupValues[outputGroupIndex];
-            predictionDataGridView.Rows[0].Cells[predictionDataGridView.Columns.Count - 1].Value = output;
+            predictionDataGridView.Rows[0].Cells[predictionDataGridView.Columns.Count - 2].Value = output;
+            string[] roundedProbabilities = new string[outputGroupValues.Length];
+            for (int groupIndex = 0; groupIndex < roundedProbabilities.Length; groupIndex++)
+                roundedProbabilities[groupIndex] = Math.Round(probabilities[groupIndex], 4).ToString();
+            predictionDataGridView.Rows[0].Cells[predictionDataGridView.Columns.Count - 1].Value = "[" + String.Join("; ", roundedProbabilities) + "]";
 
             toolStripStatusLabel.Text = "";
             Cursor = Cursors.Arrow;

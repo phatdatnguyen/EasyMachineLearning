@@ -322,10 +322,11 @@ namespace MachineLearning
             {
                 layerTextBox.Text = e.Node.Parent.Text;
                 neuronTextBox.Text = e.Node.Text;
-                Neuron neuron = (Neuron)e.Node.Tag;
+                StochasticNeuron neuron = (StochasticNeuron)e.Node.Tag;
                 weightsListBox.Items.Clear();
                 foreach (double weight in neuron.Weights)
                     weightsListBox.Items.Add(weight.ToString());
+                biasTextBox.Text = neuron.Threshold.ToString();
                 outputTextBox.Text = neuron.Output.ToString();
             }
         }

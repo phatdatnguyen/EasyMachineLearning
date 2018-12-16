@@ -15,8 +15,8 @@ namespace MachineLearning
         private DataTable inputData = new DataTable();
         private string[] classificationModels = new string[] { "Support Vector Machine (SVM)", "Naive-Bayes", "k-Nearest Neighbors (kNN)",
             "Decision Tree", "Logistic Regression", "Multinomial Logistic Regression", "Artificial Neural Network (ANN)",
-            "Deep Neural Network (DNN)" };
-        private string[] regressionModels = new string[] { "Support Vector Machine (SVM)", "Artificial Neural Network (ANN)" };
+            "Deep Belief Network (DBN)" };
+        private string[] regressionModels = new string[] { "Linear Regression", "Polynomial Regression", "Support Vector Machine (SVM)", "Artificial Neural Network (ANN)" };
         private string[] clusteringModels = new string[] { "k-Means", "Balanced k-Means", "Binary Split", "k-Medoids", "k-Modes", "Mean-Shift",
             "Gaussian Mixture", "Restricted Boltzmann Machine (RBM)", "Deep Belief Network (DBN)" };
         private string[] ensembleLearningModels = new string[] { "Random Forest", "AdaBoost" };
@@ -347,9 +347,9 @@ namespace MachineLearning
                     ANNClassifierModelForm annClassifierModelForm = new ANNClassifierModelForm(inputData, inputColumnNames.ToArray<string>(), outputColumnNames[0]);
                     annClassifierModelForm.ShowDialog(this);
                     break;
-                case "Deep Neural Network (DNN)":
-                    DNNClassifierModelForm dnnClassifierModelForm = new DNNClassifierModelForm(inputData, inputColumnNames.ToArray<string>(), outputColumnNames[0]);
-                    dnnClassifierModelForm.ShowDialog(this);
+                case "Deep Belief Network (DBN)":
+                    DBNClassifierModelForm dbnClassifierModelForm = new DBNClassifierModelForm(inputData, inputColumnNames.ToArray<string>(), outputColumnNames[0]);
+                    dbnClassifierModelForm.ShowDialog(this);
                     break;
             }
         }
@@ -395,6 +395,19 @@ namespace MachineLearning
 
             switch (model)
             {
+                case "Linear Regression":
+                    LinearRegressionModelForm linearRegressionModelForm = new LinearRegressionModelForm(inputData, inputColumnNames.ToArray<string>(), outputColumnNames[0]);
+                    linearRegressionModelForm.ShowDialog(this);
+                    break;
+                case "Polynomial Regression":
+                    if (inputColumnNames.Count != 1)
+                    {
+                        MessageBox.Show(this, "You can only choose 1 input field for polynomial regression!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    PolynomialRegressionModelForm PolynomialRegressionModelForm = new PolynomialRegressionModelForm(inputData, inputColumnNames[0], outputColumnNames[0]);
+                    PolynomialRegressionModelForm.ShowDialog(this);
+                    break;
                 case "Support Vector Machine (SVM)":
                     SVMRegressionModelForm svmRegressionModelForm = new SVMRegressionModelForm(inputData, inputColumnNames.ToArray<string>(), outputColumnNames[0]);
                     svmRegressionModelForm.ShowDialog(this);
@@ -402,10 +415,6 @@ namespace MachineLearning
                 case "Artificial Neural Network (ANN)":
                     ANNRegressionModelForm annRegressionModelForm = new ANNRegressionModelForm(inputData, inputColumnNames.ToArray<string>(), outputColumnNames[0]);
                     annRegressionModelForm.ShowDialog(this);
-                    break;
-                case "Restricted Boltzmann Machine (RBM)":
-                    //RBMRegressionModelForm rbmRegressionModelForm = new RBMRegressionModelForm(inputData, inputColumnNames.ToArray<string>(), outputColumnNames[0]);
-                    //rbmRegressionModelForm.ShowDialog(this);
                     break;
             }
         }

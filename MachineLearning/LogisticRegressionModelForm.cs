@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using Accord.Math;
+using Accord.Controls;
 using Accord.Statistics.Kernels;
 using Accord.Statistics.Models.Regression;
 using Accord.Statistics.Models.Regression.Fitting;
@@ -88,30 +89,36 @@ namespace MachineLearning
             learningFromNumericUpDown.Maximum = inputData.Rows.Count;
             learningToNumericUpDown.Maximum = inputData.Rows.Count;
             learningToNumericUpDown.Value = inputData.Rows.Count;
-
-            foreach (string inputColumnName in inputColumnNames)
+            if (inputColumnNames.Length == 1)
             {
-                learningXComboBox.Items.Add(inputColumnName);
-                learningYComboBox.Items.Add(inputColumnName);
-            }
-            learningXComboBox.SelectedIndex = 0;
-            if (learningYComboBox.Items.Count > 1)
-                learningYComboBox.SelectedIndex = 1;
-            else
+                learningXComboBox.Items.Add(inputColumnNames[0]);
+                learningYComboBox.Items.Add(outputColumnName);
+                learningXComboBox.SelectedIndex = 0;
                 learningYComboBox.SelectedIndex = 0;
+            }
+            else //inputColumnNames.Length == 2
+            {
+                learningXComboBox.Items.Add(inputColumnNames[0]);
+                learningYComboBox.Items.Add(inputColumnNames[1]);
+                learningXComboBox.SelectedIndex = 0;
+                learningYComboBox.SelectedIndex = 0;
+            }
 
             //Tab testing
             foreach (string inputColumnName in inputColumnNames)
                 testingDataGridView.Columns.Add(inputColumnName, inputColumnName + "\n(Input)");
             testingDataGridView.Columns.Add(outputColumnName, outputColumnName + "\n(Expected Output)");
             testingDataGridView.Columns.Add(outputColumnName, outputColumnName + "\n(Output)");
-            cells = new string[inputColumnNames.Length + 2];
+            testingDataGridView.Columns.Add("probabilities", "Probabilities\n[" + outputValues[0] + "; " + outputValues[1] + "]");
+            testingDataGridView.Columns[testingDataGridView.Columns.Count - 1].Width = 300;
+            cells = new string[inputColumnNames.Length + 3];
             foreach (DataRow row in this.inputData.Rows)
             {
                 for (int columnIndex = 0; columnIndex < numberOfInputFields; columnIndex++)
                     cells[columnIndex] = row[inputColumnNames[columnIndex]].ToString();
                 cells[numberOfInputFields] = outputColumn[this.inputData.Rows.IndexOf(row)].ToString();
                 cells[numberOfInputFields + 1] = "(...)";
+                cells[numberOfInputFields + 2] = "(...)";
                 testingDataGridView.Rows.Add(cells);
             }
             testingFromNumericUpDown.Maximum = inputData.Rows.Count;
@@ -122,10 +129,14 @@ namespace MachineLearning
                 predictionDataGridView.Columns.Add(inputColumnName, inputColumnName + "\n(Input)");
             predictionDataGridView.Columns.Add(outputColumnName, outputColumnName + "\n(Output)");
             predictionDataGridView.Columns[inputColumnNames.Length].ReadOnly = true;
-            cells = new string[inputColumnNames.Length + 1];
+            predictionDataGridView.Columns.Add("probabilities", "Probabilities\n[" + outputValues[0] + "; " + outputValues[1] + "]");
+            predictionDataGridView.Columns[inputColumnNames.Length + 1].Width = 300;
+            predictionDataGridView.Columns[inputColumnNames.Length + 1].ReadOnly = true;
+            cells = new string[inputColumnNames.Length + 2];
             for (int columnIndex = 0; columnIndex < numberOfInputFields; columnIndex++)
                 cells[columnIndex] = "";
             cells[inputColumnNames.Length] = "(...)";
+            cells[inputColumnNames.Length + 1] = "(...)";
             predictionDataGridView.Rows.Add(cells);
 
             foreach (string inputColumnName in inputColumnNames)
@@ -216,6 +227,20 @@ namespace MachineLearning
                 return;
             }
 
+            fittingDataGridView.Columns.Clear();
+            fittingDataGridView.Columns.Add("b0", "Intercept (b0)");
+            double[] weights = logisticRegression.Weights;
+            for (int columnIndex = 0; columnIndex < weights.Length; columnIndex++)
+                fittingDataGridView.Columns.Add("b" + (columnIndex + 1).ToString(), inputColumnNames[columnIndex] + " (b" + (columnIndex + 1).ToString() + ")");
+            string[] coefficents = new string[weights.Length + 1];
+            coefficents[0] = logisticRegression.Intercept.ToString();
+            for (int columnIndex = 0; columnIndex < weights.Length; columnIndex++)
+                coefficents[columnIndex + 1] = weights[columnIndex].ToString();
+            fittingDataGridView.Rows.Add(coefficents);
+
+            if (inputData.Columns.Count == 1)
+                ShowFitCurve(learningXComboBox.SelectedItem.ToString(), learningYComboBox.SelectedItem.ToString());
+
             if (inputData.Columns.Count == 2)
                 CreateSurface(learningXComboBox.SelectedItem.ToString(), learningYComboBox.SelectedItem.ToString());
 
@@ -228,18 +253,71 @@ namespace MachineLearning
             machineTrained = true;
         }
 
-        private void CreateSurface(string xAxisColumnName, string yAxisColumnName)
+        private void ShowFitCurve(string xAxisTitle, string yAxisTitle)
         {
             //Get the ranges for each variable (X and Y)
-            double[] xAxis = inputData.Columns[xAxisColumnName].ToArray();
-            double[] yAxis = inputData.Columns[yAxisColumnName].ToArray();
+            double[] xAxis = inputData.Columns[xAxisTitle].ToArray().Get(learningIndexes);
+            bool[] yAxis = outputBooleanColumn.Get(learningIndexes);
+
+            GraphPane graphPane = learningZedGraphControl.GraphPane;
+            graphPane.CurveList.Clear();
+
+            // Set the titles
+            graphPane.Title.IsVisible = false;
+            graphPane.XAxis.Title.Text = xAxisTitle;
+            graphPane.YAxis.Title.Text = yAxisTitle;
+
+            //Classification problem
+            PointPairList list1 = new PointPairList();
+            PointPairList list2 = new PointPairList();
+            for (int rowIndex = 0; rowIndex < xAxis.Length; rowIndex++)
+            {
+                if (yAxis[rowIndex])
+                    list1.Add(xAxis[rowIndex], Convert.ToDouble(yAxis[rowIndex]));
+                else
+                    list2.Add(xAxis[rowIndex], Convert.ToDouble(yAxis[rowIndex]));
+            }
+            double[] xData = xAxis.Get(learningIndexes).GetRange().Range(0.05);
+            double[] yData = logisticRegression.Probabilities(xData.ToJagged()).GetColumn(1);
+            PointPairList list3 = new PointPairList();
+            for (int rowIndex = 0; rowIndex < xData.Length; rowIndex++)
+                list3.Add(xData[rowIndex], yData[rowIndex]);
+
+            //Add the curve
+            LineItem myCurve = graphPane.AddCurve(outputValues[0], list1, Color.Blue, SymbolType.Circle);
+            myCurve.Line.IsVisible = false;
+            myCurve.Symbol.Border.IsVisible = false;
+            myCurve.Symbol.Fill = new Fill(Color.Blue);
+
+            myCurve = graphPane.AddCurve(outputValues[1], list2, Color.Green, SymbolType.Circle);
+            myCurve.Line.IsVisible = false;
+            myCurve.Symbol.Border.IsVisible = false;
+            myCurve.Symbol.Fill = new Fill(Color.Green);
+
+            myCurve = graphPane.AddCurve("Fit Curve", list3, Color.Red, SymbolType.Circle);
+            myCurve.Line.IsVisible = false;
+            myCurve.Symbol.Border.IsVisible = false;
+            myCurve.Symbol.Fill = new Fill(Color.Red);
+
+            //Fill the background of the chart rect and pane
+            graphPane.Fill = new Fill(Color.WhiteSmoke);
+
+            learningZedGraphControl.AxisChange();
+            learningZedGraphControl.Invalidate();
+        }
+
+        private void CreateSurface(string xAxisTitle, string yAxisTitle)
+        {
+            //Get the ranges for each variable (X and Y)
+            double[] xAxis = inputData.Columns[xAxisTitle].ToArray();
+            double[] yAxis = inputData.Columns[yAxisTitle].ToArray();
 
             //Generate a Cartesian coordinate system
             double[][] map = Matrix.Mesh(xAxis.Get(learningIndexes).GetRange(), 200, yAxis.Get(learningIndexes).GetRange(), 200);
 
             //Classify each point in the Cartesian coordinate system
             bool[] result = logisticRegression.Decide(map);
-
+            
             double[,] surface = map.ToMatrix();
 
             GraphPane graphPane = learningZedGraphControl.GraphPane;
@@ -247,8 +325,8 @@ namespace MachineLearning
 
             // Set the titles
             graphPane.Title.IsVisible = false;
-            graphPane.XAxis.Title.Text = xAxisColumnName;
-            graphPane.YAxis.Title.Text = yAxisColumnName;
+            graphPane.XAxis.Title.Text = xAxisTitle;
+            graphPane.YAxis.Title.Text = yAxisTitle;
 
             //Classification problem
             PointPairList list1 = new PointPairList();
@@ -298,9 +376,11 @@ namespace MachineLearning
             toolStripStatusLabel.Text = "Computing...";
 
             bool[] computedBooleanOutputs = null;
+            double[][] probabilities = null;
             try
             {
                 computedBooleanOutputs = logisticRegression.Decide(inputColumns.Get(testingIndexes));
+                probabilities = logisticRegression.Probabilities(inputColumns.Get(testingIndexes));
             }
             catch (Exception exception)
             {
@@ -325,15 +405,21 @@ namespace MachineLearning
             int numberOfMatches = 0;
             foreach (DataRow row in this.inputData.Rows)
             {
-                string[] cells = new string[inputColumnNames.Length + 2];
+                string[] cells = new string[inputColumnNames.Length + 3];
                 for (int columnIndex = 0; columnIndex < numberOfInputFields; columnIndex++)
                     cells[columnIndex] = row[inputColumnNames[columnIndex]].ToString();
                 cells[numberOfInputFields] = outputColumn[this.inputData.Rows.IndexOf(row)].ToString();
                 int rowIndex = this.inputData.Rows.IndexOf(row);
                 if (testingIndexes.Contains(rowIndex))
+                {
                     cells[numberOfInputFields + 1] = computedOutputs[rowIndex - fromRowIndex].ToString();
+                    cells[numberOfInputFields + 2] = "[" + Math.Round(probabilities[rowIndex][1], 4).ToString() + "; " + Math.Round(probabilities[rowIndex][0], 4).ToString() + "]";
+                }
                 else
+                {
                     cells[numberOfInputFields + 1] = "(...)";
+                    cells[numberOfInputFields + 2] = "(...)";
+                }
                 testingDataGridView.Rows.Add(cells);
 
                 if (cells[numberOfInputFields].ToString() == cells[numberOfInputFields + 1].ToString())
@@ -374,17 +460,27 @@ namespace MachineLearning
 
         private void predictButton_Click(object sender, EventArgs e)
         {
-            double[] inputValues = new double[predictionDataGridView.Columns.Count - 1];
-            for (int columnIndex = 0; columnIndex < predictionDataGridView.Columns.Count - 1; columnIndex++)
-                inputValues[columnIndex] = Convert.ToDouble(predictionDataGridView.Rows[0].Cells[columnIndex].Value);
+            double[] inputValues = new double[predictionDataGridView.Columns.Count - 2];
+            try
+            {
+                for (int columnIndex = 0; columnIndex < predictionDataGridView.Columns.Count - 2; columnIndex++)
+                    inputValues[columnIndex] = Convert.ToDouble(predictionDataGridView.Rows[0].Cells[columnIndex].Value);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(this, exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             Cursor = Cursors.WaitCursor;
             toolStripStatusLabel.Text = "Computing...";
 
             bool output = false;
+            double[] probabilities;
             try
             {
                 output = logisticRegression.Decide(inputValues);
+                probabilities = logisticRegression.Probabilities(inputValues);
             }
             catch (Exception exception)
             {
@@ -395,9 +491,13 @@ namespace MachineLearning
             }
 
             if (output)
-                predictionDataGridView.Rows[0].Cells[predictionDataGridView.Columns.Count - 1].Value = outputValues[0];
+                predictionDataGridView.Rows[0].Cells[predictionDataGridView.Columns.Count - 2].Value = outputValues[0];
             else
-                predictionDataGridView.Rows[0].Cells[predictionDataGridView.Columns.Count - 1].Value = outputValues[1];
+                predictionDataGridView.Rows[0].Cells[predictionDataGridView.Columns.Count - 2].Value = outputValues[1];
+            string[] roundedProbabilities = new string[2];
+            roundedProbabilities[0] = Math.Round(probabilities[1], 4).ToString();
+            roundedProbabilities[1] = Math.Round(probabilities[0], 4).ToString();
+            predictionDataGridView.Rows[0].Cells[predictionDataGridView.Columns.Count - 1].Value = "[" + String.Join("; ", roundedProbabilities) + "]";
 
             toolStripStatusLabel.Text = "";
             Cursor = Cursors.Arrow;

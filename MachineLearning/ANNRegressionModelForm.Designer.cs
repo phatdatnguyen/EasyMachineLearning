@@ -82,6 +82,8 @@
             this.alphaLabel = new System.Windows.Forms.Label();
             this.networkTabPage = new System.Windows.Forms.TabPage();
             this.neuronInfoGroupBox = new System.Windows.Forms.GroupBox();
+            this.biasTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.weightsListBox = new System.Windows.Forms.ListBox();
             this.outputTextBox = new System.Windows.Forms.TextBox();
             this.weightsLabel = new System.Windows.Forms.Label();
@@ -787,6 +789,8 @@
             // 
             // neuronInfoGroupBox
             // 
+            this.neuronInfoGroupBox.Controls.Add(this.biasTextBox);
+            this.neuronInfoGroupBox.Controls.Add(this.label1);
             this.neuronInfoGroupBox.Controls.Add(this.weightsListBox);
             this.neuronInfoGroupBox.Controls.Add(this.outputTextBox);
             this.neuronInfoGroupBox.Controls.Add(this.weightsLabel);
@@ -803,6 +807,22 @@
             this.neuronInfoGroupBox.TabStop = false;
             this.neuronInfoGroupBox.Text = "Neuron Info";
             // 
+            // biasTextBox
+            // 
+            this.biasTextBox.Location = new System.Drawing.Point(314, 89);
+            this.biasTextBox.Name = "biasTextBox";
+            this.biasTextBox.Size = new System.Drawing.Size(150, 26);
+            this.biasTextBox.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(268, 92);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 20);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Bias";
+            // 
             // weightsListBox
             // 
             this.weightsListBox.FormattingEnabled = true;
@@ -814,10 +834,10 @@
             // 
             // outputTextBox
             // 
-            this.outputTextBox.Location = new System.Drawing.Point(314, 89);
+            this.outputTextBox.Location = new System.Drawing.Point(314, 121);
             this.outputTextBox.Name = "outputTextBox";
             this.outputTextBox.Size = new System.Drawing.Size(150, 26);
-            this.outputTextBox.TabIndex = 3;
+            this.outputTextBox.TabIndex = 4;
             // 
             // weightsLabel
             // 
@@ -831,7 +851,7 @@
             // outputLabel
             // 
             this.outputLabel.AutoSize = true;
-            this.outputLabel.Location = new System.Drawing.Point(250, 92);
+            this.outputLabel.Location = new System.Drawing.Point(250, 124);
             this.outputLabel.Name = "outputLabel";
             this.outputLabel.Size = new System.Drawing.Size(58, 20);
             this.outputLabel.TabIndex = 0;
@@ -1326,5 +1346,7 @@
         private System.Windows.Forms.Label rSquareLabel;
         private System.Windows.Forms.Panel learningPanel;
         private Accord.Controls.Chart learningChart;
+        private System.Windows.Forms.TextBox biasTextBox;
+        private System.Windows.Forms.Label label1;
     }
 }

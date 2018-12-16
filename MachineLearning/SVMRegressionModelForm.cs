@@ -345,7 +345,7 @@ namespace MachineLearning
             for (int i = 0; i < groupColumn.Length; i++)
                 groupColumn[i] = "Fit curve";
             Program.ShowScatterPlot(learningZedGraphControl, xAxis, yAxis, groupColumn,
-            supportVectorsXComboBox.SelectedItem.ToString(), supportVectorsYComboBox.SelectedItem.ToString());
+            learningXComboBox.SelectedItem.ToString(), learningYComboBox.SelectedItem.ToString());
         }
 
         private void supportVectorsXComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -458,8 +458,16 @@ namespace MachineLearning
         private void predictButton_Click(object sender, EventArgs e)
         {
             double[] inputValues = new double[predictionDataGridView.Columns.Count - 1];
-            for (int columnIndex = 0; columnIndex < predictionDataGridView.Columns.Count - 1; columnIndex++)
-                inputValues[columnIndex] = Convert.ToDouble(predictionDataGridView.Rows[0].Cells[columnIndex].Value);
+            try
+            {
+                for (int columnIndex = 0; columnIndex < predictionDataGridView.Columns.Count - 1; columnIndex++)
+                    inputValues[columnIndex] = Convert.ToDouble(predictionDataGridView.Rows[0].Cells[columnIndex].Value);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(this, exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             Cursor = Cursors.WaitCursor;
             toolStripStatusLabel.Text = "Computing...";
