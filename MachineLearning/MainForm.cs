@@ -13,9 +13,9 @@ namespace MachineLearning
     {
         //Fields
         private DataTable inputData = new DataTable();
-        private string[] classificationModels = new string[] { "Support Vector Machine (SVM)", "Naive-Bayes", "k-Nearest Neighbors (kNN)",
-            "Decision Tree", "Logistic Regression", "Multinomial Logistic Regression", "Artificial Neural Network (ANN)",
-            "Deep Belief Network (DBN)" };
+        private string[] classificationModels = new string[] { "k-Nearest Neighbors (kNN)", "Minimum Mean Distance", "Naive-Bayes",
+            "Decision Tree", "Support Vector Machine (SVM)", "Logistic Regression", "Multinomial Logistic Regression",
+            "Artificial Neural Network (ANN)", "Deep Belief Network (DBN)" };
         private string[] regressionModels = new string[] { "Linear Regression", "Polynomial Regression", "Support Vector Machine (SVM)", "Artificial Neural Network (ANN)" };
         private string[] clusteringModels = new string[] { "k-Means", "Balanced k-Means", "Binary Split", "k-Medoids", "k-Modes", "Mean-Shift",
             "Gaussian Mixture", "Restricted Boltzmann Machine (RBM)", "Deep Belief Network (DBN)" };
@@ -303,6 +303,10 @@ namespace MachineLearning
                     KNNModelForm kNNModelForm = new KNNModelForm(inputData, inputColumnNames.ToArray<string>(), outputColumnNames[0]);
                     kNNModelForm.ShowDialog(this);
                     break;
+                case "Minimum Mean Distance":
+                    MinimumMeanDistanceModelForm minimumMeanDistanceModelForm = new MinimumMeanDistanceModelForm(inputData, inputColumnNames.ToArray<string>(), outputColumnNames[0]);
+                    minimumMeanDistanceModelForm.ShowDialog(this);
+                    break;
                 case "Naive-Bayes":
                     NaiveBayesModelForm naiveBayesModelForm = new NaiveBayesModelForm(inputData, inputColumnNames.ToArray<string>(), outputColumnNames[0]);
                     naiveBayesModelForm.ShowDialog(this);
@@ -310,10 +314,6 @@ namespace MachineLearning
                 case "Decision Tree":
                     DecisionTreeModelForm decisionTreeModelForm = new DecisionTreeModelForm(inputData, inputColumnNames.ToArray<string>(), outputColumnNames[0]);
                     decisionTreeModelForm.ShowDialog(this);
-                    break;
-                case "Random Forest":
-                    RandomForestModelForm randomForestModelForm = new RandomForestModelForm(inputData, inputColumnNames.ToArray<string>(), outputColumnNames[0]);
-                    randomForestModelForm.ShowDialog(this);
                     break;
                 case "Support Vector Machine (SVM)":
                     if (inputData.Columns[outputColumnNames[0]].ToArray<string>().Distinct().Count() == 2)

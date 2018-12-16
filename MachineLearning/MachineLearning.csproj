@@ -124,6 +124,12 @@
     <Compile Include="DBNModelForm.Designer.cs">
       <DependentUpon>DBNModelForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MinimumMeanDistanceModelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MinimumMeanDistanceModelForm.Designer.cs">
+      <DependentUpon>MinimumMeanDistanceModelForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PolynomialRegressionModelForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -254,6 +260,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DBNModelForm.resx">
       <DependentUpon>DBNModelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MinimumMeanDistanceModelForm.resx">
+      <DependentUpon>MinimumMeanDistanceModelForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PolynomialRegressionModelForm.resx">
       <DependentUpon>PolynomialRegressionModelForm.cs</DependentUpon>
