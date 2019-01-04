@@ -57,10 +57,12 @@
             this.kMeansBalancedCheckBox = new System.Windows.Forms.CheckBox();
             this.kMedoidsRadioButton = new System.Windows.Forms.RadioButton();
             this.kModesRadioButton = new System.Windows.Forms.RadioButton();
+            this.binarySplitRadioButton = new System.Windows.Forms.RadioButton();
             this.kMeansRadioButton = new System.Windows.Forms.RadioButton();
             this.gaussianLabel = new System.Windows.Forms.Label();
             this.kMedoidsKLabel = new System.Windows.Forms.Label();
             this.kModesKLabel = new System.Windows.Forms.Label();
+            this.binarySplitKLabel = new System.Windows.Forms.Label();
             this.kMeansKLabel = new System.Windows.Forms.Label();
             this.meanShiftRadiusLabel = new System.Windows.Forms.Label();
             this.meanShiftRadiusNumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -69,12 +71,10 @@
             this.kMedoidsKNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.gaussianNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.kModesKNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.binarySplitKNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.kMeansKNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.mainStatusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.binarySplitRadioButton = new System.Windows.Forms.RadioButton();
-            this.binarySplitKNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.binarySplitKLabel = new System.Windows.Forms.Label();
             this.inputDataGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inputDataGridView)).BeginInit();
             this.mainTabControl.SuspendLayout();
@@ -92,9 +92,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.kMedoidsKNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gaussianNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kModesKNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.binarySplitKNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kMeansKNumericUpDown)).BeginInit();
             this.mainStatusStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.binarySplitKNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // inputDataGroupBox
@@ -195,6 +195,7 @@
             // 
             // inputDataXComboBox
             // 
+            this.inputDataXComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.inputDataXComboBox.FormattingEnabled = true;
             this.inputDataXComboBox.Location = new System.Drawing.Point(43, 11);
             this.inputDataXComboBox.Name = "inputDataXComboBox";
@@ -204,6 +205,7 @@
             // 
             // inputDataYComboBox
             // 
+            this.inputDataYComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.inputDataYComboBox.FormattingEnabled = true;
             this.inputDataYComboBox.Location = new System.Drawing.Point(283, 11);
             this.inputDataYComboBox.Name = "inputDataYComboBox";
@@ -298,7 +300,7 @@
             this.clustersTabPage.Location = new System.Drawing.Point(4, 29);
             this.clustersTabPage.Name = "clustersTabPage";
             this.clustersTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.clustersTabPage.Size = new System.Drawing.Size(576, 411);
+            this.clustersTabPage.Size = new System.Drawing.Size(586, 411);
             this.clustersTabPage.TabIndex = 1;
             this.clustersTabPage.Text = "Clusters";
             this.clustersTabPage.UseVisualStyleBackColor = true;
@@ -310,7 +312,7 @@
             this.clustersScatterplotView.Location = new System.Drawing.Point(3, 3);
             this.clustersScatterplotView.Name = "clustersScatterplotView";
             this.clustersScatterplotView.ScaleTight = false;
-            this.clustersScatterplotView.Size = new System.Drawing.Size(570, 405);
+            this.clustersScatterplotView.Size = new System.Drawing.Size(580, 405);
             this.clustersScatterplotView.SymbolSize = 7F;
             this.clustersScatterplotView.TabIndex = 0;
             // 
@@ -328,6 +330,7 @@
             // 
             // clusteringXComboBox
             // 
+            this.clusteringXComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.clusteringXComboBox.Enabled = false;
             this.clusteringXComboBox.FormattingEnabled = true;
             this.clusteringXComboBox.Location = new System.Drawing.Point(43, 11);
@@ -338,6 +341,7 @@
             // 
             // clusteringYComboBox
             // 
+            this.clusteringYComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.clusteringYComboBox.Enabled = false;
             this.clusteringYComboBox.FormattingEnabled = true;
             this.clusteringYComboBox.Location = new System.Drawing.Point(283, 11);
@@ -437,6 +441,17 @@
             this.kModesRadioButton.UseVisualStyleBackColor = true;
             this.kModesRadioButton.CheckedChanged += new System.EventHandler(this.modelRadioButton_CheckedChanged);
             // 
+            // binarySplitRadioButton
+            // 
+            this.binarySplitRadioButton.AutoSize = true;
+            this.binarySplitRadioButton.Location = new System.Drawing.Point(17, 107);
+            this.binarySplitRadioButton.Name = "binarySplitRadioButton";
+            this.binarySplitRadioButton.Size = new System.Drawing.Size(106, 24);
+            this.binarySplitRadioButton.TabIndex = 3;
+            this.binarySplitRadioButton.Text = "Binary Split";
+            this.binarySplitRadioButton.UseVisualStyleBackColor = true;
+            this.binarySplitRadioButton.CheckedChanged += new System.EventHandler(this.modelRadioButton_CheckedChanged);
+            // 
             // kMeansRadioButton
             // 
             this.kMeansRadioButton.AutoSize = true;
@@ -445,6 +460,7 @@
             this.kMeansRadioButton.Name = "kMeansRadioButton";
             this.kMeansRadioButton.Size = new System.Drawing.Size(88, 24);
             this.kMeansRadioButton.TabIndex = 0;
+            this.kMeansRadioButton.TabStop = true;
             this.kMeansRadioButton.Text = "k-Means";
             this.kMeansRadioButton.UseVisualStyleBackColor = true;
             this.kMeansRadioButton.CheckedChanged += new System.EventHandler(this.modelRadioButton_CheckedChanged);
@@ -475,6 +491,15 @@
             this.kModesKLabel.Size = new System.Drawing.Size(21, 20);
             this.kModesKLabel.TabIndex = 0;
             this.kModesKLabel.Text = "k:";
+            // 
+            // binarySplitKLabel
+            // 
+            this.binarySplitKLabel.AutoSize = true;
+            this.binarySplitKLabel.Location = new System.Drawing.Point(89, 139);
+            this.binarySplitKLabel.Name = "binarySplitKLabel";
+            this.binarySplitKLabel.Size = new System.Drawing.Size(21, 20);
+            this.binarySplitKLabel.TabIndex = 0;
+            this.binarySplitKLabel.Text = "k:";
             // 
             // kMeansKLabel
             // 
@@ -593,6 +618,24 @@
             0,
             0});
             // 
+            // binarySplitKNumericUpDown
+            // 
+            this.binarySplitKNumericUpDown.Location = new System.Drawing.Point(116, 137);
+            this.binarySplitKNumericUpDown.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.binarySplitKNumericUpDown.Name = "binarySplitKNumericUpDown";
+            this.binarySplitKNumericUpDown.Size = new System.Drawing.Size(122, 26);
+            this.binarySplitKNumericUpDown.TabIndex = 4;
+            this.binarySplitKNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.binarySplitKNumericUpDown.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
             // kMeansKNumericUpDown
             // 
             this.kMeansKNumericUpDown.Location = new System.Drawing.Point(116, 65);
@@ -626,44 +669,6 @@
             // 
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(0, 17);
-            // 
-            // binarySplitRadioButton
-            // 
-            this.binarySplitRadioButton.AutoSize = true;
-            this.binarySplitRadioButton.Location = new System.Drawing.Point(17, 107);
-            this.binarySplitRadioButton.Name = "binarySplitRadioButton";
-            this.binarySplitRadioButton.Size = new System.Drawing.Size(106, 24);
-            this.binarySplitRadioButton.TabIndex = 3;
-            this.binarySplitRadioButton.Text = "Binary Split";
-            this.binarySplitRadioButton.UseVisualStyleBackColor = true;
-            this.binarySplitRadioButton.CheckedChanged += new System.EventHandler(this.modelRadioButton_CheckedChanged);
-            // 
-            // binarySplitKNumericUpDown
-            // 
-            this.binarySplitKNumericUpDown.Location = new System.Drawing.Point(116, 137);
-            this.binarySplitKNumericUpDown.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.binarySplitKNumericUpDown.Name = "binarySplitKNumericUpDown";
-            this.binarySplitKNumericUpDown.Size = new System.Drawing.Size(122, 26);
-            this.binarySplitKNumericUpDown.TabIndex = 4;
-            this.binarySplitKNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.binarySplitKNumericUpDown.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            // 
-            // binarySplitKLabel
-            // 
-            this.binarySplitKLabel.AutoSize = true;
-            this.binarySplitKLabel.Location = new System.Drawing.Point(89, 139);
-            this.binarySplitKLabel.Name = "binarySplitKLabel";
-            this.binarySplitKLabel.Size = new System.Drawing.Size(21, 20);
-            this.binarySplitKLabel.TabIndex = 0;
-            this.binarySplitKLabel.Text = "k:";
             // 
             // ClusteringForm
             // 
@@ -701,10 +706,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.kMedoidsKNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gaussianNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kModesKNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.binarySplitKNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kMeansKNumericUpDown)).EndInit();
             this.mainStatusStrip.ResumeLayout(false);
             this.mainStatusStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.binarySplitKNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

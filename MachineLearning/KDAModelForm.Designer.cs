@@ -1,6 +1,6 @@
 ﻿namespace MachineLearning
 {
-    partial class AdaBoostModelForm
+    partial class KDAModelForm
     {
         /// <summary>
         /// Required designer variable.
@@ -41,22 +41,20 @@
             this.inputDataYLabel = new System.Windows.Forms.Label();
             this.inputDataXLabel = new System.Windows.Forms.Label();
             this.learningTabPage = new System.Windows.Forms.TabPage();
+            this.projectedDataGroupBox = new System.Windows.Forms.GroupBox();
+            this.projectedDataDataGridView = new System.Windows.Forms.DataGridView();
             this.learningGroupBox = new System.Windows.Forms.GroupBox();
+            this.numberOfDiscriminantsNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.numberOfDiscriminantLabel = new System.Windows.Forms.Label();
             this.learnButton = new System.Windows.Forms.Button();
-            this.toleranceNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.toleranceLabel = new System.Windows.Forms.Label();
             this.learningToNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.maxIterationNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.learningToLabel = new System.Windows.Forms.Label();
-            this.maxIterationLabel = new System.Windows.Forms.Label();
             this.learningFromNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.learningFromLabel = new System.Windows.Forms.Label();
             this.kernelGroupBox = new System.Windows.Forms.GroupBox();
             this.sigmoidEstimateButton = new System.Windows.Forms.Button();
             this.laplacianEstimateButton = new System.Windows.Forms.Button();
             this.gaussianEstimateButton = new System.Windows.Forms.Button();
-            this.complexityEstimateButton = new System.Windows.Forms.Button();
-            this.svmToleranceNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.gaussianKernelRadioButton = new System.Windows.Forms.RadioButton();
             this.laplacianSigmaLabel = new System.Windows.Forms.Label();
             this.gaussianSigmaLabel = new System.Windows.Forms.Label();
@@ -65,34 +63,47 @@
             this.sigmoidAlphaNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.polynomialConstantLabel = new System.Windows.Forms.Label();
             this.polynomialDegreeLabel = new System.Windows.Forms.Label();
-            this.negativeWeightNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.positiveWeightNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.complexityNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.polynomialConstantNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.polynomialDegreeNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.sigmoidConstantLabel = new System.Windows.Forms.Label();
-            this.complexityLabel = new System.Windows.Forms.Label();
             this.sigmoidKernelRadioButton = new System.Windows.Forms.RadioButton();
             this.laplacianKernelRadioButton = new System.Windows.Forms.RadioButton();
             this.polynomialKernelRadioButton = new System.Windows.Forms.RadioButton();
-            this.costRatioLabel = new System.Windows.Forms.Label();
-            this.svmToleranceLabel = new System.Windows.Forms.Label();
             this.laplacianSigmaNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.gaussianSigmaNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.modelGroupBox = new System.Windows.Forms.GroupBox();
-            this.regulationNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.regulationLabel = new System.Windows.Forms.Label();
-            this.logisticRegressionMethodComboBox = new System.Windows.Forms.ComboBox();
-            this.logisticRegressionMethodLabel = new System.Windows.Forms.Label();
-            this.svmMethodComboBox = new System.Windows.Forms.ComboBox();
-            this.svmMethodLabel = new System.Windows.Forms.Label();
-            this.logisticRegressionMaxIterationNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.logisticRegressionToleranceNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.logisticRegressionMethodToleranceLabel = new System.Windows.Forms.Label();
-            this.logisticRegressionMethodMaxIterationLabel = new System.Windows.Forms.Label();
-            this.svmRadioButton = new System.Windows.Forms.RadioButton();
-            this.logisticRegressionRadioButton = new System.Windows.Forms.RadioButton();
-            this.decisionTreeRadioButton = new System.Windows.Forms.RadioButton();
+            this.discriminantsTabPage = new System.Windows.Forms.TabPage();
+            this.visualizationGroupBox = new System.Windows.Forms.GroupBox();
+            this.cumulativeProportionComponentView = new Accord.Controls.ComponentView();
+            this.proportionComponentView = new Accord.Controls.ComponentView();
+            this.discriminatsGroupBox = new System.Windows.Forms.GroupBox();
+            this.eigenvectorDataGridView = new System.Windows.Forms.DataGridView();
+            this.scatterMatricesTabPage = new System.Windows.Forms.TabPage();
+            this.withinClassScatterMatrixGroupBox = new System.Windows.Forms.GroupBox();
+            this.withinClassScatterMatrixDataGridView = new System.Windows.Forms.DataGridView();
+            this.betweenClassScatterMatrixGroupBox = new System.Windows.Forms.GroupBox();
+            this.betweenClassScatterMatrixDataGridView = new System.Windows.Forms.DataGridView();
+            this.totalScatterMatrixGroupBox = new System.Windows.Forms.GroupBox();
+            this.totalScatterMatrixDataGridView = new System.Windows.Forms.DataGridView();
+            this.projectionTabPage = new System.Windows.Forms.TabPage();
+            this.featureSpaceGroupBox = new System.Windows.Forms.GroupBox();
+            this.featureSpaceZedGraphControl = new ZedGraph.ZedGraphControl();
+            this.featureSpacePanel = new System.Windows.Forms.Panel();
+            this.featureSpaceXComboBox = new System.Windows.Forms.ComboBox();
+            this.featureSpaceYComboBox = new System.Windows.Forms.ComboBox();
+            this.featureSpaceYLabel = new System.Windows.Forms.Label();
+            this.featureSpaceXLabel = new System.Windows.Forms.Label();
+            this.inputSpaceGroupBox = new System.Windows.Forms.GroupBox();
+            this.inputSpaceZedGraphControl = new ZedGraph.ZedGraphControl();
+            this.inputSpacePanel = new System.Windows.Forms.Panel();
+            this.navigateCheckBox = new System.Windows.Forms.CheckBox();
+            this.inputSpaceXComboBox = new System.Windows.Forms.ComboBox();
+            this.inputSpaceYComboBox = new System.Windows.Forms.ComboBox();
+            this.inputSpaceYLabel = new System.Windows.Forms.Label();
+            this.inputSpaceXLabel = new System.Windows.Forms.Label();
+            this.projectionGroupBox = new System.Windows.Forms.GroupBox();
+            this.projectionResultDataGridView = new System.Windows.Forms.DataGridView();
+            this.projectButton = new System.Windows.Forms.Button();
+            this.projectionDataGridView = new System.Windows.Forms.DataGridView();
             this.modelTestingTabPage = new System.Windows.Forms.TabPage();
             this.testingVisualizationGroupBox = new System.Windows.Forms.GroupBox();
             this.testingZedGraphControl = new ZedGraph.ZedGraphControl();
@@ -115,6 +126,14 @@
             this.testButton = new System.Windows.Forms.Button();
             this.mainStatusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.cumulativeProportionTextBox = new System.Windows.Forms.TextBox();
+            this.cumulativeProportionLabel = new System.Windows.Forms.Label();
+            this.proportionTextBox = new System.Windows.Forms.TextBox();
+            this.proportionLabel = new System.Windows.Forms.Label();
+            this.eigenvalueTextBox = new System.Windows.Forms.TextBox();
+            this.discriminantLabel = new System.Windows.Forms.Label();
+            this.eigenvalueLabel = new System.Windows.Forms.Label();
+            this.discriminantComboBox = new System.Windows.Forms.ComboBox();
             this.inputDataGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inputDataGridView)).BeginInit();
             this.mainTabControl.SuspendLayout();
@@ -122,26 +141,38 @@
             this.inputDataVisualizationGroupBox.SuspendLayout();
             this.inputDataVisualizationPanel.SuspendLayout();
             this.learningTabPage.SuspendLayout();
+            this.projectedDataGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.projectedDataDataGridView)).BeginInit();
             this.learningGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.toleranceNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numberOfDiscriminantsNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.learningToNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.maxIterationNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.learningFromNumericUpDown)).BeginInit();
             this.kernelGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.svmToleranceNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sigmoidConstantNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sigmoidAlphaNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.negativeWeightNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.positiveWeightNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.complexityNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.polynomialConstantNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.polynomialDegreeNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.laplacianSigmaNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gaussianSigmaNumericUpDown)).BeginInit();
-            this.modelGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.regulationNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logisticRegressionMaxIterationNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logisticRegressionToleranceNumericUpDown)).BeginInit();
+            this.discriminantsTabPage.SuspendLayout();
+            this.visualizationGroupBox.SuspendLayout();
+            this.discriminatsGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.eigenvectorDataGridView)).BeginInit();
+            this.scatterMatricesTabPage.SuspendLayout();
+            this.withinClassScatterMatrixGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.withinClassScatterMatrixDataGridView)).BeginInit();
+            this.betweenClassScatterMatrixGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.betweenClassScatterMatrixDataGridView)).BeginInit();
+            this.totalScatterMatrixGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.totalScatterMatrixDataGridView)).BeginInit();
+            this.projectionTabPage.SuspendLayout();
+            this.featureSpaceGroupBox.SuspendLayout();
+            this.featureSpacePanel.SuspendLayout();
+            this.inputSpaceGroupBox.SuspendLayout();
+            this.inputSpacePanel.SuspendLayout();
+            this.projectionGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.projectionResultDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectionDataGridView)).BeginInit();
             this.modelTestingTabPage.SuspendLayout();
             this.testingVisualizationGroupBox.SuspendLayout();
             this.testingVisualizationPanel.SuspendLayout();
@@ -163,7 +194,7 @@
             this.inputDataGroupBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.inputDataGroupBox.Name = "inputDataGroupBox";
             this.inputDataGroupBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.inputDataGroupBox.Size = new System.Drawing.Size(385, 518);
+            this.inputDataGroupBox.Size = new System.Drawing.Size(456, 518);
             this.inputDataGroupBox.TabIndex = 0;
             this.inputDataGroupBox.TabStop = false;
             this.inputDataGroupBox.Text = "Input Data";
@@ -184,13 +215,16 @@
             this.inputDataGridView.ShowCellErrors = false;
             this.inputDataGridView.ShowEditingIcon = false;
             this.inputDataGridView.ShowRowErrors = false;
-            this.inputDataGridView.Size = new System.Drawing.Size(377, 489);
+            this.inputDataGridView.Size = new System.Drawing.Size(448, 489);
             this.inputDataGridView.TabIndex = 0;
             // 
             // mainTabControl
             // 
             this.mainTabControl.Controls.Add(this.inputDataTabPage);
             this.mainTabControl.Controls.Add(this.learningTabPage);
+            this.mainTabControl.Controls.Add(this.discriminantsTabPage);
+            this.mainTabControl.Controls.Add(this.scatterMatricesTabPage);
+            this.mainTabControl.Controls.Add(this.projectionTabPage);
             this.mainTabControl.Controls.Add(this.modelTestingTabPage);
             this.mainTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainTabControl.Location = new System.Drawing.Point(0, 0);
@@ -216,9 +250,9 @@
             this.inputDataVisualizationGroupBox.Controls.Add(this.inputDataZedGraphControl);
             this.inputDataVisualizationGroupBox.Controls.Add(this.inputDataVisualizationPanel);
             this.inputDataVisualizationGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.inputDataVisualizationGroupBox.Location = new System.Drawing.Point(388, 3);
+            this.inputDataVisualizationGroupBox.Location = new System.Drawing.Point(459, 3);
             this.inputDataVisualizationGroupBox.Name = "inputDataVisualizationGroupBox";
-            this.inputDataVisualizationGroupBox.Size = new System.Drawing.Size(585, 518);
+            this.inputDataVisualizationGroupBox.Size = new System.Drawing.Size(514, 518);
             this.inputDataVisualizationGroupBox.TabIndex = 1;
             this.inputDataVisualizationGroupBox.TabStop = false;
             this.inputDataVisualizationGroupBox.Text = "2D Visualization";
@@ -236,7 +270,7 @@
             this.inputDataZedGraphControl.ScrollMinX = 0D;
             this.inputDataZedGraphControl.ScrollMinY = 0D;
             this.inputDataZedGraphControl.ScrollMinY2 = 0D;
-            this.inputDataZedGraphControl.Size = new System.Drawing.Size(579, 438);
+            this.inputDataZedGraphControl.Size = new System.Drawing.Size(508, 438);
             this.inputDataZedGraphControl.TabIndex = 1;
             this.inputDataZedGraphControl.UseExtendedPrintDialog = true;
             // 
@@ -249,14 +283,14 @@
             this.inputDataVisualizationPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.inputDataVisualizationPanel.Location = new System.Drawing.Point(3, 22);
             this.inputDataVisualizationPanel.Name = "inputDataVisualizationPanel";
-            this.inputDataVisualizationPanel.Size = new System.Drawing.Size(579, 55);
+            this.inputDataVisualizationPanel.Size = new System.Drawing.Size(508, 55);
             this.inputDataVisualizationPanel.TabIndex = 0;
             // 
             // inputDataXComboBox
             // 
             this.inputDataXComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.inputDataXComboBox.FormattingEnabled = true;
-            this.inputDataXComboBox.Location = new System.Drawing.Point(38, 11);
+            this.inputDataXComboBox.Location = new System.Drawing.Point(43, 11);
             this.inputDataXComboBox.Name = "inputDataXComboBox";
             this.inputDataXComboBox.Size = new System.Drawing.Size(200, 28);
             this.inputDataXComboBox.TabIndex = 0;
@@ -266,7 +300,7 @@
             // 
             this.inputDataYComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.inputDataYComboBox.FormattingEnabled = true;
-            this.inputDataYComboBox.Location = new System.Drawing.Point(278, 11);
+            this.inputDataYComboBox.Location = new System.Drawing.Point(283, 11);
             this.inputDataYComboBox.Name = "inputDataYComboBox";
             this.inputDataYComboBox.Size = new System.Drawing.Size(200, 28);
             this.inputDataYComboBox.TabIndex = 1;
@@ -275,7 +309,7 @@
             // inputDataYLabel
             // 
             this.inputDataYLabel.AutoSize = true;
-            this.inputDataYLabel.Location = new System.Drawing.Point(252, 14);
+            this.inputDataYLabel.Location = new System.Drawing.Point(257, 14);
             this.inputDataYLabel.Name = "inputDataYLabel";
             this.inputDataYLabel.Size = new System.Drawing.Size(20, 20);
             this.inputDataYLabel.TabIndex = 0;
@@ -284,7 +318,7 @@
             // inputDataXLabel
             // 
             this.inputDataXLabel.AutoSize = true;
-            this.inputDataXLabel.Location = new System.Drawing.Point(12, 14);
+            this.inputDataXLabel.Location = new System.Drawing.Point(17, 14);
             this.inputDataXLabel.Name = "inputDataXLabel";
             this.inputDataXLabel.Size = new System.Drawing.Size(20, 20);
             this.inputDataXLabel.TabIndex = 0;
@@ -292,9 +326,9 @@
             // 
             // learningTabPage
             // 
+            this.learningTabPage.Controls.Add(this.projectedDataGroupBox);
             this.learningTabPage.Controls.Add(this.learningGroupBox);
             this.learningTabPage.Controls.Add(this.kernelGroupBox);
-            this.learningTabPage.Controls.Add(this.modelGroupBox);
             this.learningTabPage.Location = new System.Drawing.Point(4, 29);
             this.learningTabPage.Name = "learningTabPage";
             this.learningTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -303,70 +337,88 @@
             this.learningTabPage.Text = "Learning";
             this.learningTabPage.UseVisualStyleBackColor = true;
             // 
+            // projectedDataGroupBox
+            // 
+            this.projectedDataGroupBox.Controls.Add(this.projectedDataDataGridView);
+            this.projectedDataGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.projectedDataGroupBox.Location = new System.Drawing.Point(403, 103);
+            this.projectedDataGroupBox.Name = "projectedDataGroupBox";
+            this.projectedDataGroupBox.Size = new System.Drawing.Size(570, 418);
+            this.projectedDataGroupBox.TabIndex = 1;
+            this.projectedDataGroupBox.TabStop = false;
+            this.projectedDataGroupBox.Text = "Projected Data";
+            // 
+            // projectedDataDataGridView
+            // 
+            this.projectedDataDataGridView.AllowUserToAddRows = false;
+            this.projectedDataDataGridView.AllowUserToDeleteRows = false;
+            this.projectedDataDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.projectedDataDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.projectedDataDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.projectedDataDataGridView.Location = new System.Drawing.Point(3, 22);
+            this.projectedDataDataGridView.Name = "projectedDataDataGridView";
+            this.projectedDataDataGridView.ReadOnly = true;
+            this.projectedDataDataGridView.RowHeadersVisible = false;
+            this.projectedDataDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.projectedDataDataGridView.Size = new System.Drawing.Size(564, 393);
+            this.projectedDataDataGridView.TabIndex = 0;
+            // 
             // learningGroupBox
             // 
+            this.learningGroupBox.Controls.Add(this.numberOfDiscriminantsNumericUpDown);
+            this.learningGroupBox.Controls.Add(this.numberOfDiscriminantLabel);
             this.learningGroupBox.Controls.Add(this.learnButton);
-            this.learningGroupBox.Controls.Add(this.toleranceNumericUpDown);
-            this.learningGroupBox.Controls.Add(this.toleranceLabel);
             this.learningGroupBox.Controls.Add(this.learningToNumericUpDown);
-            this.learningGroupBox.Controls.Add(this.maxIterationNumericUpDown);
             this.learningGroupBox.Controls.Add(this.learningToLabel);
-            this.learningGroupBox.Controls.Add(this.maxIterationLabel);
             this.learningGroupBox.Controls.Add(this.learningFromNumericUpDown);
             this.learningGroupBox.Controls.Add(this.learningFromLabel);
-            this.learningGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.learningGroupBox.Location = new System.Drawing.Point(748, 3);
+            this.learningGroupBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.learningGroupBox.Location = new System.Drawing.Point(403, 3);
             this.learningGroupBox.Name = "learningGroupBox";
-            this.learningGroupBox.Size = new System.Drawing.Size(225, 518);
-            this.learningGroupBox.TabIndex = 2;
+            this.learningGroupBox.Size = new System.Drawing.Size(570, 100);
+            this.learningGroupBox.TabIndex = 0;
             this.learningGroupBox.TabStop = false;
             this.learningGroupBox.Text = "Learning";
             // 
-            // learnButton
+            // numberOfDiscriminantsNumericUpDown
             // 
-            this.learnButton.Location = new System.Drawing.Point(119, 190);
-            this.learnButton.Name = "learnButton";
-            this.learnButton.Size = new System.Drawing.Size(100, 30);
-            this.learnButton.TabIndex = 4;
-            this.learnButton.Text = "Learn";
-            this.learnButton.UseVisualStyleBackColor = true;
-            this.learnButton.Click += new System.EventHandler(this.learnButton_Click);
-            // 
-            // toleranceNumericUpDown
-            // 
-            this.toleranceNumericUpDown.DecimalPlaces = 5;
-            this.toleranceNumericUpDown.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            262144});
-            this.toleranceNumericUpDown.Location = new System.Drawing.Point(119, 60);
-            this.toleranceNumericUpDown.Maximum = new decimal(new int[] {
+            this.numberOfDiscriminantsNumericUpDown.Location = new System.Drawing.Point(225, 61);
+            this.numberOfDiscriminantsNumericUpDown.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.toleranceNumericUpDown.Name = "toleranceNumericUpDown";
-            this.toleranceNumericUpDown.Size = new System.Drawing.Size(100, 26);
-            this.toleranceNumericUpDown.TabIndex = 1;
-            this.toleranceNumericUpDown.Value = new decimal(new int[] {
+            this.numberOfDiscriminantsNumericUpDown.Name = "numberOfDiscriminantsNumericUpDown";
+            this.numberOfDiscriminantsNumericUpDown.Size = new System.Drawing.Size(100, 26);
+            this.numberOfDiscriminantsNumericUpDown.TabIndex = 2;
+            this.numberOfDiscriminantsNumericUpDown.Value = new decimal(new int[] {
             1,
             0,
             0,
-            327680});
+            0});
             // 
-            // toleranceLabel
+            // numberOfDiscriminantLabel
             // 
-            this.toleranceLabel.AutoSize = true;
-            this.toleranceLabel.Location = new System.Drawing.Point(34, 62);
-            this.toleranceLabel.Name = "toleranceLabel";
-            this.toleranceLabel.Size = new System.Drawing.Size(79, 20);
-            this.toleranceLabel.TabIndex = 0;
-            this.toleranceLabel.Text = "Tolerance";
+            this.numberOfDiscriminantLabel.AutoSize = true;
+            this.numberOfDiscriminantLabel.Location = new System.Drawing.Point(37, 64);
+            this.numberOfDiscriminantLabel.Name = "numberOfDiscriminantLabel";
+            this.numberOfDiscriminantLabel.Size = new System.Drawing.Size(182, 20);
+            this.numberOfDiscriminantLabel.TabIndex = 0;
+            this.numberOfDiscriminantLabel.Text = "Number of Discriminants";
+            // 
+            // learnButton
+            // 
+            this.learnButton.Location = new System.Drawing.Point(341, 59);
+            this.learnButton.Name = "learnButton";
+            this.learnButton.Size = new System.Drawing.Size(100, 30);
+            this.learnButton.TabIndex = 3;
+            this.learnButton.Text = "Learn";
+            this.learnButton.UseVisualStyleBackColor = true;
+            this.learnButton.Click += new System.EventHandler(this.learnButton_Click);
             // 
             // learningToNumericUpDown
             // 
-            this.learningToNumericUpDown.Location = new System.Drawing.Point(119, 142);
+            this.learningToNumericUpDown.Location = new System.Drawing.Point(225, 29);
             this.learningToNumericUpDown.Minimum = new decimal(new int[] {
             1,
             0,
@@ -374,31 +426,9 @@
             0});
             this.learningToNumericUpDown.Name = "learningToNumericUpDown";
             this.learningToNumericUpDown.Size = new System.Drawing.Size(100, 26);
-            this.learningToNumericUpDown.TabIndex = 3;
+            this.learningToNumericUpDown.TabIndex = 1;
             this.learningToNumericUpDown.Value = new decimal(new int[] {
             1,
-            0,
-            0,
-            0});
-            // 
-            // maxIterationNumericUpDown
-            // 
-            this.maxIterationNumericUpDown.Location = new System.Drawing.Point(119, 28);
-            this.maxIterationNumericUpDown.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-            this.maxIterationNumericUpDown.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.maxIterationNumericUpDown.Name = "maxIterationNumericUpDown";
-            this.maxIterationNumericUpDown.Size = new System.Drawing.Size(100, 26);
-            this.maxIterationNumericUpDown.TabIndex = 0;
-            this.maxIterationNumericUpDown.Value = new decimal(new int[] {
-            100,
             0,
             0,
             0});
@@ -406,24 +436,15 @@
             // learningToLabel
             // 
             this.learningToLabel.AutoSize = true;
-            this.learningToLabel.Location = new System.Drawing.Point(86, 144);
+            this.learningToLabel.Location = new System.Drawing.Point(192, 31);
             this.learningToLabel.Name = "learningToLabel";
             this.learningToLabel.Size = new System.Drawing.Size(27, 20);
             this.learningToLabel.TabIndex = 0;
             this.learningToLabel.Text = "To";
             // 
-            // maxIterationLabel
-            // 
-            this.maxIterationLabel.AutoSize = true;
-            this.maxIterationLabel.Location = new System.Drawing.Point(12, 30);
-            this.maxIterationLabel.Name = "maxIterationLabel";
-            this.maxIterationLabel.Size = new System.Drawing.Size(101, 20);
-            this.maxIterationLabel.TabIndex = 0;
-            this.maxIterationLabel.Text = "Max Iteration";
-            // 
             // learningFromNumericUpDown
             // 
-            this.learningFromNumericUpDown.Location = new System.Drawing.Point(119, 110);
+            this.learningFromNumericUpDown.Location = new System.Drawing.Point(77, 29);
             this.learningFromNumericUpDown.Minimum = new decimal(new int[] {
             1,
             0,
@@ -431,7 +452,7 @@
             0});
             this.learningFromNumericUpDown.Name = "learningFromNumericUpDown";
             this.learningFromNumericUpDown.Size = new System.Drawing.Size(100, 26);
-            this.learningFromNumericUpDown.TabIndex = 2;
+            this.learningFromNumericUpDown.TabIndex = 0;
             this.learningFromNumericUpDown.Value = new decimal(new int[] {
             1,
             0,
@@ -441,7 +462,7 @@
             // learningFromLabel
             // 
             this.learningFromLabel.AutoSize = true;
-            this.learningFromLabel.Location = new System.Drawing.Point(67, 112);
+            this.learningFromLabel.Location = new System.Drawing.Point(25, 31);
             this.learningFromLabel.Name = "learningFromLabel";
             this.learningFromLabel.Size = new System.Drawing.Size(46, 20);
             this.learningFromLabel.TabIndex = 0;
@@ -452,8 +473,6 @@
             this.kernelGroupBox.Controls.Add(this.sigmoidEstimateButton);
             this.kernelGroupBox.Controls.Add(this.laplacianEstimateButton);
             this.kernelGroupBox.Controls.Add(this.gaussianEstimateButton);
-            this.kernelGroupBox.Controls.Add(this.complexityEstimateButton);
-            this.kernelGroupBox.Controls.Add(this.svmToleranceNumericUpDown);
             this.kernelGroupBox.Controls.Add(this.gaussianKernelRadioButton);
             this.kernelGroupBox.Controls.Add(this.laplacianSigmaLabel);
             this.kernelGroupBox.Controls.Add(this.gaussianSigmaLabel);
@@ -462,28 +481,21 @@
             this.kernelGroupBox.Controls.Add(this.sigmoidAlphaNumericUpDown);
             this.kernelGroupBox.Controls.Add(this.polynomialConstantLabel);
             this.kernelGroupBox.Controls.Add(this.polynomialDegreeLabel);
-            this.kernelGroupBox.Controls.Add(this.negativeWeightNumericUpDown);
-            this.kernelGroupBox.Controls.Add(this.positiveWeightNumericUpDown);
-            this.kernelGroupBox.Controls.Add(this.complexityNumericUpDown);
             this.kernelGroupBox.Controls.Add(this.polynomialConstantNumericUpDown);
             this.kernelGroupBox.Controls.Add(this.polynomialDegreeNumericUpDown);
             this.kernelGroupBox.Controls.Add(this.sigmoidConstantLabel);
-            this.kernelGroupBox.Controls.Add(this.complexityLabel);
             this.kernelGroupBox.Controls.Add(this.sigmoidKernelRadioButton);
             this.kernelGroupBox.Controls.Add(this.laplacianKernelRadioButton);
             this.kernelGroupBox.Controls.Add(this.polynomialKernelRadioButton);
-            this.kernelGroupBox.Controls.Add(this.costRatioLabel);
-            this.kernelGroupBox.Controls.Add(this.svmToleranceLabel);
             this.kernelGroupBox.Controls.Add(this.laplacianSigmaNumericUpDown);
             this.kernelGroupBox.Controls.Add(this.gaussianSigmaNumericUpDown);
             this.kernelGroupBox.Dock = System.Windows.Forms.DockStyle.Left;
-            this.kernelGroupBox.Enabled = false;
-            this.kernelGroupBox.Location = new System.Drawing.Point(358, 3);
+            this.kernelGroupBox.Location = new System.Drawing.Point(3, 3);
             this.kernelGroupBox.Name = "kernelGroupBox";
-            this.kernelGroupBox.Size = new System.Drawing.Size(390, 518);
-            this.kernelGroupBox.TabIndex = 1;
+            this.kernelGroupBox.Size = new System.Drawing.Size(400, 518);
+            this.kernelGroupBox.TabIndex = 2;
             this.kernelGroupBox.TabStop = false;
-            this.kernelGroupBox.Text = "Kernel (for SVM)";
+            this.kernelGroupBox.Text = "Kernel";
             // 
             // sigmoidEstimateButton
             // 
@@ -523,37 +535,6 @@
             this.gaussianEstimateButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.gaussianEstimateButton.UseVisualStyleBackColor = true;
             this.gaussianEstimateButton.Click += new System.EventHandler(this.gaussianEstimateButton_Click);
-            // 
-            // complexityEstimateButton
-            // 
-            this.complexityEstimateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.complexityEstimateButton.Location = new System.Drawing.Point(260, 394);
-            this.complexityEstimateButton.Name = "complexityEstimateButton";
-            this.complexityEstimateButton.Size = new System.Drawing.Size(100, 30);
-            this.complexityEstimateButton.TabIndex = 14;
-            this.complexityEstimateButton.Text = "Estimate";
-            this.complexityEstimateButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.complexityEstimateButton.UseVisualStyleBackColor = true;
-            this.complexityEstimateButton.Click += new System.EventHandler(this.complexityEstimateButton_Click);
-            // 
-            // svmToleranceNumericUpDown
-            // 
-            this.svmToleranceNumericUpDown.DecimalPlaces = 4;
-            this.svmToleranceNumericUpDown.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            196608});
-            this.svmToleranceNumericUpDown.Location = new System.Drawing.Point(133, 467);
-            this.svmToleranceNumericUpDown.Name = "svmToleranceNumericUpDown";
-            this.svmToleranceNumericUpDown.Size = new System.Drawing.Size(121, 26);
-            this.svmToleranceNumericUpDown.TabIndex = 17;
-            this.svmToleranceNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.svmToleranceNumericUpDown.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            196608});
             // 
             // gaussianKernelRadioButton
             // 
@@ -646,63 +627,6 @@
             this.polynomialDegreeLabel.TabIndex = 0;
             this.polynomialDegreeLabel.Text = "Degree:";
             // 
-            // negativeWeightNumericUpDown
-            // 
-            this.negativeWeightNumericUpDown.DecimalPlaces = 4;
-            this.negativeWeightNumericUpDown.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            196608});
-            this.negativeWeightNumericUpDown.Location = new System.Drawing.Point(260, 431);
-            this.negativeWeightNumericUpDown.Name = "negativeWeightNumericUpDown";
-            this.negativeWeightNumericUpDown.Size = new System.Drawing.Size(121, 26);
-            this.negativeWeightNumericUpDown.TabIndex = 16;
-            this.negativeWeightNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.negativeWeightNumericUpDown.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // positiveWeightNumericUpDown
-            // 
-            this.positiveWeightNumericUpDown.DecimalPlaces = 4;
-            this.positiveWeightNumericUpDown.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            196608});
-            this.positiveWeightNumericUpDown.Location = new System.Drawing.Point(133, 431);
-            this.positiveWeightNumericUpDown.Name = "positiveWeightNumericUpDown";
-            this.positiveWeightNumericUpDown.Size = new System.Drawing.Size(121, 26);
-            this.positiveWeightNumericUpDown.TabIndex = 15;
-            this.positiveWeightNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.positiveWeightNumericUpDown.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // complexityNumericUpDown
-            // 
-            this.complexityNumericUpDown.DecimalPlaces = 4;
-            this.complexityNumericUpDown.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            196608});
-            this.complexityNumericUpDown.Location = new System.Drawing.Point(133, 395);
-            this.complexityNumericUpDown.Name = "complexityNumericUpDown";
-            this.complexityNumericUpDown.Size = new System.Drawing.Size(121, 26);
-            this.complexityNumericUpDown.TabIndex = 13;
-            this.complexityNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.complexityNumericUpDown.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
             // polynomialConstantNumericUpDown
             // 
             this.polynomialConstantNumericUpDown.DecimalPlaces = 4;
@@ -754,15 +678,6 @@
             this.sigmoidConstantLabel.TabIndex = 0;
             this.sigmoidConstantLabel.Text = "Constant:";
             // 
-            // complexityLabel
-            // 
-            this.complexityLabel.AutoSize = true;
-            this.complexityLabel.Location = new System.Drawing.Point(38, 399);
-            this.complexityLabel.Name = "complexityLabel";
-            this.complexityLabel.Size = new System.Drawing.Size(89, 20);
-            this.complexityLabel.TabIndex = 0;
-            this.complexityLabel.Text = "Complexity:";
-            // 
             // sigmoidKernelRadioButton
             // 
             this.sigmoidKernelRadioButton.AutoSize = true;
@@ -797,24 +712,6 @@
             this.polynomialKernelRadioButton.Text = "Polynomial Kernel";
             this.polynomialKernelRadioButton.UseVisualStyleBackColor = true;
             this.polynomialKernelRadioButton.CheckedChanged += new System.EventHandler(this.kernelRadioButton_CheckedChanged);
-            // 
-            // costRatioLabel
-            // 
-            this.costRatioLabel.AutoSize = true;
-            this.costRatioLabel.Location = new System.Drawing.Point(39, 433);
-            this.costRatioLabel.Name = "costRatioLabel";
-            this.costRatioLabel.Size = new System.Drawing.Size(88, 20);
-            this.costRatioLabel.TabIndex = 0;
-            this.costRatioLabel.Text = "Cost Ratio:";
-            // 
-            // svmToleranceLabel
-            // 
-            this.svmToleranceLabel.AutoSize = true;
-            this.svmToleranceLabel.Location = new System.Drawing.Point(44, 469);
-            this.svmToleranceLabel.Name = "svmToleranceLabel";
-            this.svmToleranceLabel.Size = new System.Drawing.Size(83, 20);
-            this.svmToleranceLabel.TabIndex = 0;
-            this.svmToleranceLabel.Text = "Tolerance:";
             // 
             // laplacianSigmaNumericUpDown
             // 
@@ -866,194 +763,419 @@
             0,
             262144});
             // 
-            // modelGroupBox
+            // discriminantsTabPage
             // 
-            this.modelGroupBox.Controls.Add(this.regulationNumericUpDown);
-            this.modelGroupBox.Controls.Add(this.regulationLabel);
-            this.modelGroupBox.Controls.Add(this.logisticRegressionMethodComboBox);
-            this.modelGroupBox.Controls.Add(this.logisticRegressionMethodLabel);
-            this.modelGroupBox.Controls.Add(this.svmMethodComboBox);
-            this.modelGroupBox.Controls.Add(this.svmMethodLabel);
-            this.modelGroupBox.Controls.Add(this.logisticRegressionMaxIterationNumericUpDown);
-            this.modelGroupBox.Controls.Add(this.logisticRegressionToleranceNumericUpDown);
-            this.modelGroupBox.Controls.Add(this.logisticRegressionMethodToleranceLabel);
-            this.modelGroupBox.Controls.Add(this.logisticRegressionMethodMaxIterationLabel);
-            this.modelGroupBox.Controls.Add(this.svmRadioButton);
-            this.modelGroupBox.Controls.Add(this.logisticRegressionRadioButton);
-            this.modelGroupBox.Controls.Add(this.decisionTreeRadioButton);
-            this.modelGroupBox.Dock = System.Windows.Forms.DockStyle.Left;
-            this.modelGroupBox.Location = new System.Drawing.Point(3, 3);
-            this.modelGroupBox.Name = "modelGroupBox";
-            this.modelGroupBox.Size = new System.Drawing.Size(355, 518);
-            this.modelGroupBox.TabIndex = 0;
-            this.modelGroupBox.TabStop = false;
-            this.modelGroupBox.Text = "Model";
+            this.discriminantsTabPage.Controls.Add(this.visualizationGroupBox);
+            this.discriminantsTabPage.Controls.Add(this.discriminatsGroupBox);
+            this.discriminantsTabPage.Location = new System.Drawing.Point(4, 29);
+            this.discriminantsTabPage.Name = "discriminantsTabPage";
+            this.discriminantsTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.discriminantsTabPage.Size = new System.Drawing.Size(976, 524);
+            this.discriminantsTabPage.TabIndex = 6;
+            this.discriminantsTabPage.Text = "Discriminants";
+            this.discriminantsTabPage.UseVisualStyleBackColor = true;
             // 
-            // regulationNumericUpDown
+            // visualizationGroupBox
             // 
-            this.regulationNumericUpDown.Enabled = false;
-            this.regulationNumericUpDown.Location = new System.Drawing.Point(135, 166);
-            this.regulationNumericUpDown.Name = "regulationNumericUpDown";
-            this.regulationNumericUpDown.Size = new System.Drawing.Size(120, 26);
-            this.regulationNumericUpDown.TabIndex = 12;
+            this.visualizationGroupBox.Controls.Add(this.cumulativeProportionComponentView);
+            this.visualizationGroupBox.Controls.Add(this.proportionComponentView);
+            this.visualizationGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.visualizationGroupBox.Location = new System.Drawing.Point(543, 3);
+            this.visualizationGroupBox.Name = "visualizationGroupBox";
+            this.visualizationGroupBox.Size = new System.Drawing.Size(430, 518);
+            this.visualizationGroupBox.TabIndex = 1;
+            this.visualizationGroupBox.TabStop = false;
+            this.visualizationGroupBox.Text = "Visualization";
             // 
-            // regulationLabel
+            // cumulativeProportionComponentView
             // 
-            this.regulationLabel.AutoSize = true;
-            this.regulationLabel.Location = new System.Drawing.Point(39, 168);
-            this.regulationLabel.Name = "regulationLabel";
-            this.regulationLabel.Size = new System.Drawing.Size(90, 20);
-            this.regulationLabel.TabIndex = 11;
-            this.regulationLabel.Text = "Regulation:";
+            this.cumulativeProportionComponentView.Cumulative = true;
+            this.cumulativeProportionComponentView.DataSource = null;
+            this.cumulativeProportionComponentView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cumulativeProportionComponentView.Location = new System.Drawing.Point(3, 232);
+            this.cumulativeProportionComponentView.Name = "cumulativeProportionComponentView";
+            this.cumulativeProportionComponentView.Size = new System.Drawing.Size(424, 283);
+            this.cumulativeProportionComponentView.TabIndex = 1;
             // 
-            // logisticRegressionMethodComboBox
+            // proportionComponentView
             // 
-            this.logisticRegressionMethodComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.logisticRegressionMethodComboBox.Enabled = false;
-            this.logisticRegressionMethodComboBox.FormattingEnabled = true;
-            this.logisticRegressionMethodComboBox.Items.AddRange(new object[] {
-            "Iterative Reweighted Least Squares"});
-            this.logisticRegressionMethodComboBox.Location = new System.Drawing.Point(9, 132);
-            this.logisticRegressionMethodComboBox.Name = "logisticRegressionMethodComboBox";
-            this.logisticRegressionMethodComboBox.Size = new System.Drawing.Size(340, 28);
-            this.logisticRegressionMethodComboBox.TabIndex = 5;
+            this.proportionComponentView.Cumulative = false;
+            this.proportionComponentView.DataSource = null;
+            this.proportionComponentView.Dock = System.Windows.Forms.DockStyle.Top;
+            this.proportionComponentView.Location = new System.Drawing.Point(3, 22);
+            this.proportionComponentView.Name = "proportionComponentView";
+            this.proportionComponentView.Size = new System.Drawing.Size(424, 210);
+            this.proportionComponentView.TabIndex = 0;
             // 
-            // logisticRegressionMethodLabel
+            // discriminatsGroupBox
             // 
-            this.logisticRegressionMethodLabel.AutoSize = true;
-            this.logisticRegressionMethodLabel.Location = new System.Drawing.Point(28, 109);
-            this.logisticRegressionMethodLabel.Name = "logisticRegressionMethodLabel";
-            this.logisticRegressionMethodLabel.Size = new System.Drawing.Size(63, 20);
-            this.logisticRegressionMethodLabel.TabIndex = 0;
-            this.logisticRegressionMethodLabel.Text = "Method";
+            this.discriminatsGroupBox.Controls.Add(this.cumulativeProportionTextBox);
+            this.discriminatsGroupBox.Controls.Add(this.cumulativeProportionLabel);
+            this.discriminatsGroupBox.Controls.Add(this.proportionTextBox);
+            this.discriminatsGroupBox.Controls.Add(this.proportionLabel);
+            this.discriminatsGroupBox.Controls.Add(this.eigenvalueTextBox);
+            this.discriminatsGroupBox.Controls.Add(this.discriminantLabel);
+            this.discriminatsGroupBox.Controls.Add(this.eigenvalueLabel);
+            this.discriminatsGroupBox.Controls.Add(this.discriminantComboBox);
+            this.discriminatsGroupBox.Controls.Add(this.eigenvectorDataGridView);
+            this.discriminatsGroupBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.discriminatsGroupBox.Location = new System.Drawing.Point(3, 3);
+            this.discriminatsGroupBox.Name = "discriminatsGroupBox";
+            this.discriminatsGroupBox.Size = new System.Drawing.Size(540, 518);
+            this.discriminatsGroupBox.TabIndex = 0;
+            this.discriminatsGroupBox.TabStop = false;
+            this.discriminatsGroupBox.Text = "Discriminants";
             // 
-            // svmMethodComboBox
+            // eigenvectorDataGridView
             // 
-            this.svmMethodComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.svmMethodComboBox.Enabled = false;
-            this.svmMethodComboBox.FormattingEnabled = true;
-            this.svmMethodComboBox.Items.AddRange(new object[] {
-            "Sequential Minimal Optimization",
-            "Least Squares",
-            "Linear Coordinate Descent",
-            "Linear Dual Coordinate Descent",
-            "Linear Newton",
-            "Probabilistic Coordinate Descent",
-            "Probabilistic Dual Coordinate Descent",
-            "Probabilistic Newton"});
-            this.svmMethodComboBox.Location = new System.Drawing.Point(5, 411);
-            this.svmMethodComboBox.Name = "svmMethodComboBox";
-            this.svmMethodComboBox.Size = new System.Drawing.Size(340, 28);
-            this.svmMethodComboBox.TabIndex = 9;
+            this.eigenvectorDataGridView.AllowUserToAddRows = false;
+            this.eigenvectorDataGridView.AllowUserToDeleteRows = false;
+            this.eigenvectorDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.eigenvectorDataGridView.Dock = System.Windows.Forms.DockStyle.Right;
+            this.eigenvectorDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.eigenvectorDataGridView.Location = new System.Drawing.Point(297, 22);
+            this.eigenvectorDataGridView.Name = "eigenvectorDataGridView";
+            this.eigenvectorDataGridView.ReadOnly = true;
+            this.eigenvectorDataGridView.RowHeadersVisible = false;
+            this.eigenvectorDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.eigenvectorDataGridView.Size = new System.Drawing.Size(240, 493);
+            this.eigenvectorDataGridView.TabIndex = 0;
             // 
-            // svmMethodLabel
+            // scatterMatricesTabPage
             // 
-            this.svmMethodLabel.AutoSize = true;
-            this.svmMethodLabel.Location = new System.Drawing.Point(23, 388);
-            this.svmMethodLabel.Name = "svmMethodLabel";
-            this.svmMethodLabel.Size = new System.Drawing.Size(63, 20);
-            this.svmMethodLabel.TabIndex = 0;
-            this.svmMethodLabel.Text = "Method";
+            this.scatterMatricesTabPage.Controls.Add(this.withinClassScatterMatrixGroupBox);
+            this.scatterMatricesTabPage.Controls.Add(this.betweenClassScatterMatrixGroupBox);
+            this.scatterMatricesTabPage.Controls.Add(this.totalScatterMatrixGroupBox);
+            this.scatterMatricesTabPage.Location = new System.Drawing.Point(4, 29);
+            this.scatterMatricesTabPage.Name = "scatterMatricesTabPage";
+            this.scatterMatricesTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.scatterMatricesTabPage.Size = new System.Drawing.Size(976, 524);
+            this.scatterMatricesTabPage.TabIndex = 4;
+            this.scatterMatricesTabPage.Text = "Scatter Matrices";
+            this.scatterMatricesTabPage.UseVisualStyleBackColor = true;
             // 
-            // logisticRegressionMaxIterationNumericUpDown
+            // withinClassScatterMatrixGroupBox
             // 
-            this.logisticRegressionMaxIterationNumericUpDown.Enabled = false;
-            this.logisticRegressionMaxIterationNumericUpDown.Location = new System.Drawing.Point(135, 198);
-            this.logisticRegressionMaxIterationNumericUpDown.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.logisticRegressionMaxIterationNumericUpDown.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.logisticRegressionMaxIterationNumericUpDown.Name = "logisticRegressionMaxIterationNumericUpDown";
-            this.logisticRegressionMaxIterationNumericUpDown.Size = new System.Drawing.Size(120, 26);
-            this.logisticRegressionMaxIterationNumericUpDown.TabIndex = 6;
-            this.logisticRegressionMaxIterationNumericUpDown.Value = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
+            this.withinClassScatterMatrixGroupBox.Controls.Add(this.withinClassScatterMatrixDataGridView);
+            this.withinClassScatterMatrixGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.withinClassScatterMatrixGroupBox.Location = new System.Drawing.Point(430, 258);
+            this.withinClassScatterMatrixGroupBox.Name = "withinClassScatterMatrixGroupBox";
+            this.withinClassScatterMatrixGroupBox.Size = new System.Drawing.Size(543, 263);
+            this.withinClassScatterMatrixGroupBox.TabIndex = 2;
+            this.withinClassScatterMatrixGroupBox.TabStop = false;
+            this.withinClassScatterMatrixGroupBox.Text = "Within Class Scatter Matrix";
             // 
-            // logisticRegressionToleranceNumericUpDown
+            // withinClassScatterMatrixDataGridView
             // 
-            this.logisticRegressionToleranceNumericUpDown.DecimalPlaces = 4;
-            this.logisticRegressionToleranceNumericUpDown.Enabled = false;
-            this.logisticRegressionToleranceNumericUpDown.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            262144});
-            this.logisticRegressionToleranceNumericUpDown.Location = new System.Drawing.Point(135, 230);
-            this.logisticRegressionToleranceNumericUpDown.Maximum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.logisticRegressionToleranceNumericUpDown.Name = "logisticRegressionToleranceNumericUpDown";
-            this.logisticRegressionToleranceNumericUpDown.Size = new System.Drawing.Size(120, 26);
-            this.logisticRegressionToleranceNumericUpDown.TabIndex = 7;
-            this.logisticRegressionToleranceNumericUpDown.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            262144});
+            this.withinClassScatterMatrixDataGridView.AllowUserToAddRows = false;
+            this.withinClassScatterMatrixDataGridView.AllowUserToDeleteRows = false;
+            this.withinClassScatterMatrixDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.withinClassScatterMatrixDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.withinClassScatterMatrixDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.withinClassScatterMatrixDataGridView.Location = new System.Drawing.Point(3, 22);
+            this.withinClassScatterMatrixDataGridView.Name = "withinClassScatterMatrixDataGridView";
+            this.withinClassScatterMatrixDataGridView.ReadOnly = true;
+            this.withinClassScatterMatrixDataGridView.RowHeadersVisible = false;
+            this.withinClassScatterMatrixDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.withinClassScatterMatrixDataGridView.Size = new System.Drawing.Size(537, 238);
+            this.withinClassScatterMatrixDataGridView.TabIndex = 0;
             // 
-            // logisticRegressionMethodToleranceLabel
+            // betweenClassScatterMatrixGroupBox
             // 
-            this.logisticRegressionMethodToleranceLabel.AutoSize = true;
-            this.logisticRegressionMethodToleranceLabel.Location = new System.Drawing.Point(46, 232);
-            this.logisticRegressionMethodToleranceLabel.Name = "logisticRegressionMethodToleranceLabel";
-            this.logisticRegressionMethodToleranceLabel.Size = new System.Drawing.Size(83, 20);
-            this.logisticRegressionMethodToleranceLabel.TabIndex = 0;
-            this.logisticRegressionMethodToleranceLabel.Text = "Tolerance:";
+            this.betweenClassScatterMatrixGroupBox.Controls.Add(this.betweenClassScatterMatrixDataGridView);
+            this.betweenClassScatterMatrixGroupBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.betweenClassScatterMatrixGroupBox.Location = new System.Drawing.Point(430, 3);
+            this.betweenClassScatterMatrixGroupBox.Name = "betweenClassScatterMatrixGroupBox";
+            this.betweenClassScatterMatrixGroupBox.Size = new System.Drawing.Size(543, 255);
+            this.betweenClassScatterMatrixGroupBox.TabIndex = 1;
+            this.betweenClassScatterMatrixGroupBox.TabStop = false;
+            this.betweenClassScatterMatrixGroupBox.Text = "Between Class Scatter Matrix";
             // 
-            // logisticRegressionMethodMaxIterationLabel
+            // betweenClassScatterMatrixDataGridView
             // 
-            this.logisticRegressionMethodMaxIterationLabel.AutoSize = true;
-            this.logisticRegressionMethodMaxIterationLabel.Location = new System.Drawing.Point(24, 200);
-            this.logisticRegressionMethodMaxIterationLabel.Name = "logisticRegressionMethodMaxIterationLabel";
-            this.logisticRegressionMethodMaxIterationLabel.Size = new System.Drawing.Size(105, 20);
-            this.logisticRegressionMethodMaxIterationLabel.TabIndex = 0;
-            this.logisticRegressionMethodMaxIterationLabel.Text = "Max Iteration:";
+            this.betweenClassScatterMatrixDataGridView.AllowUserToAddRows = false;
+            this.betweenClassScatterMatrixDataGridView.AllowUserToDeleteRows = false;
+            this.betweenClassScatterMatrixDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.betweenClassScatterMatrixDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.betweenClassScatterMatrixDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.betweenClassScatterMatrixDataGridView.Location = new System.Drawing.Point(3, 22);
+            this.betweenClassScatterMatrixDataGridView.Name = "betweenClassScatterMatrixDataGridView";
+            this.betweenClassScatterMatrixDataGridView.ReadOnly = true;
+            this.betweenClassScatterMatrixDataGridView.RowHeadersVisible = false;
+            this.betweenClassScatterMatrixDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.betweenClassScatterMatrixDataGridView.Size = new System.Drawing.Size(537, 230);
+            this.betweenClassScatterMatrixDataGridView.TabIndex = 0;
             // 
-            // svmRadioButton
+            // totalScatterMatrixGroupBox
             // 
-            this.svmRadioButton.AutoSize = true;
-            this.svmRadioButton.Location = new System.Drawing.Point(0, 351);
-            this.svmRadioButton.Name = "svmRadioButton";
-            this.svmRadioButton.Size = new System.Drawing.Size(248, 24);
-            this.svmRadioButton.TabIndex = 8;
-            this.svmRadioButton.Text = "Support Vector Machine (SVM)";
-            this.svmRadioButton.UseVisualStyleBackColor = true;
-            this.svmRadioButton.CheckedChanged += new System.EventHandler(this.modelRadioButton_CheckedChanged);
+            this.totalScatterMatrixGroupBox.Controls.Add(this.totalScatterMatrixDataGridView);
+            this.totalScatterMatrixGroupBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.totalScatterMatrixGroupBox.Location = new System.Drawing.Point(3, 3);
+            this.totalScatterMatrixGroupBox.Name = "totalScatterMatrixGroupBox";
+            this.totalScatterMatrixGroupBox.Size = new System.Drawing.Size(427, 518);
+            this.totalScatterMatrixGroupBox.TabIndex = 0;
+            this.totalScatterMatrixGroupBox.TabStop = false;
+            this.totalScatterMatrixGroupBox.Text = "Total Scatter Matrix";
             // 
-            // logisticRegressionRadioButton
+            // totalScatterMatrixDataGridView
             // 
-            this.logisticRegressionRadioButton.AutoSize = true;
-            this.logisticRegressionRadioButton.Location = new System.Drawing.Point(6, 67);
-            this.logisticRegressionRadioButton.Name = "logisticRegressionRadioButton";
-            this.logisticRegressionRadioButton.Size = new System.Drawing.Size(166, 24);
-            this.logisticRegressionRadioButton.TabIndex = 4;
-            this.logisticRegressionRadioButton.Text = "Logistic Regression";
-            this.logisticRegressionRadioButton.UseVisualStyleBackColor = true;
-            this.logisticRegressionRadioButton.CheckedChanged += new System.EventHandler(this.modelRadioButton_CheckedChanged);
+            this.totalScatterMatrixDataGridView.AllowUserToAddRows = false;
+            this.totalScatterMatrixDataGridView.AllowUserToDeleteRows = false;
+            this.totalScatterMatrixDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.totalScatterMatrixDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.totalScatterMatrixDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.totalScatterMatrixDataGridView.Location = new System.Drawing.Point(3, 22);
+            this.totalScatterMatrixDataGridView.Name = "totalScatterMatrixDataGridView";
+            this.totalScatterMatrixDataGridView.ReadOnly = true;
+            this.totalScatterMatrixDataGridView.RowHeadersVisible = false;
+            this.totalScatterMatrixDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.totalScatterMatrixDataGridView.Size = new System.Drawing.Size(421, 493);
+            this.totalScatterMatrixDataGridView.TabIndex = 0;
             // 
-            // decisionTreeRadioButton
+            // projectionTabPage
             // 
-            this.decisionTreeRadioButton.AutoSize = true;
-            this.decisionTreeRadioButton.Checked = true;
-            this.decisionTreeRadioButton.Location = new System.Drawing.Point(6, 30);
-            this.decisionTreeRadioButton.Name = "decisionTreeRadioButton";
-            this.decisionTreeRadioButton.Size = new System.Drawing.Size(167, 24);
-            this.decisionTreeRadioButton.TabIndex = 3;
-            this.decisionTreeRadioButton.TabStop = true;
-            this.decisionTreeRadioButton.Text = "Decision Tree (C45)";
-            this.decisionTreeRadioButton.UseVisualStyleBackColor = true;
-            this.decisionTreeRadioButton.CheckedChanged += new System.EventHandler(this.modelRadioButton_CheckedChanged);
+            this.projectionTabPage.Controls.Add(this.featureSpaceGroupBox);
+            this.projectionTabPage.Controls.Add(this.inputSpaceGroupBox);
+            this.projectionTabPage.Controls.Add(this.projectionGroupBox);
+            this.projectionTabPage.Location = new System.Drawing.Point(4, 29);
+            this.projectionTabPage.Name = "projectionTabPage";
+            this.projectionTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.projectionTabPage.Size = new System.Drawing.Size(976, 524);
+            this.projectionTabPage.TabIndex = 5;
+            this.projectionTabPage.Text = "Projection";
+            this.projectionTabPage.UseVisualStyleBackColor = true;
+            // 
+            // featureSpaceGroupBox
+            // 
+            this.featureSpaceGroupBox.Controls.Add(this.featureSpaceZedGraphControl);
+            this.featureSpaceGroupBox.Controls.Add(this.featureSpacePanel);
+            this.featureSpaceGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.featureSpaceGroupBox.Location = new System.Drawing.Point(503, 153);
+            this.featureSpaceGroupBox.Name = "featureSpaceGroupBox";
+            this.featureSpaceGroupBox.Size = new System.Drawing.Size(470, 368);
+            this.featureSpaceGroupBox.TabIndex = 2;
+            this.featureSpaceGroupBox.TabStop = false;
+            this.featureSpaceGroupBox.Text = "Feature Space";
+            // 
+            // featureSpaceZedGraphControl
+            // 
+            this.featureSpaceZedGraphControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.featureSpaceZedGraphControl.Location = new System.Drawing.Point(3, 77);
+            this.featureSpaceZedGraphControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.featureSpaceZedGraphControl.Name = "featureSpaceZedGraphControl";
+            this.featureSpaceZedGraphControl.ScrollGrace = 0D;
+            this.featureSpaceZedGraphControl.ScrollMaxX = 0D;
+            this.featureSpaceZedGraphControl.ScrollMaxY = 0D;
+            this.featureSpaceZedGraphControl.ScrollMaxY2 = 0D;
+            this.featureSpaceZedGraphControl.ScrollMinX = 0D;
+            this.featureSpaceZedGraphControl.ScrollMinY = 0D;
+            this.featureSpaceZedGraphControl.ScrollMinY2 = 0D;
+            this.featureSpaceZedGraphControl.Size = new System.Drawing.Size(464, 288);
+            this.featureSpaceZedGraphControl.TabIndex = 1;
+            this.featureSpaceZedGraphControl.UseExtendedPrintDialog = true;
+            // 
+            // featureSpacePanel
+            // 
+            this.featureSpacePanel.Controls.Add(this.featureSpaceXComboBox);
+            this.featureSpacePanel.Controls.Add(this.featureSpaceYComboBox);
+            this.featureSpacePanel.Controls.Add(this.featureSpaceYLabel);
+            this.featureSpacePanel.Controls.Add(this.featureSpaceXLabel);
+            this.featureSpacePanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.featureSpacePanel.Location = new System.Drawing.Point(3, 22);
+            this.featureSpacePanel.Name = "featureSpacePanel";
+            this.featureSpacePanel.Size = new System.Drawing.Size(464, 55);
+            this.featureSpacePanel.TabIndex = 0;
+            // 
+            // featureSpaceXComboBox
+            // 
+            this.featureSpaceXComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.featureSpaceXComboBox.FormattingEnabled = true;
+            this.featureSpaceXComboBox.Location = new System.Drawing.Point(40, 14);
+            this.featureSpaceXComboBox.Name = "featureSpaceXComboBox";
+            this.featureSpaceXComboBox.Size = new System.Drawing.Size(100, 28);
+            this.featureSpaceXComboBox.TabIndex = 0;
+            this.featureSpaceXComboBox.SelectedIndexChanged += new System.EventHandler(this.featureSpaceComboBox_SelectedIndexChanged);
+            // 
+            // featureSpaceYComboBox
+            // 
+            this.featureSpaceYComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.featureSpaceYComboBox.FormattingEnabled = true;
+            this.featureSpaceYComboBox.Location = new System.Drawing.Point(210, 14);
+            this.featureSpaceYComboBox.Name = "featureSpaceYComboBox";
+            this.featureSpaceYComboBox.Size = new System.Drawing.Size(100, 28);
+            this.featureSpaceYComboBox.TabIndex = 1;
+            this.featureSpaceYComboBox.SelectedIndexChanged += new System.EventHandler(this.featureSpaceComboBox_SelectedIndexChanged);
+            // 
+            // featureSpaceYLabel
+            // 
+            this.featureSpaceYLabel.AutoSize = true;
+            this.featureSpaceYLabel.Location = new System.Drawing.Point(184, 17);
+            this.featureSpaceYLabel.Name = "featureSpaceYLabel";
+            this.featureSpaceYLabel.Size = new System.Drawing.Size(20, 20);
+            this.featureSpaceYLabel.TabIndex = 0;
+            this.featureSpaceYLabel.Text = "y:";
+            // 
+            // featureSpaceXLabel
+            // 
+            this.featureSpaceXLabel.AutoSize = true;
+            this.featureSpaceXLabel.Location = new System.Drawing.Point(14, 17);
+            this.featureSpaceXLabel.Name = "featureSpaceXLabel";
+            this.featureSpaceXLabel.Size = new System.Drawing.Size(20, 20);
+            this.featureSpaceXLabel.TabIndex = 0;
+            this.featureSpaceXLabel.Text = "x:";
+            // 
+            // inputSpaceGroupBox
+            // 
+            this.inputSpaceGroupBox.Controls.Add(this.inputSpaceZedGraphControl);
+            this.inputSpaceGroupBox.Controls.Add(this.inputSpacePanel);
+            this.inputSpaceGroupBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.inputSpaceGroupBox.Location = new System.Drawing.Point(3, 153);
+            this.inputSpaceGroupBox.Name = "inputSpaceGroupBox";
+            this.inputSpaceGroupBox.Size = new System.Drawing.Size(500, 368);
+            this.inputSpaceGroupBox.TabIndex = 1;
+            this.inputSpaceGroupBox.TabStop = false;
+            this.inputSpaceGroupBox.Text = "Input Space";
+            // 
+            // inputSpaceZedGraphControl
+            // 
+            this.inputSpaceZedGraphControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.inputSpaceZedGraphControl.Location = new System.Drawing.Point(3, 77);
+            this.inputSpaceZedGraphControl.Margin = new System.Windows.Forms.Padding(8);
+            this.inputSpaceZedGraphControl.Name = "inputSpaceZedGraphControl";
+            this.inputSpaceZedGraphControl.ScrollGrace = 0D;
+            this.inputSpaceZedGraphControl.ScrollMaxX = 0D;
+            this.inputSpaceZedGraphControl.ScrollMaxY = 0D;
+            this.inputSpaceZedGraphControl.ScrollMaxY2 = 0D;
+            this.inputSpaceZedGraphControl.ScrollMinX = 0D;
+            this.inputSpaceZedGraphControl.ScrollMinY = 0D;
+            this.inputSpaceZedGraphControl.ScrollMinY2 = 0D;
+            this.inputSpaceZedGraphControl.Size = new System.Drawing.Size(494, 288);
+            this.inputSpaceZedGraphControl.TabIndex = 1;
+            this.inputSpaceZedGraphControl.UseExtendedPrintDialog = true;
+            this.inputSpaceZedGraphControl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.inputSpaceZedGraphControl_MouseMove);
+            // 
+            // inputSpacePanel
+            // 
+            this.inputSpacePanel.Controls.Add(this.navigateCheckBox);
+            this.inputSpacePanel.Controls.Add(this.inputSpaceXComboBox);
+            this.inputSpacePanel.Controls.Add(this.inputSpaceYComboBox);
+            this.inputSpacePanel.Controls.Add(this.inputSpaceYLabel);
+            this.inputSpacePanel.Controls.Add(this.inputSpaceXLabel);
+            this.inputSpacePanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.inputSpacePanel.Location = new System.Drawing.Point(3, 22);
+            this.inputSpacePanel.Name = "inputSpacePanel";
+            this.inputSpacePanel.Size = new System.Drawing.Size(494, 55);
+            this.inputSpacePanel.TabIndex = 0;
+            // 
+            // navigateCheckBox
+            // 
+            this.navigateCheckBox.AutoSize = true;
+            this.navigateCheckBox.Location = new System.Drawing.Point(395, 16);
+            this.navigateCheckBox.Name = "navigateCheckBox";
+            this.navigateCheckBox.Size = new System.Drawing.Size(90, 24);
+            this.navigateCheckBox.TabIndex = 2;
+            this.navigateCheckBox.Text = "Navigate";
+            this.navigateCheckBox.UseVisualStyleBackColor = true;
+            this.navigateCheckBox.CheckedChanged += new System.EventHandler(this.navigateCheckBox_CheckedChanged);
+            // 
+            // inputSpaceXComboBox
+            // 
+            this.inputSpaceXComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.inputSpaceXComboBox.FormattingEnabled = true;
+            this.inputSpaceXComboBox.Location = new System.Drawing.Point(37, 14);
+            this.inputSpaceXComboBox.Name = "inputSpaceXComboBox";
+            this.inputSpaceXComboBox.Size = new System.Drawing.Size(160, 28);
+            this.inputSpaceXComboBox.TabIndex = 0;
+            this.inputSpaceXComboBox.SelectedIndexChanged += new System.EventHandler(this.inputSpaceComboBox_SelectedIndexChanged);
+            // 
+            // inputSpaceYComboBox
+            // 
+            this.inputSpaceYComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.inputSpaceYComboBox.FormattingEnabled = true;
+            this.inputSpaceYComboBox.Location = new System.Drawing.Point(229, 14);
+            this.inputSpaceYComboBox.Name = "inputSpaceYComboBox";
+            this.inputSpaceYComboBox.Size = new System.Drawing.Size(160, 28);
+            this.inputSpaceYComboBox.TabIndex = 1;
+            this.inputSpaceYComboBox.SelectedIndexChanged += new System.EventHandler(this.inputSpaceComboBox_SelectedIndexChanged);
+            // 
+            // inputSpaceYLabel
+            // 
+            this.inputSpaceYLabel.AutoSize = true;
+            this.inputSpaceYLabel.Location = new System.Drawing.Point(203, 17);
+            this.inputSpaceYLabel.Name = "inputSpaceYLabel";
+            this.inputSpaceYLabel.Size = new System.Drawing.Size(20, 20);
+            this.inputSpaceYLabel.TabIndex = 0;
+            this.inputSpaceYLabel.Text = "y:";
+            // 
+            // inputSpaceXLabel
+            // 
+            this.inputSpaceXLabel.AutoSize = true;
+            this.inputSpaceXLabel.Location = new System.Drawing.Point(11, 17);
+            this.inputSpaceXLabel.Name = "inputSpaceXLabel";
+            this.inputSpaceXLabel.Size = new System.Drawing.Size(20, 20);
+            this.inputSpaceXLabel.TabIndex = 0;
+            this.inputSpaceXLabel.Text = "x:";
+            // 
+            // projectionGroupBox
+            // 
+            this.projectionGroupBox.Controls.Add(this.projectionResultDataGridView);
+            this.projectionGroupBox.Controls.Add(this.projectButton);
+            this.projectionGroupBox.Controls.Add(this.projectionDataGridView);
+            this.projectionGroupBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.projectionGroupBox.Location = new System.Drawing.Point(3, 3);
+            this.projectionGroupBox.Name = "projectionGroupBox";
+            this.projectionGroupBox.Size = new System.Drawing.Size(970, 150);
+            this.projectionGroupBox.TabIndex = 0;
+            this.projectionGroupBox.TabStop = false;
+            this.projectionGroupBox.Text = "Projection";
+            // 
+            // projectionResultDataGridView
+            // 
+            this.projectionResultDataGridView.AllowUserToAddRows = false;
+            this.projectionResultDataGridView.AllowUserToDeleteRows = false;
+            this.projectionResultDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.projectionResultDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.projectionResultDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.projectionResultDataGridView.Location = new System.Drawing.Point(541, 22);
+            this.projectionResultDataGridView.Name = "projectionResultDataGridView";
+            this.projectionResultDataGridView.ReadOnly = true;
+            this.projectionResultDataGridView.RowHeadersVisible = false;
+            this.projectionResultDataGridView.RowTemplate.Height = 24;
+            this.projectionResultDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.projectionResultDataGridView.ShowCellErrors = false;
+            this.projectionResultDataGridView.ShowEditingIcon = false;
+            this.projectionResultDataGridView.ShowRowErrors = false;
+            this.projectionResultDataGridView.Size = new System.Drawing.Size(426, 125);
+            this.projectionResultDataGridView.TabIndex = 2;
+            // 
+            // projectButton
+            // 
+            this.projectButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.projectButton.Enabled = false;
+            this.projectButton.Location = new System.Drawing.Point(461, 22);
+            this.projectButton.Name = "projectButton";
+            this.projectButton.Size = new System.Drawing.Size(80, 125);
+            this.projectButton.TabIndex = 1;
+            this.projectButton.Text = "Project";
+            this.projectButton.UseVisualStyleBackColor = true;
+            this.projectButton.Click += new System.EventHandler(this.projectButton_Click);
+            // 
+            // projectionDataGridView
+            // 
+            this.projectionDataGridView.AllowUserToAddRows = false;
+            this.projectionDataGridView.AllowUserToDeleteRows = false;
+            this.projectionDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.projectionDataGridView.Dock = System.Windows.Forms.DockStyle.Left;
+            this.projectionDataGridView.Location = new System.Drawing.Point(3, 22);
+            this.projectionDataGridView.Name = "projectionDataGridView";
+            this.projectionDataGridView.RowHeadersVisible = false;
+            this.projectionDataGridView.RowTemplate.Height = 24;
+            this.projectionDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.projectionDataGridView.ShowCellErrors = false;
+            this.projectionDataGridView.ShowEditingIcon = false;
+            this.projectionDataGridView.ShowRowErrors = false;
+            this.projectionDataGridView.Size = new System.Drawing.Size(458, 125);
+            this.projectionDataGridView.TabIndex = 0;
             // 
             // modelTestingTabPage
             // 
@@ -1114,7 +1236,7 @@
             this.testingXComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.testingXComboBox.Enabled = false;
             this.testingXComboBox.FormattingEnabled = true;
-            this.testingXComboBox.Location = new System.Drawing.Point(38, 11);
+            this.testingXComboBox.Location = new System.Drawing.Point(46, 13);
             this.testingXComboBox.Name = "testingXComboBox";
             this.testingXComboBox.Size = new System.Drawing.Size(200, 28);
             this.testingXComboBox.TabIndex = 0;
@@ -1125,7 +1247,7 @@
             this.testingYComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.testingYComboBox.Enabled = false;
             this.testingYComboBox.FormattingEnabled = true;
-            this.testingYComboBox.Location = new System.Drawing.Point(280, 11);
+            this.testingYComboBox.Location = new System.Drawing.Point(288, 13);
             this.testingYComboBox.Name = "testingYComboBox";
             this.testingYComboBox.Size = new System.Drawing.Size(200, 28);
             this.testingYComboBox.TabIndex = 1;
@@ -1134,7 +1256,7 @@
             // testingYLabel
             // 
             this.testingYLabel.AutoSize = true;
-            this.testingYLabel.Location = new System.Drawing.Point(254, 14);
+            this.testingYLabel.Location = new System.Drawing.Point(262, 16);
             this.testingYLabel.Name = "testingYLabel";
             this.testingYLabel.Size = new System.Drawing.Size(20, 20);
             this.testingYLabel.TabIndex = 0;
@@ -1143,7 +1265,7 @@
             // testingXLabel
             // 
             this.testingXLabel.AutoSize = true;
-            this.testingXLabel.Location = new System.Drawing.Point(12, 14);
+            this.testingXLabel.Location = new System.Drawing.Point(20, 16);
             this.testingXLabel.Name = "testingXLabel";
             this.testingXLabel.Size = new System.Drawing.Size(20, 20);
             this.testingXLabel.TabIndex = 0;
@@ -1235,12 +1357,12 @@
             this.testingPanel.Location = new System.Drawing.Point(4, 437);
             this.testingPanel.Name = "testingPanel";
             this.testingPanel.Size = new System.Drawing.Size(432, 76);
-            this.testingPanel.TabIndex = 4;
+            this.testingPanel.TabIndex = 1;
             // 
             // testingFromLabel
             // 
             this.testingFromLabel.AutoSize = true;
-            this.testingFromLabel.Location = new System.Drawing.Point(14, 13);
+            this.testingFromLabel.Location = new System.Drawing.Point(14, 12);
             this.testingFromLabel.Name = "testingFromLabel";
             this.testingFromLabel.Size = new System.Drawing.Size(46, 20);
             this.testingFromLabel.TabIndex = 0;
@@ -1249,7 +1371,7 @@
             // numberOfMatchesLabel
             // 
             this.numberOfMatchesLabel.AutoSize = true;
-            this.numberOfMatchesLabel.Location = new System.Drawing.Point(14, 45);
+            this.numberOfMatchesLabel.Location = new System.Drawing.Point(14, 44);
             this.numberOfMatchesLabel.Name = "numberOfMatchesLabel";
             this.numberOfMatchesLabel.Size = new System.Drawing.Size(152, 20);
             this.numberOfMatchesLabel.TabIndex = 0;
@@ -1257,7 +1379,7 @@
             // 
             // testingFromNumericUpDown
             // 
-            this.testingFromNumericUpDown.Location = new System.Drawing.Point(66, 11);
+            this.testingFromNumericUpDown.Location = new System.Drawing.Point(66, 10);
             this.testingFromNumericUpDown.Minimum = new decimal(new int[] {
             1,
             0,
@@ -1265,7 +1387,7 @@
             0});
             this.testingFromNumericUpDown.Name = "testingFromNumericUpDown";
             this.testingFromNumericUpDown.Size = new System.Drawing.Size(100, 26);
-            this.testingFromNumericUpDown.TabIndex = 1;
+            this.testingFromNumericUpDown.TabIndex = 0;
             this.testingFromNumericUpDown.Value = new decimal(new int[] {
             1,
             0,
@@ -1275,7 +1397,7 @@
             // testingToLabel
             // 
             this.testingToLabel.AutoSize = true;
-            this.testingToLabel.Location = new System.Drawing.Point(181, 13);
+            this.testingToLabel.Location = new System.Drawing.Point(181, 12);
             this.testingToLabel.Name = "testingToLabel";
             this.testingToLabel.Size = new System.Drawing.Size(27, 20);
             this.testingToLabel.TabIndex = 0;
@@ -1283,7 +1405,7 @@
             // 
             // testingToNumericUpDown
             // 
-            this.testingToNumericUpDown.Location = new System.Drawing.Point(214, 11);
+            this.testingToNumericUpDown.Location = new System.Drawing.Point(214, 10);
             this.testingToNumericUpDown.Minimum = new decimal(new int[] {
             1,
             0,
@@ -1291,7 +1413,7 @@
             0});
             this.testingToNumericUpDown.Name = "testingToNumericUpDown";
             this.testingToNumericUpDown.Size = new System.Drawing.Size(100, 26);
-            this.testingToNumericUpDown.TabIndex = 2;
+            this.testingToNumericUpDown.TabIndex = 1;
             this.testingToNumericUpDown.Value = new decimal(new int[] {
             1,
             0,
@@ -1301,10 +1423,10 @@
             // testButton
             // 
             this.testButton.Enabled = false;
-            this.testButton.Location = new System.Drawing.Point(320, 8);
+            this.testButton.Location = new System.Drawing.Point(320, 7);
             this.testButton.Name = "testButton";
             this.testButton.Size = new System.Drawing.Size(100, 30);
-            this.testButton.TabIndex = 3;
+            this.testButton.TabIndex = 2;
             this.testButton.Text = "Test";
             this.testButton.UseVisualStyleBackColor = true;
             this.testButton.Click += new System.EventHandler(this.testButton_Click);
@@ -1325,7 +1447,74 @@
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(0, 17);
             // 
-            // AdaBoostModelForm
+            // cumulativeProportionTextBox
+            // 
+            this.cumulativeProportionTextBox.Location = new System.Drawing.Point(191, 123);
+            this.cumulativeProportionTextBox.Name = "cumulativeProportionTextBox";
+            this.cumulativeProportionTextBox.Size = new System.Drawing.Size(100, 26);
+            this.cumulativeProportionTextBox.TabIndex = 11;
+            // 
+            // cumulativeProportionLabel
+            // 
+            this.cumulativeProportionLabel.AutoSize = true;
+            this.cumulativeProportionLabel.Location = new System.Drawing.Point(21, 126);
+            this.cumulativeProportionLabel.Name = "cumulativeProportionLabel";
+            this.cumulativeProportionLabel.Size = new System.Drawing.Size(164, 20);
+            this.cumulativeProportionLabel.TabIndex = 4;
+            this.cumulativeProportionLabel.Text = "Cumulative Proportion";
+            // 
+            // proportionTextBox
+            // 
+            this.proportionTextBox.Location = new System.Drawing.Point(191, 91);
+            this.proportionTextBox.Name = "proportionTextBox";
+            this.proportionTextBox.Size = new System.Drawing.Size(100, 26);
+            this.proportionTextBox.TabIndex = 10;
+            // 
+            // proportionLabel
+            // 
+            this.proportionLabel.AutoSize = true;
+            this.proportionLabel.Location = new System.Drawing.Point(103, 94);
+            this.proportionLabel.Name = "proportionLabel";
+            this.proportionLabel.Size = new System.Drawing.Size(82, 20);
+            this.proportionLabel.TabIndex = 5;
+            this.proportionLabel.Text = "Proportion";
+            // 
+            // eigenvalueTextBox
+            // 
+            this.eigenvalueTextBox.Location = new System.Drawing.Point(191, 59);
+            this.eigenvalueTextBox.Name = "eigenvalueTextBox";
+            this.eigenvalueTextBox.Size = new System.Drawing.Size(100, 26);
+            this.eigenvalueTextBox.TabIndex = 9;
+            // 
+            // discriminantLabel
+            // 
+            this.discriminantLabel.AutoSize = true;
+            this.discriminantLabel.Location = new System.Drawing.Point(89, 28);
+            this.discriminantLabel.Name = "discriminantLabel";
+            this.discriminantLabel.Size = new System.Drawing.Size(96, 20);
+            this.discriminantLabel.TabIndex = 6;
+            this.discriminantLabel.Text = "Discriminant";
+            // 
+            // eigenvalueLabel
+            // 
+            this.eigenvalueLabel.AutoSize = true;
+            this.eigenvalueLabel.Location = new System.Drawing.Point(98, 62);
+            this.eigenvalueLabel.Name = "eigenvalueLabel";
+            this.eigenvalueLabel.Size = new System.Drawing.Size(87, 20);
+            this.eigenvalueLabel.TabIndex = 7;
+            this.eigenvalueLabel.Text = "Eigenvalue";
+            // 
+            // discriminantComboBox
+            // 
+            this.discriminantComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.discriminantComboBox.FormattingEnabled = true;
+            this.discriminantComboBox.Location = new System.Drawing.Point(191, 25);
+            this.discriminantComboBox.Name = "discriminantComboBox";
+            this.discriminantComboBox.Size = new System.Drawing.Size(100, 28);
+            this.discriminantComboBox.TabIndex = 8;
+            this.discriminantComboBox.SelectedIndexChanged += new System.EventHandler(this.discriminantComboBox_SelectedIndexChanged);
+            // 
+            // KDAModelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1336,11 +1525,11 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1000, 618);
-            this.Name = "AdaBoostModelForm";
+            this.Name = "KDAModelForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AdaBoost (Binary Classifier)";
+            this.Text = "Kernel Discriminant Analysis (KDA)";
             this.inputDataGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.inputDataGridView)).EndInit();
             this.mainTabControl.ResumeLayout(false);
@@ -1349,29 +1538,43 @@
             this.inputDataVisualizationPanel.ResumeLayout(false);
             this.inputDataVisualizationPanel.PerformLayout();
             this.learningTabPage.ResumeLayout(false);
+            this.projectedDataGroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.projectedDataDataGridView)).EndInit();
             this.learningGroupBox.ResumeLayout(false);
             this.learningGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.toleranceNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numberOfDiscriminantsNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.learningToNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.maxIterationNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.learningFromNumericUpDown)).EndInit();
             this.kernelGroupBox.ResumeLayout(false);
             this.kernelGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.svmToleranceNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sigmoidConstantNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sigmoidAlphaNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.negativeWeightNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.positiveWeightNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.complexityNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.polynomialConstantNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.polynomialDegreeNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.laplacianSigmaNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gaussianSigmaNumericUpDown)).EndInit();
-            this.modelGroupBox.ResumeLayout(false);
-            this.modelGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.regulationNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logisticRegressionMaxIterationNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logisticRegressionToleranceNumericUpDown)).EndInit();
+            this.discriminantsTabPage.ResumeLayout(false);
+            this.visualizationGroupBox.ResumeLayout(false);
+            this.discriminatsGroupBox.ResumeLayout(false);
+            this.discriminatsGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.eigenvectorDataGridView)).EndInit();
+            this.scatterMatricesTabPage.ResumeLayout(false);
+            this.withinClassScatterMatrixGroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.withinClassScatterMatrixDataGridView)).EndInit();
+            this.betweenClassScatterMatrixGroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.betweenClassScatterMatrixDataGridView)).EndInit();
+            this.totalScatterMatrixGroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.totalScatterMatrixDataGridView)).EndInit();
+            this.projectionTabPage.ResumeLayout(false);
+            this.featureSpaceGroupBox.ResumeLayout(false);
+            this.featureSpacePanel.ResumeLayout(false);
+            this.featureSpacePanel.PerformLayout();
+            this.inputSpaceGroupBox.ResumeLayout(false);
+            this.inputSpacePanel.ResumeLayout(false);
+            this.inputSpacePanel.PerformLayout();
+            this.projectionGroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.projectionResultDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectionDataGridView)).EndInit();
             this.modelTestingTabPage.ResumeLayout(false);
             this.testingVisualizationGroupBox.ResumeLayout(false);
             this.testingVisualizationPanel.ResumeLayout(false);
@@ -1432,17 +1635,47 @@
         private System.Windows.Forms.Label learningToLabel;
         private System.Windows.Forms.NumericUpDown learningFromNumericUpDown;
         private System.Windows.Forms.Label learningFromLabel;
-        private System.Windows.Forms.GroupBox modelGroupBox;
-        private System.Windows.Forms.NumericUpDown toleranceNumericUpDown;
-        private System.Windows.Forms.Label toleranceLabel;
-        private System.Windows.Forms.NumericUpDown maxIterationNumericUpDown;
-        private System.Windows.Forms.Label maxIterationLabel;
+        private System.Windows.Forms.TabPage scatterMatricesTabPage;
+        private System.Windows.Forms.GroupBox withinClassScatterMatrixGroupBox;
+        private System.Windows.Forms.DataGridView withinClassScatterMatrixDataGridView;
+        private System.Windows.Forms.GroupBox betweenClassScatterMatrixGroupBox;
+        private System.Windows.Forms.DataGridView betweenClassScatterMatrixDataGridView;
+        private System.Windows.Forms.GroupBox totalScatterMatrixGroupBox;
+        private System.Windows.Forms.DataGridView totalScatterMatrixDataGridView;
+        private System.Windows.Forms.TabPage projectionTabPage;
+        private System.Windows.Forms.GroupBox featureSpaceGroupBox;
+        private System.Windows.Forms.Panel featureSpacePanel;
+        private System.Windows.Forms.ComboBox featureSpaceXComboBox;
+        private System.Windows.Forms.ComboBox featureSpaceYComboBox;
+        private System.Windows.Forms.Label featureSpaceYLabel;
+        private System.Windows.Forms.Label featureSpaceXLabel;
+        private ZedGraph.ZedGraphControl featureSpaceZedGraphControl;
+        private System.Windows.Forms.GroupBox projectionGroupBox;
+        private System.Windows.Forms.DataGridView projectionResultDataGridView;
+        private System.Windows.Forms.DataGridView projectionDataGridView;
+        private System.Windows.Forms.Button projectButton;
+        private System.Windows.Forms.GroupBox inputSpaceGroupBox;
+        private ZedGraph.ZedGraphControl inputSpaceZedGraphControl;
+        private System.Windows.Forms.Panel inputSpacePanel;
+        private System.Windows.Forms.ComboBox inputSpaceXComboBox;
+        private System.Windows.Forms.ComboBox inputSpaceYComboBox;
+        private System.Windows.Forms.Label inputSpaceYLabel;
+        private System.Windows.Forms.Label inputSpaceXLabel;
+        private System.Windows.Forms.CheckBox navigateCheckBox;
+        private System.Windows.Forms.NumericUpDown numberOfDiscriminantsNumericUpDown;
+        private System.Windows.Forms.Label numberOfDiscriminantLabel;
+        private System.Windows.Forms.GroupBox projectedDataGroupBox;
+        private System.Windows.Forms.DataGridView projectedDataDataGridView;
+        private System.Windows.Forms.TabPage discriminantsTabPage;
+        private System.Windows.Forms.GroupBox visualizationGroupBox;
+        private Accord.Controls.ComponentView cumulativeProportionComponentView;
+        private Accord.Controls.ComponentView proportionComponentView;
+        private System.Windows.Forms.GroupBox discriminatsGroupBox;
+        private System.Windows.Forms.DataGridView eigenvectorDataGridView;
         private System.Windows.Forms.GroupBox kernelGroupBox;
         private System.Windows.Forms.Button sigmoidEstimateButton;
         private System.Windows.Forms.Button laplacianEstimateButton;
         private System.Windows.Forms.Button gaussianEstimateButton;
-        private System.Windows.Forms.Button complexityEstimateButton;
-        private System.Windows.Forms.NumericUpDown svmToleranceNumericUpDown;
         private System.Windows.Forms.RadioButton gaussianKernelRadioButton;
         private System.Windows.Forms.Label laplacianSigmaLabel;
         private System.Windows.Forms.Label gaussianSigmaLabel;
@@ -1451,32 +1684,21 @@
         private System.Windows.Forms.NumericUpDown sigmoidAlphaNumericUpDown;
         private System.Windows.Forms.Label polynomialConstantLabel;
         private System.Windows.Forms.Label polynomialDegreeLabel;
-        private System.Windows.Forms.NumericUpDown negativeWeightNumericUpDown;
-        private System.Windows.Forms.NumericUpDown positiveWeightNumericUpDown;
-        private System.Windows.Forms.NumericUpDown complexityNumericUpDown;
         private System.Windows.Forms.NumericUpDown polynomialConstantNumericUpDown;
         private System.Windows.Forms.NumericUpDown polynomialDegreeNumericUpDown;
         private System.Windows.Forms.Label sigmoidConstantLabel;
-        private System.Windows.Forms.Label complexityLabel;
         private System.Windows.Forms.RadioButton sigmoidKernelRadioButton;
         private System.Windows.Forms.RadioButton laplacianKernelRadioButton;
         private System.Windows.Forms.RadioButton polynomialKernelRadioButton;
-        private System.Windows.Forms.Label costRatioLabel;
-        private System.Windows.Forms.Label svmToleranceLabel;
         private System.Windows.Forms.NumericUpDown laplacianSigmaNumericUpDown;
         private System.Windows.Forms.NumericUpDown gaussianSigmaNumericUpDown;
-        private System.Windows.Forms.RadioButton decisionTreeRadioButton;
-        private System.Windows.Forms.RadioButton logisticRegressionRadioButton;
-        private System.Windows.Forms.NumericUpDown logisticRegressionMaxIterationNumericUpDown;
-        private System.Windows.Forms.NumericUpDown logisticRegressionToleranceNumericUpDown;
-        private System.Windows.Forms.Label logisticRegressionMethodToleranceLabel;
-        private System.Windows.Forms.Label logisticRegressionMethodMaxIterationLabel;
-        private System.Windows.Forms.ComboBox logisticRegressionMethodComboBox;
-        private System.Windows.Forms.Label logisticRegressionMethodLabel;
-        private System.Windows.Forms.ComboBox svmMethodComboBox;
-        private System.Windows.Forms.Label svmMethodLabel;
-        private System.Windows.Forms.RadioButton svmRadioButton;
-        private System.Windows.Forms.NumericUpDown regulationNumericUpDown;
-        private System.Windows.Forms.Label regulationLabel;
+        private System.Windows.Forms.TextBox cumulativeProportionTextBox;
+        private System.Windows.Forms.Label cumulativeProportionLabel;
+        private System.Windows.Forms.TextBox proportionTextBox;
+        private System.Windows.Forms.Label proportionLabel;
+        private System.Windows.Forms.TextBox eigenvalueTextBox;
+        private System.Windows.Forms.Label discriminantLabel;
+        private System.Windows.Forms.Label eigenvalueLabel;
+        private System.Windows.Forms.ComboBox discriminantComboBox;
     }
 }

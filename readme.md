@@ -16,6 +16,11 @@ A simple machine learning software for educational purpose. This software is bas
   - Support Vector Machine (SVM)
   - Artificial Neural Network (ANN)
   - Deep Belief Network (DBN)
+- Dimensionality Reduction
+  - Linear Discriminant Analysis (LDA)
+  - Kernel Discriminant Analysis (KDA)
+  - Principle Component Analysis (PCA)
+  - Kernel Principle Component Analysis (KPCA)
 - Clustering
   - k-Means
   - Binary Split

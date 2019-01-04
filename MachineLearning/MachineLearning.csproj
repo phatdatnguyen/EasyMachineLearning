@@ -124,11 +124,35 @@
     <Compile Include="DBNModelForm.Designer.cs">
       <DependentUpon>DBNModelForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="KPCAModelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KPCAModelForm.Designer.cs">
+      <DependentUpon>KPCAModelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KDAModelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KDAModelForm.Designer.cs">
+      <DependentUpon>KDAModelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PCAModelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PCAModelForm.Designer.cs">
+      <DependentUpon>PCAModelForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MinimumMeanDistanceModelForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MinimumMeanDistanceModelForm.Designer.cs">
       <DependentUpon>MinimumMeanDistanceModelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LDAModelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LDAModelForm.Designer.cs">
+      <DependentUpon>LDAModelForm.cs</DependentUpon>
     </Compile>
     <Compile Include="PolynomialRegressionModelForm.cs">
       <SubType>Form</SubType>
@@ -261,8 +285,20 @@
     <EmbeddedResource Include="DBNModelForm.resx">
       <DependentUpon>DBNModelForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="KPCAModelForm.resx">
+      <DependentUpon>KPCAModelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KDAModelForm.resx">
+      <DependentUpon>KDAModelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCAModelForm.resx">
+      <DependentUpon>PCAModelForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MinimumMeanDistanceModelForm.resx">
       <DependentUpon>MinimumMeanDistanceModelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LDAModelForm.resx">
+      <DependentUpon>LDAModelForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PolynomialRegressionModelForm.resx">
       <DependentUpon>PolynomialRegressionModelForm.cs</DependentUpon>
@@ -370,6 +406,7 @@
     <None Include="SampleDatabases\LetterData.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="SampleDatabases\LogicalOperations.xlsx" />
     <None Include="SampleDatabases\Mushrooms.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

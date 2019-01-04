@@ -200,6 +200,7 @@
             // 
             // inputDataXComboBox
             // 
+            this.inputDataXComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.inputDataXComboBox.FormattingEnabled = true;
             this.inputDataXComboBox.Location = new System.Drawing.Point(38, 11);
             this.inputDataXComboBox.Name = "inputDataXComboBox";
@@ -209,6 +210,7 @@
             // 
             // inputDataYComboBox
             // 
+            this.inputDataYComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.inputDataYComboBox.FormattingEnabled = true;
             this.inputDataYComboBox.Location = new System.Drawing.Point(278, 11);
             this.inputDataYComboBox.Name = "inputDataYComboBox";
@@ -289,6 +291,7 @@
             // 
             // learningXComboBox
             // 
+            this.learningXComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.learningXComboBox.Enabled = false;
             this.learningXComboBox.FormattingEnabled = true;
             this.learningXComboBox.Location = new System.Drawing.Point(38, 11);
@@ -298,6 +301,7 @@
             // 
             // learningYComboBox
             // 
+            this.learningYComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.learningYComboBox.Enabled = false;
             this.learningYComboBox.FormattingEnabled = true;
             this.learningYComboBox.Location = new System.Drawing.Point(278, 11);
@@ -456,6 +460,7 @@
             // 
             // testingXComboBox
             // 
+            this.testingXComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.testingXComboBox.Enabled = false;
             this.testingXComboBox.FormattingEnabled = true;
             this.testingXComboBox.Location = new System.Drawing.Point(38, 11);
@@ -466,6 +471,7 @@
             // 
             // testingYComboBox
             // 
+            this.testingYComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.testingYComboBox.Enabled = false;
             this.testingYComboBox.FormattingEnabled = true;
             this.testingYComboBox.Location = new System.Drawing.Point(280, 11);
@@ -477,7 +483,7 @@
             // testingYLabel
             // 
             this.testingYLabel.AutoSize = true;
-            this.testingYLabel.Location = new System.Drawing.Point(246, 14);
+            this.testingYLabel.Location = new System.Drawing.Point(254, 14);
             this.testingYLabel.Name = "testingYLabel";
             this.testingYLabel.Size = new System.Drawing.Size(20, 20);
             this.testingYLabel.TabIndex = 0;
@@ -486,7 +492,7 @@
             // testingXLabel
             // 
             this.testingXLabel.AutoSize = true;
-            this.testingXLabel.Location = new System.Drawing.Point(4, 14);
+            this.testingXLabel.Location = new System.Drawing.Point(12, 14);
             this.testingXLabel.Name = "testingXLabel";
             this.testingXLabel.Size = new System.Drawing.Size(20, 20);
             this.testingXLabel.TabIndex = 0;

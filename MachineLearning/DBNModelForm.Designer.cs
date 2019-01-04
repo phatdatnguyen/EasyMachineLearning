@@ -82,6 +82,8 @@
             this.alphaLabel = new System.Windows.Forms.Label();
             this.networkTabPage = new System.Windows.Forms.TabPage();
             this.neuronInfoGroupBox = new System.Windows.Forms.GroupBox();
+            this.biasTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.weightsListBox = new System.Windows.Forms.ListBox();
             this.outputTextBox = new System.Windows.Forms.TextBox();
             this.weightsLabel = new System.Windows.Forms.Label();
@@ -102,8 +104,6 @@
             this.mainStatusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
-            this.biasTextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.inputDataGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inputDataGridView)).BeginInit();
             this.mainTabControl.SuspendLayout();
@@ -235,6 +235,7 @@
             // 
             // inputDataXComboBox
             // 
+            this.inputDataXComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.inputDataXComboBox.FormattingEnabled = true;
             this.inputDataXComboBox.Location = new System.Drawing.Point(38, 11);
             this.inputDataXComboBox.Name = "inputDataXComboBox";
@@ -244,6 +245,7 @@
             // 
             // inputDataYComboBox
             // 
+            this.inputDataYComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.inputDataYComboBox.FormattingEnabled = true;
             this.inputDataYComboBox.Location = new System.Drawing.Point(278, 11);
             this.inputDataYComboBox.Name = "inputDataYComboBox";
@@ -368,6 +370,7 @@
             // 
             // clusteringXComboBox
             // 
+            this.clusteringXComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.clusteringXComboBox.Enabled = false;
             this.clusteringXComboBox.FormattingEnabled = true;
             this.clusteringXComboBox.Location = new System.Drawing.Point(43, 11);
@@ -378,6 +381,7 @@
             // 
             // clusteringYComboBox
             // 
+            this.clusteringYComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.clusteringYComboBox.Enabled = false;
             this.clusteringYComboBox.FormattingEnabled = true;
             this.clusteringYComboBox.Location = new System.Drawing.Point(283, 11);
@@ -791,6 +795,22 @@
             this.neuronInfoGroupBox.TabStop = false;
             this.neuronInfoGroupBox.Text = "Neuron Info";
             // 
+            // biasTextBox
+            // 
+            this.biasTextBox.Location = new System.Drawing.Point(314, 89);
+            this.biasTextBox.Name = "biasTextBox";
+            this.biasTextBox.Size = new System.Drawing.Size(150, 26);
+            this.biasTextBox.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(268, 92);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 20);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Bias";
+            // 
             // weightsListBox
             // 
             this.weightsListBox.FormattingEnabled = true;
@@ -961,22 +981,6 @@
             // 
             this.fileSystemWatcher1.EnableRaisingEvents = true;
             this.fileSystemWatcher1.SynchronizingObject = this;
-            // 
-            // biasTextBox
-            // 
-            this.biasTextBox.Location = new System.Drawing.Point(314, 89);
-            this.biasTextBox.Name = "biasTextBox";
-            this.biasTextBox.Size = new System.Drawing.Size(150, 26);
-            this.biasTextBox.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(268, 92);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 20);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Bias";
             // 
             // DBNModelForm
             // 

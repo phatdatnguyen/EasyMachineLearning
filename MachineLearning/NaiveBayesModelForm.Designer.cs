@@ -41,6 +41,20 @@
             this.inputDataYComboBox = new System.Windows.Forms.ComboBox();
             this.inputDataYLabel = new System.Windows.Forms.Label();
             this.inputDataXLabel = new System.Windows.Forms.Label();
+            this.learningTabPage = new System.Windows.Forms.TabPage();
+            this.learningVisualizationGroupBox = new System.Windows.Forms.GroupBox();
+            this.learningZedGraphControl = new ZedGraph.ZedGraphControl();
+            this.learningVisualizationPanel = new System.Windows.Forms.Panel();
+            this.learningXComboBox = new System.Windows.Forms.ComboBox();
+            this.learningYComboBox = new System.Windows.Forms.ComboBox();
+            this.learningYLabel = new System.Windows.Forms.Label();
+            this.learningXLabel = new System.Windows.Forms.Label();
+            this.learningGroupBox = new System.Windows.Forms.GroupBox();
+            this.learnButton = new System.Windows.Forms.Button();
+            this.learningToNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.learningToLabel = new System.Windows.Forms.Label();
+            this.learningFromNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.learningFromLabel = new System.Windows.Forms.Label();
             this.probabilitiesTabPage = new System.Windows.Forms.TabPage();
             this.probabilitiesDataGridView = new System.Windows.Forms.DataGridView();
             this.modelTestingTabPage = new System.Windows.Forms.TabPage();
@@ -65,26 +79,18 @@
             this.testButton = new System.Windows.Forms.Button();
             this.mainStatusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.learningTabPage = new System.Windows.Forms.TabPage();
-            this.learningGroupBox = new System.Windows.Forms.GroupBox();
-            this.learnButton = new System.Windows.Forms.Button();
-            this.learningToNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.learningToLabel = new System.Windows.Forms.Label();
-            this.learningFromNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.learningFromLabel = new System.Windows.Forms.Label();
-            this.learningVisualizationGroupBox = new System.Windows.Forms.GroupBox();
-            this.learningZedGraphControl = new ZedGraph.ZedGraphControl();
-            this.learningVisualizationPanel = new System.Windows.Forms.Panel();
-            this.learningXComboBox = new System.Windows.Forms.ComboBox();
-            this.learningYComboBox = new System.Windows.Forms.ComboBox();
-            this.learningYLabel = new System.Windows.Forms.Label();
-            this.learningXLabel = new System.Windows.Forms.Label();
             this.inputDataGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inputDataGridView)).BeginInit();
             this.mainTabControl.SuspendLayout();
             this.inputDataTabPage.SuspendLayout();
             this.inputDataVisualizationGroupBox.SuspendLayout();
             this.inputDataVisualizationPanel.SuspendLayout();
+            this.learningTabPage.SuspendLayout();
+            this.learningVisualizationGroupBox.SuspendLayout();
+            this.learningVisualizationPanel.SuspendLayout();
+            this.learningGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.learningToNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.learningFromNumericUpDown)).BeginInit();
             this.probabilitiesTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.probabilitiesDataGridView)).BeginInit();
             this.modelTestingTabPage.SuspendLayout();
@@ -98,12 +104,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.testingFromNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testingToNumericUpDown)).BeginInit();
             this.mainStatusStrip.SuspendLayout();
-            this.learningTabPage.SuspendLayout();
-            this.learningGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.learningToNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.learningFromNumericUpDown)).BeginInit();
-            this.learningVisualizationGroupBox.SuspendLayout();
-            this.learningVisualizationPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // inputDataGroupBox
@@ -206,6 +206,7 @@
             // 
             // inputDataXComboBox
             // 
+            this.inputDataXComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.inputDataXComboBox.FormattingEnabled = true;
             this.inputDataXComboBox.Location = new System.Drawing.Point(43, 11);
             this.inputDataXComboBox.Name = "inputDataXComboBox";
@@ -215,6 +216,7 @@
             // 
             // inputDataYComboBox
             // 
+            this.inputDataYComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.inputDataYComboBox.FormattingEnabled = true;
             this.inputDataYComboBox.Location = new System.Drawing.Point(283, 11);
             this.inputDataYComboBox.Name = "inputDataYComboBox";
@@ -239,6 +241,174 @@
             this.inputDataXLabel.Size = new System.Drawing.Size(20, 20);
             this.inputDataXLabel.TabIndex = 0;
             this.inputDataXLabel.Text = "x:";
+            // 
+            // learningTabPage
+            // 
+            this.learningTabPage.Controls.Add(this.learningVisualizationGroupBox);
+            this.learningTabPage.Controls.Add(this.learningGroupBox);
+            this.learningTabPage.Location = new System.Drawing.Point(4, 29);
+            this.learningTabPage.Name = "learningTabPage";
+            this.learningTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.learningTabPage.Size = new System.Drawing.Size(976, 524);
+            this.learningTabPage.TabIndex = 3;
+            this.learningTabPage.Text = "Learning";
+            this.learningTabPage.UseVisualStyleBackColor = true;
+            // 
+            // learningVisualizationGroupBox
+            // 
+            this.learningVisualizationGroupBox.Controls.Add(this.learningZedGraphControl);
+            this.learningVisualizationGroupBox.Controls.Add(this.learningVisualizationPanel);
+            this.learningVisualizationGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.learningVisualizationGroupBox.Location = new System.Drawing.Point(3, 73);
+            this.learningVisualizationGroupBox.Name = "learningVisualizationGroupBox";
+            this.learningVisualizationGroupBox.Size = new System.Drawing.Size(970, 448);
+            this.learningVisualizationGroupBox.TabIndex = 1;
+            this.learningVisualizationGroupBox.TabStop = false;
+            this.learningVisualizationGroupBox.Text = "2D Visualization";
+            // 
+            // learningZedGraphControl
+            // 
+            this.learningZedGraphControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.learningZedGraphControl.Location = new System.Drawing.Point(3, 77);
+            this.learningZedGraphControl.Margin = new System.Windows.Forms.Padding(12);
+            this.learningZedGraphControl.Name = "learningZedGraphControl";
+            this.learningZedGraphControl.ScrollGrace = 0D;
+            this.learningZedGraphControl.ScrollMaxX = 0D;
+            this.learningZedGraphControl.ScrollMaxY = 0D;
+            this.learningZedGraphControl.ScrollMaxY2 = 0D;
+            this.learningZedGraphControl.ScrollMinX = 0D;
+            this.learningZedGraphControl.ScrollMinY = 0D;
+            this.learningZedGraphControl.ScrollMinY2 = 0D;
+            this.learningZedGraphControl.Size = new System.Drawing.Size(964, 368);
+            this.learningZedGraphControl.TabIndex = 1;
+            this.learningZedGraphControl.UseExtendedPrintDialog = true;
+            // 
+            // learningVisualizationPanel
+            // 
+            this.learningVisualizationPanel.Controls.Add(this.learningXComboBox);
+            this.learningVisualizationPanel.Controls.Add(this.learningYComboBox);
+            this.learningVisualizationPanel.Controls.Add(this.learningYLabel);
+            this.learningVisualizationPanel.Controls.Add(this.learningXLabel);
+            this.learningVisualizationPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.learningVisualizationPanel.Location = new System.Drawing.Point(3, 22);
+            this.learningVisualizationPanel.Name = "learningVisualizationPanel";
+            this.learningVisualizationPanel.Size = new System.Drawing.Size(964, 55);
+            this.learningVisualizationPanel.TabIndex = 0;
+            // 
+            // learningXComboBox
+            // 
+            this.learningXComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.learningXComboBox.Enabled = false;
+            this.learningXComboBox.FormattingEnabled = true;
+            this.learningXComboBox.Location = new System.Drawing.Point(38, 11);
+            this.learningXComboBox.Name = "learningXComboBox";
+            this.learningXComboBox.Size = new System.Drawing.Size(200, 28);
+            this.learningXComboBox.TabIndex = 0;
+            // 
+            // learningYComboBox
+            // 
+            this.learningYComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.learningYComboBox.Enabled = false;
+            this.learningYComboBox.FormattingEnabled = true;
+            this.learningYComboBox.Location = new System.Drawing.Point(278, 11);
+            this.learningYComboBox.Name = "learningYComboBox";
+            this.learningYComboBox.Size = new System.Drawing.Size(200, 28);
+            this.learningYComboBox.TabIndex = 1;
+            // 
+            // learningYLabel
+            // 
+            this.learningYLabel.AutoSize = true;
+            this.learningYLabel.Location = new System.Drawing.Point(252, 14);
+            this.learningYLabel.Name = "learningYLabel";
+            this.learningYLabel.Size = new System.Drawing.Size(20, 20);
+            this.learningYLabel.TabIndex = 0;
+            this.learningYLabel.Text = "y:";
+            // 
+            // learningXLabel
+            // 
+            this.learningXLabel.AutoSize = true;
+            this.learningXLabel.Location = new System.Drawing.Point(12, 14);
+            this.learningXLabel.Name = "learningXLabel";
+            this.learningXLabel.Size = new System.Drawing.Size(20, 20);
+            this.learningXLabel.TabIndex = 0;
+            this.learningXLabel.Text = "x:";
+            // 
+            // learningGroupBox
+            // 
+            this.learningGroupBox.Controls.Add(this.learnButton);
+            this.learningGroupBox.Controls.Add(this.learningToNumericUpDown);
+            this.learningGroupBox.Controls.Add(this.learningToLabel);
+            this.learningGroupBox.Controls.Add(this.learningFromNumericUpDown);
+            this.learningGroupBox.Controls.Add(this.learningFromLabel);
+            this.learningGroupBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.learningGroupBox.Location = new System.Drawing.Point(3, 3);
+            this.learningGroupBox.Name = "learningGroupBox";
+            this.learningGroupBox.Size = new System.Drawing.Size(970, 70);
+            this.learningGroupBox.TabIndex = 0;
+            this.learningGroupBox.TabStop = false;
+            this.learningGroupBox.Text = "Learning";
+            // 
+            // learnButton
+            // 
+            this.learnButton.Location = new System.Drawing.Point(331, 26);
+            this.learnButton.Name = "learnButton";
+            this.learnButton.Size = new System.Drawing.Size(100, 30);
+            this.learnButton.TabIndex = 2;
+            this.learnButton.Text = "Learn";
+            this.learnButton.UseVisualStyleBackColor = true;
+            this.learnButton.Click += new System.EventHandler(this.learnButton_Click);
+            // 
+            // learningToNumericUpDown
+            // 
+            this.learningToNumericUpDown.Location = new System.Drawing.Point(225, 29);
+            this.learningToNumericUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.learningToNumericUpDown.Name = "learningToNumericUpDown";
+            this.learningToNumericUpDown.Size = new System.Drawing.Size(100, 26);
+            this.learningToNumericUpDown.TabIndex = 1;
+            this.learningToNumericUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // learningToLabel
+            // 
+            this.learningToLabel.AutoSize = true;
+            this.learningToLabel.Location = new System.Drawing.Point(192, 31);
+            this.learningToLabel.Name = "learningToLabel";
+            this.learningToLabel.Size = new System.Drawing.Size(27, 20);
+            this.learningToLabel.TabIndex = 0;
+            this.learningToLabel.Text = "To";
+            // 
+            // learningFromNumericUpDown
+            // 
+            this.learningFromNumericUpDown.Location = new System.Drawing.Point(77, 29);
+            this.learningFromNumericUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.learningFromNumericUpDown.Name = "learningFromNumericUpDown";
+            this.learningFromNumericUpDown.Size = new System.Drawing.Size(100, 26);
+            this.learningFromNumericUpDown.TabIndex = 0;
+            this.learningFromNumericUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // learningFromLabel
+            // 
+            this.learningFromLabel.AutoSize = true;
+            this.learningFromLabel.Location = new System.Drawing.Point(25, 31);
+            this.learningFromLabel.Name = "learningFromLabel";
+            this.learningFromLabel.Size = new System.Drawing.Size(46, 20);
+            this.learningFromLabel.TabIndex = 0;
+            this.learningFromLabel.Text = "From";
             // 
             // probabilitiesTabPage
             // 
@@ -324,6 +494,7 @@
             // 
             // testingXComboBox
             // 
+            this.testingXComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.testingXComboBox.Enabled = false;
             this.testingXComboBox.FormattingEnabled = true;
             this.testingXComboBox.Location = new System.Drawing.Point(46, 13);
@@ -334,6 +505,7 @@
             // 
             // testingYComboBox
             // 
+            this.testingYComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.testingYComboBox.Enabled = false;
             this.testingYComboBox.FormattingEnabled = true;
             this.testingYComboBox.Location = new System.Drawing.Point(288, 13);
@@ -536,172 +708,6 @@
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(0, 17);
             // 
-            // learningTabPage
-            // 
-            this.learningTabPage.Controls.Add(this.learningVisualizationGroupBox);
-            this.learningTabPage.Controls.Add(this.learningGroupBox);
-            this.learningTabPage.Location = new System.Drawing.Point(4, 29);
-            this.learningTabPage.Name = "learningTabPage";
-            this.learningTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.learningTabPage.Size = new System.Drawing.Size(976, 524);
-            this.learningTabPage.TabIndex = 3;
-            this.learningTabPage.Text = "Learning";
-            this.learningTabPage.UseVisualStyleBackColor = true;
-            // 
-            // learningGroupBox
-            // 
-            this.learningGroupBox.Controls.Add(this.learnButton);
-            this.learningGroupBox.Controls.Add(this.learningToNumericUpDown);
-            this.learningGroupBox.Controls.Add(this.learningToLabel);
-            this.learningGroupBox.Controls.Add(this.learningFromNumericUpDown);
-            this.learningGroupBox.Controls.Add(this.learningFromLabel);
-            this.learningGroupBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.learningGroupBox.Location = new System.Drawing.Point(3, 3);
-            this.learningGroupBox.Name = "learningGroupBox";
-            this.learningGroupBox.Size = new System.Drawing.Size(970, 70);
-            this.learningGroupBox.TabIndex = 0;
-            this.learningGroupBox.TabStop = false;
-            this.learningGroupBox.Text = "Learning";
-            // 
-            // learnButton
-            // 
-            this.learnButton.Location = new System.Drawing.Point(331, 26);
-            this.learnButton.Name = "learnButton";
-            this.learnButton.Size = new System.Drawing.Size(100, 30);
-            this.learnButton.TabIndex = 2;
-            this.learnButton.Text = "Learn";
-            this.learnButton.UseVisualStyleBackColor = true;
-            this.learnButton.Click += new System.EventHandler(this.learnButton_Click);
-            // 
-            // learningToNumericUpDown
-            // 
-            this.learningToNumericUpDown.Location = new System.Drawing.Point(225, 29);
-            this.learningToNumericUpDown.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.learningToNumericUpDown.Name = "learningToNumericUpDown";
-            this.learningToNumericUpDown.Size = new System.Drawing.Size(100, 26);
-            this.learningToNumericUpDown.TabIndex = 1;
-            this.learningToNumericUpDown.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // learningToLabel
-            // 
-            this.learningToLabel.AutoSize = true;
-            this.learningToLabel.Location = new System.Drawing.Point(192, 31);
-            this.learningToLabel.Name = "learningToLabel";
-            this.learningToLabel.Size = new System.Drawing.Size(27, 20);
-            this.learningToLabel.TabIndex = 0;
-            this.learningToLabel.Text = "To";
-            // 
-            // learningFromNumericUpDown
-            // 
-            this.learningFromNumericUpDown.Location = new System.Drawing.Point(77, 29);
-            this.learningFromNumericUpDown.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.learningFromNumericUpDown.Name = "learningFromNumericUpDown";
-            this.learningFromNumericUpDown.Size = new System.Drawing.Size(100, 26);
-            this.learningFromNumericUpDown.TabIndex = 0;
-            this.learningFromNumericUpDown.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // learningFromLabel
-            // 
-            this.learningFromLabel.AutoSize = true;
-            this.learningFromLabel.Location = new System.Drawing.Point(25, 31);
-            this.learningFromLabel.Name = "learningFromLabel";
-            this.learningFromLabel.Size = new System.Drawing.Size(46, 20);
-            this.learningFromLabel.TabIndex = 0;
-            this.learningFromLabel.Text = "From";
-            // 
-            // learningVisualizationGroupBox
-            // 
-            this.learningVisualizationGroupBox.Controls.Add(this.learningZedGraphControl);
-            this.learningVisualizationGroupBox.Controls.Add(this.learningVisualizationPanel);
-            this.learningVisualizationGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.learningVisualizationGroupBox.Location = new System.Drawing.Point(3, 73);
-            this.learningVisualizationGroupBox.Name = "learningVisualizationGroupBox";
-            this.learningVisualizationGroupBox.Size = new System.Drawing.Size(970, 448);
-            this.learningVisualizationGroupBox.TabIndex = 1;
-            this.learningVisualizationGroupBox.TabStop = false;
-            this.learningVisualizationGroupBox.Text = "2D Visualization";
-            // 
-            // learningZedGraphControl
-            // 
-            this.learningZedGraphControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.learningZedGraphControl.Location = new System.Drawing.Point(3, 77);
-            this.learningZedGraphControl.Margin = new System.Windows.Forms.Padding(12);
-            this.learningZedGraphControl.Name = "learningZedGraphControl";
-            this.learningZedGraphControl.ScrollGrace = 0D;
-            this.learningZedGraphControl.ScrollMaxX = 0D;
-            this.learningZedGraphControl.ScrollMaxY = 0D;
-            this.learningZedGraphControl.ScrollMaxY2 = 0D;
-            this.learningZedGraphControl.ScrollMinX = 0D;
-            this.learningZedGraphControl.ScrollMinY = 0D;
-            this.learningZedGraphControl.ScrollMinY2 = 0D;
-            this.learningZedGraphControl.Size = new System.Drawing.Size(964, 368);
-            this.learningZedGraphControl.TabIndex = 1;
-            this.learningZedGraphControl.UseExtendedPrintDialog = true;
-            // 
-            // learningVisualizationPanel
-            // 
-            this.learningVisualizationPanel.Controls.Add(this.learningXComboBox);
-            this.learningVisualizationPanel.Controls.Add(this.learningYComboBox);
-            this.learningVisualizationPanel.Controls.Add(this.learningYLabel);
-            this.learningVisualizationPanel.Controls.Add(this.learningXLabel);
-            this.learningVisualizationPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.learningVisualizationPanel.Location = new System.Drawing.Point(3, 22);
-            this.learningVisualizationPanel.Name = "learningVisualizationPanel";
-            this.learningVisualizationPanel.Size = new System.Drawing.Size(964, 55);
-            this.learningVisualizationPanel.TabIndex = 0;
-            // 
-            // learningXComboBox
-            // 
-            this.learningXComboBox.Enabled = false;
-            this.learningXComboBox.FormattingEnabled = true;
-            this.learningXComboBox.Location = new System.Drawing.Point(38, 11);
-            this.learningXComboBox.Name = "learningXComboBox";
-            this.learningXComboBox.Size = new System.Drawing.Size(200, 28);
-            this.learningXComboBox.TabIndex = 0;
-            // 
-            // learningYComboBox
-            // 
-            this.learningYComboBox.Enabled = false;
-            this.learningYComboBox.FormattingEnabled = true;
-            this.learningYComboBox.Location = new System.Drawing.Point(278, 11);
-            this.learningYComboBox.Name = "learningYComboBox";
-            this.learningYComboBox.Size = new System.Drawing.Size(200, 28);
-            this.learningYComboBox.TabIndex = 1;
-            // 
-            // learningYLabel
-            // 
-            this.learningYLabel.AutoSize = true;
-            this.learningYLabel.Location = new System.Drawing.Point(252, 14);
-            this.learningYLabel.Name = "learningYLabel";
-            this.learningYLabel.Size = new System.Drawing.Size(20, 20);
-            this.learningYLabel.TabIndex = 0;
-            this.learningYLabel.Text = "y:";
-            // 
-            // learningXLabel
-            // 
-            this.learningXLabel.AutoSize = true;
-            this.learningXLabel.Location = new System.Drawing.Point(12, 14);
-            this.learningXLabel.Name = "learningXLabel";
-            this.learningXLabel.Size = new System.Drawing.Size(20, 20);
-            this.learningXLabel.TabIndex = 0;
-            this.learningXLabel.Text = "x:";
-            // 
             // NaiveBayesModelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -725,6 +731,14 @@
             this.inputDataVisualizationGroupBox.ResumeLayout(false);
             this.inputDataVisualizationPanel.ResumeLayout(false);
             this.inputDataVisualizationPanel.PerformLayout();
+            this.learningTabPage.ResumeLayout(false);
+            this.learningVisualizationGroupBox.ResumeLayout(false);
+            this.learningVisualizationPanel.ResumeLayout(false);
+            this.learningVisualizationPanel.PerformLayout();
+            this.learningGroupBox.ResumeLayout(false);
+            this.learningGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.learningToNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.learningFromNumericUpDown)).EndInit();
             this.probabilitiesTabPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.probabilitiesDataGridView)).EndInit();
             this.modelTestingTabPage.ResumeLayout(false);
@@ -741,14 +755,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.testingToNumericUpDown)).EndInit();
             this.mainStatusStrip.ResumeLayout(false);
             this.mainStatusStrip.PerformLayout();
-            this.learningTabPage.ResumeLayout(false);
-            this.learningGroupBox.ResumeLayout(false);
-            this.learningGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.learningToNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.learningFromNumericUpDown)).EndInit();
-            this.learningVisualizationGroupBox.ResumeLayout(false);
-            this.learningVisualizationPanel.ResumeLayout(false);
-            this.learningVisualizationPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

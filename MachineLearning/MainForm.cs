@@ -17,6 +17,8 @@ namespace MachineLearning
             "Decision Tree", "Support Vector Machine (SVM)", "Logistic Regression", "Multinomial Logistic Regression",
             "Artificial Neural Network (ANN)", "Deep Belief Network (DBN)" };
         private string[] regressionModels = new string[] { "Linear Regression", "Polynomial Regression", "Support Vector Machine (SVM)", "Artificial Neural Network (ANN)" };
+        private string[] dimensionalityReductionModels = new string[] { "Linear Discriminant Analysis (LDA)", "Kernel Discriminant Analysis (KDA)",
+            "Principal Component Analysis (PCA)", "Kernel Principal Component Analysis (KPCA)" };
         private string[] clusteringModels = new string[] { "k-Means", "Balanced k-Means", "Binary Split", "k-Medoids", "k-Modes", "Mean-Shift",
             "Gaussian Mixture", "Restricted Boltzmann Machine (RBM)", "Deep Belief Network (DBN)" };
         private string[] ensembleLearningModels = new string[] { "Random Forest", "AdaBoost" };
@@ -224,6 +226,10 @@ namespace MachineLearning
                     foreach (string model in clusteringModels)
                         modelComboBox.Items.Add(model);
                     break;
+                case "Dimensionality Reduction":
+                    foreach (string model in dimensionalityReductionModels)
+                        modelComboBox.Items.Add(model);
+                    break;
                 case "Rule Learning":
                     foreach (string model in ruleLearningModels)
                         modelComboBox.Items.Add(model);
@@ -245,6 +251,9 @@ namespace MachineLearning
                     break;
                 case "Regression":
                     openRegressionForm(modelComboBox.SelectedItem.ToString());
+                    break;
+                case "Dimensionality Reduction":
+                    openDimensionalityReductionForm(modelComboBox.SelectedItem.ToString());
                     break;
                 case "Clustering":
                     openClusteringForm(modelComboBox.SelectedItem.ToString());
@@ -415,6 +424,81 @@ namespace MachineLearning
                 case "Artificial Neural Network (ANN)":
                     ANNRegressionModelForm annRegressionModelForm = new ANNRegressionModelForm(inputData, inputColumnNames.ToArray<string>(), outputColumnNames[0]);
                     annRegressionModelForm.ShowDialog(this);
+                    break;
+            }
+        }
+
+        private void openDimensionalityReductionForm(string model)
+        {
+            List<string> inputColumnNames = new List<string>();
+            List<string> outputColumnNames = new List<string>();
+            foreach (DataGridViewRow row in columnsDataGridView.Rows)
+            {
+                if ((bool)row.Cells[2].Value)
+                    inputColumnNames.Add(row.Cells[0].Value.ToString());
+                if ((bool)row.Cells[3].Value)
+                    outputColumnNames.Add(row.Cells[0].Value.ToString());
+            }
+
+            if (inputColumnNames.Count == 0)
+            {
+                MessageBox.Show(this, "You have to choose as least 1 input field!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            foreach (string inputFieldName in inputColumnNames)
+                if (!Program.IsNumericType(inputData.Columns[inputFieldName].DataType))
+                {
+                    MessageBox.Show(this, "Input fields have to be of numeric type!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+            switch (model)
+            {
+                case "Linear Discriminant Analysis (LDA)":
+                    if (outputColumnNames.Count != 1)
+                    {
+                        MessageBox.Show(this, "You can only choose 1 output field!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (inputColumnNames.Contains(outputColumnNames[0]))
+                    {
+                        MessageBox.Show(this, "Output field cannot be input field!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (inputData.Columns[outputColumnNames[0]].ToArray<string>().Distinct().Count() == 1)
+                    {
+                        MessageBox.Show(this, "Oneclass-classification is not available!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    LDAModelForm ldaModelForm = new LDAModelForm(inputData, inputColumnNames.ToArray<string>(), outputColumnNames[0]);
+                    ldaModelForm.ShowDialog(this);
+                    break;
+                case "Kernel Discriminant Analysis (KDA)":
+                    if (outputColumnNames.Count != 1)
+                    {
+                        MessageBox.Show(this, "You can only choose 1 output field!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (inputColumnNames.Contains(outputColumnNames[0]))
+                    {
+                        MessageBox.Show(this, "Output field cannot be input field!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (inputData.Columns[outputColumnNames[0]].ToArray<string>().Distinct().Count() == 1)
+                    {
+                        MessageBox.Show(this, "Oneclass-classification is not available!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    KDAModelForm kdaModelForm = new KDAModelForm(inputData, inputColumnNames.ToArray<string>(), outputColumnNames[0]);
+                    kdaModelForm.ShowDialog(this);
+                    break;
+                case "Principal Component Analysis (PCA)":
+                    PCAModelForm pcaModelForm = new PCAModelForm(inputData, inputColumnNames.ToArray<string>());
+                    pcaModelForm.ShowDialog(this);
+                    break;
+                case "Kernel Principal Component Analysis (KPCA)":
+                    KPCAModelForm kpcaModelForm = new KPCAModelForm(inputData, inputColumnNames.ToArray<string>());
+                    kpcaModelForm.ShowDialog(this);
                     break;
             }
         }

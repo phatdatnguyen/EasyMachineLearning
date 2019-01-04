@@ -41,6 +41,11 @@
             this.inputDataYLabel = new System.Windows.Forms.Label();
             this.inputDataXLabel = new System.Windows.Forms.Label();
             this.learningTabPage = new System.Windows.Forms.TabPage();
+            this.treeViewGroupBox = new System.Windows.Forms.GroupBox();
+            this.decisionTreeView = new Accord.Controls.DecisionTreeView();
+            this.treePanel = new System.Windows.Forms.Panel();
+            this.treeComboBox = new System.Windows.Forms.ComboBox();
+            this.treeLabel = new System.Windows.Forms.Label();
             this.pruningGroupBox = new System.Windows.Forms.GroupBox();
             this.pruningMethodComboBox = new System.Windows.Forms.ComboBox();
             this.pruningToNumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -61,11 +66,13 @@
             this.numberOfTreesNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.sampleRatioLabel = new System.Windows.Forms.Label();
             this.numberOfTreesLabel = new System.Windows.Forms.Label();
-            this.treeViewGroupBox = new System.Windows.Forms.GroupBox();
-            this.decisionTreeView = new Accord.Controls.DecisionTreeView();
-            this.treePanel = new System.Windows.Forms.Panel();
-            this.treeComboBox = new System.Windows.Forms.ComboBox();
-            this.treeLabel = new System.Windows.Forms.Label();
+            this.learningVisualizationGroupBox = new System.Windows.Forms.GroupBox();
+            this.learningZedGraphControl = new ZedGraph.ZedGraphControl();
+            this.learningVisualizationPanel = new System.Windows.Forms.Panel();
+            this.learningXComboBox = new System.Windows.Forms.ComboBox();
+            this.learningYComboBox = new System.Windows.Forms.ComboBox();
+            this.learningYLabel = new System.Windows.Forms.Label();
+            this.learningXLabel = new System.Windows.Forms.Label();
             this.modelTestingTabPage = new System.Windows.Forms.TabPage();
             this.testingVisualizationGroupBox = new System.Windows.Forms.GroupBox();
             this.testingZedGraphControl = new ZedGraph.ZedGraphControl();
@@ -88,13 +95,6 @@
             this.testButton = new System.Windows.Forms.Button();
             this.mainStatusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.learningVisualizationGroupBox = new System.Windows.Forms.GroupBox();
-            this.learningZedGraphControl = new ZedGraph.ZedGraphControl();
-            this.learningVisualizationPanel = new System.Windows.Forms.Panel();
-            this.learningXComboBox = new System.Windows.Forms.ComboBox();
-            this.learningYComboBox = new System.Windows.Forms.ComboBox();
-            this.learningYLabel = new System.Windows.Forms.Label();
-            this.learningXLabel = new System.Windows.Forms.Label();
             this.inputDataGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inputDataGridView)).BeginInit();
             this.mainTabControl.SuspendLayout();
@@ -102,6 +102,8 @@
             this.inputDataVisualizationGroupBox.SuspendLayout();
             this.inputDataVisualizationPanel.SuspendLayout();
             this.learningTabPage.SuspendLayout();
+            this.treeViewGroupBox.SuspendLayout();
+            this.treePanel.SuspendLayout();
             this.pruningGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pruningToNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pruningThresholdNumericUpDown)).BeginInit();
@@ -111,8 +113,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.learningFromNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sampleRatioNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numberOfTreesNumericUpDown)).BeginInit();
-            this.treeViewGroupBox.SuspendLayout();
-            this.treePanel.SuspendLayout();
+            this.learningVisualizationGroupBox.SuspendLayout();
+            this.learningVisualizationPanel.SuspendLayout();
             this.modelTestingTabPage.SuspendLayout();
             this.testingVisualizationGroupBox.SuspendLayout();
             this.testingVisualizationPanel.SuspendLayout();
@@ -124,8 +126,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.testingFromNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testingToNumericUpDown)).BeginInit();
             this.mainStatusStrip.SuspendLayout();
-            this.learningVisualizationGroupBox.SuspendLayout();
-            this.learningVisualizationPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // inputDataGroupBox
@@ -227,6 +227,7 @@
             // 
             // inputDataXComboBox
             // 
+            this.inputDataXComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.inputDataXComboBox.FormattingEnabled = true;
             this.inputDataXComboBox.Location = new System.Drawing.Point(38, 11);
             this.inputDataXComboBox.Name = "inputDataXComboBox";
@@ -236,6 +237,7 @@
             // 
             // inputDataYComboBox
             // 
+            this.inputDataYComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.inputDataYComboBox.FormattingEnabled = true;
             this.inputDataYComboBox.Location = new System.Drawing.Point(278, 11);
             this.inputDataYComboBox.Name = "inputDataYComboBox";
@@ -246,7 +248,7 @@
             // inputDataYLabel
             // 
             this.inputDataYLabel.AutoSize = true;
-            this.inputDataYLabel.Location = new System.Drawing.Point(244, 14);
+            this.inputDataYLabel.Location = new System.Drawing.Point(252, 14);
             this.inputDataYLabel.Name = "inputDataYLabel";
             this.inputDataYLabel.Size = new System.Drawing.Size(20, 20);
             this.inputDataYLabel.TabIndex = 0;
@@ -255,7 +257,7 @@
             // inputDataXLabel
             // 
             this.inputDataXLabel.AutoSize = true;
-            this.inputDataXLabel.Location = new System.Drawing.Point(4, 14);
+            this.inputDataXLabel.Location = new System.Drawing.Point(12, 14);
             this.inputDataXLabel.Name = "inputDataXLabel";
             this.inputDataXLabel.Size = new System.Drawing.Size(20, 20);
             this.inputDataXLabel.TabIndex = 0;
@@ -274,6 +276,57 @@
             this.learningTabPage.TabIndex = 3;
             this.learningTabPage.Text = "Learning";
             this.learningTabPage.UseVisualStyleBackColor = true;
+            // 
+            // treeViewGroupBox
+            // 
+            this.treeViewGroupBox.Controls.Add(this.decisionTreeView);
+            this.treeViewGroupBox.Controls.Add(this.treePanel);
+            this.treeViewGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeViewGroupBox.Location = new System.Drawing.Point(3, 225);
+            this.treeViewGroupBox.Name = "treeViewGroupBox";
+            this.treeViewGroupBox.Size = new System.Drawing.Size(480, 296);
+            this.treeViewGroupBox.TabIndex = 2;
+            this.treeViewGroupBox.TabStop = false;
+            this.treeViewGroupBox.Text = "Tree View";
+            // 
+            // decisionTreeView
+            // 
+            this.decisionTreeView.Codebook = null;
+            this.decisionTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.decisionTreeView.Location = new System.Drawing.Point(3, 72);
+            this.decisionTreeView.Name = "decisionTreeView";
+            this.decisionTreeView.Size = new System.Drawing.Size(474, 221);
+            this.decisionTreeView.TabIndex = 3;
+            this.decisionTreeView.TreeSource = null;
+            // 
+            // treePanel
+            // 
+            this.treePanel.Controls.Add(this.treeComboBox);
+            this.treePanel.Controls.Add(this.treeLabel);
+            this.treePanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.treePanel.Location = new System.Drawing.Point(3, 22);
+            this.treePanel.Name = "treePanel";
+            this.treePanel.Size = new System.Drawing.Size(474, 50);
+            this.treePanel.TabIndex = 2;
+            // 
+            // treeComboBox
+            // 
+            this.treeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.treeComboBox.FormattingEnabled = true;
+            this.treeComboBox.Location = new System.Drawing.Point(61, 10);
+            this.treeComboBox.Name = "treeComboBox";
+            this.treeComboBox.Size = new System.Drawing.Size(80, 28);
+            this.treeComboBox.TabIndex = 0;
+            this.treeComboBox.SelectedIndexChanged += new System.EventHandler(this.treeComboBox_SelectedIndexChanged);
+            // 
+            // treeLabel
+            // 
+            this.treeLabel.AutoSize = true;
+            this.treeLabel.Location = new System.Drawing.Point(14, 13);
+            this.treeLabel.Name = "treeLabel";
+            this.treeLabel.Size = new System.Drawing.Size(41, 20);
+            this.treeLabel.TabIndex = 0;
+            this.treeLabel.Text = "Tree";
             // 
             // pruningGroupBox
             // 
@@ -550,56 +603,84 @@
             this.numberOfTreesLabel.TabIndex = 0;
             this.numberOfTreesLabel.Text = "Number of trees";
             // 
-            // treeViewGroupBox
+            // learningVisualizationGroupBox
             // 
-            this.treeViewGroupBox.Controls.Add(this.decisionTreeView);
-            this.treeViewGroupBox.Controls.Add(this.treePanel);
-            this.treeViewGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeViewGroupBox.Location = new System.Drawing.Point(3, 225);
-            this.treeViewGroupBox.Name = "treeViewGroupBox";
-            this.treeViewGroupBox.Size = new System.Drawing.Size(480, 296);
-            this.treeViewGroupBox.TabIndex = 2;
-            this.treeViewGroupBox.TabStop = false;
-            this.treeViewGroupBox.Text = "Tree View";
+            this.learningVisualizationGroupBox.Controls.Add(this.learningZedGraphControl);
+            this.learningVisualizationGroupBox.Controls.Add(this.learningVisualizationPanel);
+            this.learningVisualizationGroupBox.Dock = System.Windows.Forms.DockStyle.Right;
+            this.learningVisualizationGroupBox.Location = new System.Drawing.Point(483, 3);
+            this.learningVisualizationGroupBox.Name = "learningVisualizationGroupBox";
+            this.learningVisualizationGroupBox.Size = new System.Drawing.Size(490, 518);
+            this.learningVisualizationGroupBox.TabIndex = 3;
+            this.learningVisualizationGroupBox.TabStop = false;
+            this.learningVisualizationGroupBox.Text = "2D Visualization";
             // 
-            // decisionTreeView
+            // learningZedGraphControl
             // 
-            this.decisionTreeView.Codebook = null;
-            this.decisionTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.decisionTreeView.Location = new System.Drawing.Point(3, 72);
-            this.decisionTreeView.Name = "decisionTreeView";
-            this.decisionTreeView.Size = new System.Drawing.Size(474, 221);
-            this.decisionTreeView.TabIndex = 3;
-            this.decisionTreeView.TreeSource = null;
+            this.learningZedGraphControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.learningZedGraphControl.Location = new System.Drawing.Point(3, 77);
+            this.learningZedGraphControl.Margin = new System.Windows.Forms.Padding(12);
+            this.learningZedGraphControl.Name = "learningZedGraphControl";
+            this.learningZedGraphControl.ScrollGrace = 0D;
+            this.learningZedGraphControl.ScrollMaxX = 0D;
+            this.learningZedGraphControl.ScrollMaxY = 0D;
+            this.learningZedGraphControl.ScrollMaxY2 = 0D;
+            this.learningZedGraphControl.ScrollMinX = 0D;
+            this.learningZedGraphControl.ScrollMinY = 0D;
+            this.learningZedGraphControl.ScrollMinY2 = 0D;
+            this.learningZedGraphControl.Size = new System.Drawing.Size(484, 438);
+            this.learningZedGraphControl.TabIndex = 1;
+            this.learningZedGraphControl.UseExtendedPrintDialog = true;
             // 
-            // treePanel
+            // learningVisualizationPanel
             // 
-            this.treePanel.Controls.Add(this.treeComboBox);
-            this.treePanel.Controls.Add(this.treeLabel);
-            this.treePanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.treePanel.Location = new System.Drawing.Point(3, 22);
-            this.treePanel.Name = "treePanel";
-            this.treePanel.Size = new System.Drawing.Size(474, 50);
-            this.treePanel.TabIndex = 2;
+            this.learningVisualizationPanel.Controls.Add(this.learningXComboBox);
+            this.learningVisualizationPanel.Controls.Add(this.learningYComboBox);
+            this.learningVisualizationPanel.Controls.Add(this.learningYLabel);
+            this.learningVisualizationPanel.Controls.Add(this.learningXLabel);
+            this.learningVisualizationPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.learningVisualizationPanel.Location = new System.Drawing.Point(3, 22);
+            this.learningVisualizationPanel.Name = "learningVisualizationPanel";
+            this.learningVisualizationPanel.Size = new System.Drawing.Size(484, 55);
+            this.learningVisualizationPanel.TabIndex = 0;
             // 
-            // treeComboBox
+            // learningXComboBox
             // 
-            this.treeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.treeComboBox.FormattingEnabled = true;
-            this.treeComboBox.Location = new System.Drawing.Point(61, 10);
-            this.treeComboBox.Name = "treeComboBox";
-            this.treeComboBox.Size = new System.Drawing.Size(80, 28);
-            this.treeComboBox.TabIndex = 0;
-            this.treeComboBox.SelectedIndexChanged += new System.EventHandler(this.treeComboBox_SelectedIndexChanged);
+            this.learningXComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.learningXComboBox.Enabled = false;
+            this.learningXComboBox.FormattingEnabled = true;
+            this.learningXComboBox.Location = new System.Drawing.Point(34, 11);
+            this.learningXComboBox.Name = "learningXComboBox";
+            this.learningXComboBox.Size = new System.Drawing.Size(200, 28);
+            this.learningXComboBox.TabIndex = 0;
             // 
-            // treeLabel
+            // learningYComboBox
             // 
-            this.treeLabel.AutoSize = true;
-            this.treeLabel.Location = new System.Drawing.Point(14, 13);
-            this.treeLabel.Name = "treeLabel";
-            this.treeLabel.Size = new System.Drawing.Size(41, 20);
-            this.treeLabel.TabIndex = 0;
-            this.treeLabel.Text = "Tree";
+            this.learningYComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.learningYComboBox.Enabled = false;
+            this.learningYComboBox.FormattingEnabled = true;
+            this.learningYComboBox.Location = new System.Drawing.Point(274, 11);
+            this.learningYComboBox.Name = "learningYComboBox";
+            this.learningYComboBox.Size = new System.Drawing.Size(200, 28);
+            this.learningYComboBox.TabIndex = 1;
+            // 
+            // learningYLabel
+            // 
+            this.learningYLabel.AutoSize = true;
+            this.learningYLabel.Location = new System.Drawing.Point(248, 14);
+            this.learningYLabel.Name = "learningYLabel";
+            this.learningYLabel.Size = new System.Drawing.Size(20, 20);
+            this.learningYLabel.TabIndex = 0;
+            this.learningYLabel.Text = "y:";
+            // 
+            // learningXLabel
+            // 
+            this.learningXLabel.AutoSize = true;
+            this.learningXLabel.Location = new System.Drawing.Point(8, 14);
+            this.learningXLabel.Name = "learningXLabel";
+            this.learningXLabel.Size = new System.Drawing.Size(20, 20);
+            this.learningXLabel.TabIndex = 0;
+            this.learningXLabel.Text = "x:";
             // 
             // modelTestingTabPage
             // 
@@ -657,6 +738,7 @@
             // 
             // testingXComboBox
             // 
+            this.testingXComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.testingXComboBox.Enabled = false;
             this.testingXComboBox.FormattingEnabled = true;
             this.testingXComboBox.Location = new System.Drawing.Point(38, 11);
@@ -667,6 +749,7 @@
             // 
             // testingYComboBox
             // 
+            this.testingYComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.testingYComboBox.Enabled = false;
             this.testingYComboBox.FormattingEnabled = true;
             this.testingYComboBox.Location = new System.Drawing.Point(280, 11);
@@ -869,83 +952,6 @@
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(0, 17);
             // 
-            // learningVisualizationGroupBox
-            // 
-            this.learningVisualizationGroupBox.Controls.Add(this.learningZedGraphControl);
-            this.learningVisualizationGroupBox.Controls.Add(this.learningVisualizationPanel);
-            this.learningVisualizationGroupBox.Dock = System.Windows.Forms.DockStyle.Right;
-            this.learningVisualizationGroupBox.Location = new System.Drawing.Point(483, 3);
-            this.learningVisualizationGroupBox.Name = "learningVisualizationGroupBox";
-            this.learningVisualizationGroupBox.Size = new System.Drawing.Size(490, 518);
-            this.learningVisualizationGroupBox.TabIndex = 3;
-            this.learningVisualizationGroupBox.TabStop = false;
-            this.learningVisualizationGroupBox.Text = "2D Visualization";
-            // 
-            // learningZedGraphControl
-            // 
-            this.learningZedGraphControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.learningZedGraphControl.Location = new System.Drawing.Point(3, 77);
-            this.learningZedGraphControl.Margin = new System.Windows.Forms.Padding(12);
-            this.learningZedGraphControl.Name = "learningZedGraphControl";
-            this.learningZedGraphControl.ScrollGrace = 0D;
-            this.learningZedGraphControl.ScrollMaxX = 0D;
-            this.learningZedGraphControl.ScrollMaxY = 0D;
-            this.learningZedGraphControl.ScrollMaxY2 = 0D;
-            this.learningZedGraphControl.ScrollMinX = 0D;
-            this.learningZedGraphControl.ScrollMinY = 0D;
-            this.learningZedGraphControl.ScrollMinY2 = 0D;
-            this.learningZedGraphControl.Size = new System.Drawing.Size(484, 438);
-            this.learningZedGraphControl.TabIndex = 1;
-            this.learningZedGraphControl.UseExtendedPrintDialog = true;
-            // 
-            // learningVisualizationPanel
-            // 
-            this.learningVisualizationPanel.Controls.Add(this.learningXComboBox);
-            this.learningVisualizationPanel.Controls.Add(this.learningYComboBox);
-            this.learningVisualizationPanel.Controls.Add(this.learningYLabel);
-            this.learningVisualizationPanel.Controls.Add(this.learningXLabel);
-            this.learningVisualizationPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.learningVisualizationPanel.Location = new System.Drawing.Point(3, 22);
-            this.learningVisualizationPanel.Name = "learningVisualizationPanel";
-            this.learningVisualizationPanel.Size = new System.Drawing.Size(484, 55);
-            this.learningVisualizationPanel.TabIndex = 0;
-            // 
-            // learningXComboBox
-            // 
-            this.learningXComboBox.Enabled = false;
-            this.learningXComboBox.FormattingEnabled = true;
-            this.learningXComboBox.Location = new System.Drawing.Point(34, 11);
-            this.learningXComboBox.Name = "learningXComboBox";
-            this.learningXComboBox.Size = new System.Drawing.Size(200, 28);
-            this.learningXComboBox.TabIndex = 0;
-            // 
-            // learningYComboBox
-            // 
-            this.learningYComboBox.Enabled = false;
-            this.learningYComboBox.FormattingEnabled = true;
-            this.learningYComboBox.Location = new System.Drawing.Point(274, 11);
-            this.learningYComboBox.Name = "learningYComboBox";
-            this.learningYComboBox.Size = new System.Drawing.Size(200, 28);
-            this.learningYComboBox.TabIndex = 1;
-            // 
-            // learningYLabel
-            // 
-            this.learningYLabel.AutoSize = true;
-            this.learningYLabel.Location = new System.Drawing.Point(248, 14);
-            this.learningYLabel.Name = "learningYLabel";
-            this.learningYLabel.Size = new System.Drawing.Size(20, 20);
-            this.learningYLabel.TabIndex = 0;
-            this.learningYLabel.Text = "y:";
-            // 
-            // learningXLabel
-            // 
-            this.learningXLabel.AutoSize = true;
-            this.learningXLabel.Location = new System.Drawing.Point(8, 14);
-            this.learningXLabel.Name = "learningXLabel";
-            this.learningXLabel.Size = new System.Drawing.Size(20, 20);
-            this.learningXLabel.TabIndex = 0;
-            this.learningXLabel.Text = "x:";
-            // 
             // RandomForestModelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -970,6 +976,9 @@
             this.inputDataVisualizationPanel.ResumeLayout(false);
             this.inputDataVisualizationPanel.PerformLayout();
             this.learningTabPage.ResumeLayout(false);
+            this.treeViewGroupBox.ResumeLayout(false);
+            this.treePanel.ResumeLayout(false);
+            this.treePanel.PerformLayout();
             this.pruningGroupBox.ResumeLayout(false);
             this.pruningGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pruningToNumericUpDown)).EndInit();
@@ -981,9 +990,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.learningFromNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sampleRatioNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numberOfTreesNumericUpDown)).EndInit();
-            this.treeViewGroupBox.ResumeLayout(false);
-            this.treePanel.ResumeLayout(false);
-            this.treePanel.PerformLayout();
+            this.learningVisualizationGroupBox.ResumeLayout(false);
+            this.learningVisualizationPanel.ResumeLayout(false);
+            this.learningVisualizationPanel.PerformLayout();
             this.modelTestingTabPage.ResumeLayout(false);
             this.testingVisualizationGroupBox.ResumeLayout(false);
             this.testingVisualizationPanel.ResumeLayout(false);
@@ -998,9 +1007,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.testingToNumericUpDown)).EndInit();
             this.mainStatusStrip.ResumeLayout(false);
             this.mainStatusStrip.PerformLayout();
-            this.learningVisualizationGroupBox.ResumeLayout(false);
-            this.learningVisualizationPanel.ResumeLayout(false);
-            this.learningVisualizationPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
