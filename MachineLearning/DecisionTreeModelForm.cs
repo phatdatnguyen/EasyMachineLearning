@@ -182,7 +182,7 @@ namespace MachineLearning
 
             try
             {
-                if (learningMethodComboBox.SelectedItem.ToString() == "C45")
+                if (learningMethodComboBox.SelectedItem.ToString() == "C4.5")
                 {
                     DecisionVariable[] decisionVariables = new DecisionVariable[inputColumnNames.Length];
                     for (int columnIndex = 0; columnIndex < inputColumnNames.Length; columnIndex++)

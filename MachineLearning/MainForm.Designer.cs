@@ -32,7 +32,7 @@
             this.inputDataGroupBox = new System.Windows.Forms.GroupBox();
             this.inputDataGridView = new System.Windows.Forms.DataGridView();
             this.importDatabaseFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.modalGroupBox = new System.Windows.Forms.GroupBox();
+            this.modelGroupBox = new System.Windows.Forms.GroupBox();
             this.modelLabel = new System.Windows.Forms.Label();
             this.taskLabel = new System.Windows.Forms.Label();
             this.taskComboBox = new System.Windows.Forms.ComboBox();
@@ -63,7 +63,7 @@
             this.xComboBox = new System.Windows.Forms.ComboBox();
             this.inputDataGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inputDataGridView)).BeginInit();
-            this.modalGroupBox.SuspendLayout();
+            this.modelGroupBox.SuspendLayout();
             this.mainStatusStrip.SuspendLayout();
             this.mainMenuStrip.SuspendLayout();
             this.inputAndOutputGroupBox.SuspendLayout();
@@ -75,11 +75,11 @@
             // 
             this.inputDataGroupBox.Controls.Add(this.inputDataGridView);
             this.inputDataGroupBox.Dock = System.Windows.Forms.DockStyle.Left;
-            this.inputDataGroupBox.Location = new System.Drawing.Point(0, 24);
+            this.inputDataGroupBox.Location = new System.Drawing.Point(0, 28);
             this.inputDataGroupBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.inputDataGroupBox.Name = "inputDataGroupBox";
             this.inputDataGroupBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.inputDataGroupBox.Size = new System.Drawing.Size(689, 656);
+            this.inputDataGroupBox.Size = new System.Drawing.Size(689, 652);
             this.inputDataGroupBox.TabIndex = 0;
             this.inputDataGroupBox.TabStop = false;
             this.inputDataGroupBox.Text = "Database";
@@ -91,7 +91,7 @@
             this.inputDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.inputDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.inputDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.inputDataGridView.Location = new System.Drawing.Point(4, 24);
+            this.inputDataGridView.Location = new System.Drawing.Point(4, 28);
             this.inputDataGridView.Name = "inputDataGridView";
             this.inputDataGridView.ReadOnly = true;
             this.inputDataGridView.RowHeadersVisible = false;
@@ -100,7 +100,7 @@
             this.inputDataGridView.ShowCellErrors = false;
             this.inputDataGridView.ShowEditingIcon = false;
             this.inputDataGridView.ShowRowErrors = false;
-            this.inputDataGridView.Size = new System.Drawing.Size(681, 627);
+            this.inputDataGridView.Size = new System.Drawing.Size(681, 619);
             this.inputDataGridView.TabIndex = 0;
             // 
             // importDatabaseFileDialog
@@ -109,36 +109,36 @@
             this.importDatabaseFileDialog.Filter = "Excel (*.xls, *.xlsx)|*.xls;*.xlsx|CSV (*.csv)|*.csv";
             this.importDatabaseFileDialog.Title = "Open Database";
             // 
-            // modalGroupBox
+            // modelGroupBox
             // 
-            this.modalGroupBox.Controls.Add(this.modelLabel);
-            this.modalGroupBox.Controls.Add(this.taskLabel);
-            this.modalGroupBox.Controls.Add(this.taskComboBox);
-            this.modalGroupBox.Controls.Add(this.editModelButton);
-            this.modalGroupBox.Controls.Add(this.modelComboBox);
-            this.modalGroupBox.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.modalGroupBox.Location = new System.Drawing.Point(689, 580);
-            this.modalGroupBox.Name = "modalGroupBox";
-            this.modalGroupBox.Size = new System.Drawing.Size(495, 100);
-            this.modalGroupBox.TabIndex = 3;
-            this.modalGroupBox.TabStop = false;
-            this.modalGroupBox.Text = "Modal";
+            this.modelGroupBox.Controls.Add(this.modelLabel);
+            this.modelGroupBox.Controls.Add(this.taskLabel);
+            this.modelGroupBox.Controls.Add(this.taskComboBox);
+            this.modelGroupBox.Controls.Add(this.editModelButton);
+            this.modelGroupBox.Controls.Add(this.modelComboBox);
+            this.modelGroupBox.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.modelGroupBox.Location = new System.Drawing.Point(689, 580);
+            this.modelGroupBox.Name = "modelGroupBox";
+            this.modelGroupBox.Size = new System.Drawing.Size(495, 100);
+            this.modelGroupBox.TabIndex = 3;
+            this.modelGroupBox.TabStop = false;
+            this.modelGroupBox.Text = "Model";
             // 
             // modelLabel
             // 
             this.modelLabel.AutoSize = true;
             this.modelLabel.Location = new System.Drawing.Point(17, 62);
             this.modelLabel.Name = "modelLabel";
-            this.modelLabel.Size = new System.Drawing.Size(52, 20);
+            this.modelLabel.Size = new System.Drawing.Size(66, 25);
             this.modelLabel.TabIndex = 0;
-            this.modelLabel.Text = "Modal";
+            this.modelLabel.Text = "Model";
             // 
             // taskLabel
             // 
             this.taskLabel.AutoSize = true;
             this.taskLabel.Location = new System.Drawing.Point(26, 28);
             this.taskLabel.Name = "taskLabel";
-            this.taskLabel.Size = new System.Drawing.Size(43, 20);
+            this.taskLabel.Size = new System.Drawing.Size(56, 25);
             this.taskLabel.TabIndex = 0;
             this.taskLabel.Text = "Task";
             // 
@@ -155,7 +155,7 @@
             "Rule Learning"});
             this.taskComboBox.Location = new System.Drawing.Point(75, 25);
             this.taskComboBox.Name = "taskComboBox";
-            this.taskComboBox.Size = new System.Drawing.Size(349, 28);
+            this.taskComboBox.Size = new System.Drawing.Size(349, 33);
             this.taskComboBox.TabIndex = 0;
             this.taskComboBox.SelectedIndexChanged += new System.EventHandler(this.taskComboBox_SelectedIndexChanged);
             // 
@@ -186,7 +186,7 @@
             "Deep Neural Network (DNN)"});
             this.modelComboBox.Location = new System.Drawing.Point(75, 59);
             this.modelComboBox.Name = "modelComboBox";
-            this.modelComboBox.Size = new System.Drawing.Size(349, 28);
+            this.modelComboBox.Size = new System.Drawing.Size(349, 33);
             this.modelComboBox.TabIndex = 1;
             // 
             // mainStatusStrip
@@ -213,7 +213,7 @@
             this.helpToolStripMenuItem});
             this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.mainMenuStrip.Name = "mainMenuStrip";
-            this.mainMenuStrip.Size = new System.Drawing.Size(1184, 24);
+            this.mainMenuStrip.Size = new System.Drawing.Size(1184, 28);
             this.mainMenuStrip.TabIndex = 0;
             this.mainMenuStrip.Text = "Main Menu Strip";
             // 
@@ -224,25 +224,25 @@
             this.toolStripMenuItem1,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
             this.fileToolStripMenuItem.Text = "&File";
             // 
             // importDatabaseToolStripMenuItem
             // 
             this.importDatabaseToolStripMenuItem.Name = "importDatabaseToolStripMenuItem";
-            this.importDatabaseToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.importDatabaseToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
             this.importDatabaseToolStripMenuItem.Text = "Import &Database...";
             this.importDatabaseToolStripMenuItem.Click += new System.EventHandler(this.importDatabaseToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(167, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(202, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -251,13 +251,13 @@
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
             this.helpToolStripMenuItem.Text = "&Help";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(134, 26);
             this.aboutToolStripMenuItem.Text = "&About...";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -265,9 +265,9 @@
             // 
             this.inputAndOutputGroupBox.Controls.Add(this.columnsDataGridView);
             this.inputAndOutputGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.inputAndOutputGroupBox.Location = new System.Drawing.Point(689, 124);
+            this.inputAndOutputGroupBox.Location = new System.Drawing.Point(689, 128);
             this.inputAndOutputGroupBox.Name = "inputAndOutputGroupBox";
-            this.inputAndOutputGroupBox.Size = new System.Drawing.Size(495, 456);
+            this.inputAndOutputGroupBox.Size = new System.Drawing.Size(495, 452);
             this.inputAndOutputGroupBox.TabIndex = 2;
             this.inputAndOutputGroupBox.TabStop = false;
             this.inputAndOutputGroupBox.Text = "Input and Output Fields";
@@ -283,7 +283,7 @@
             this.IsInputField,
             this.IsOutputField});
             this.columnsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.columnsDataGridView.Location = new System.Drawing.Point(3, 22);
+            this.columnsDataGridView.Location = new System.Drawing.Point(3, 26);
             this.columnsDataGridView.MultiSelect = false;
             this.columnsDataGridView.Name = "columnsDataGridView";
             this.columnsDataGridView.RowHeadersVisible = false;
@@ -292,7 +292,7 @@
             this.columnsDataGridView.ShowCellErrors = false;
             this.columnsDataGridView.ShowEditingIcon = false;
             this.columnsDataGridView.ShowRowErrors = false;
-            this.columnsDataGridView.Size = new System.Drawing.Size(489, 431);
+            this.columnsDataGridView.Size = new System.Drawing.Size(489, 423);
             this.columnsDataGridView.TabIndex = 0;
             this.columnsDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.columnsDataGridView_CellValueChanged);
             this.columnsDataGridView.CurrentCellDirtyStateChanged += new System.EventHandler(this.columnsDataGridView_CurrentCellDirtyStateChanged);
@@ -347,7 +347,7 @@
             this.visualizationGroupBox.Controls.Add(this.yComboBox);
             this.visualizationGroupBox.Controls.Add(this.xComboBox);
             this.visualizationGroupBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.visualizationGroupBox.Location = new System.Drawing.Point(689, 24);
+            this.visualizationGroupBox.Location = new System.Drawing.Point(689, 28);
             this.visualizationGroupBox.Name = "visualizationGroupBox";
             this.visualizationGroupBox.Size = new System.Drawing.Size(495, 100);
             this.visualizationGroupBox.TabIndex = 1;
@@ -370,7 +370,7 @@
             this.groupLabel.AutoSize = true;
             this.groupLabel.Location = new System.Drawing.Point(113, 69);
             this.groupLabel.Name = "groupLabel";
-            this.groupLabel.Size = new System.Drawing.Size(58, 20);
+            this.groupLabel.Size = new System.Drawing.Size(72, 25);
             this.groupLabel.TabIndex = 0;
             this.groupLabel.Text = "Group:";
             // 
@@ -379,7 +379,7 @@
             this.yLabel.AutoSize = true;
             this.yLabel.Location = new System.Drawing.Point(257, 35);
             this.yLabel.Name = "yLabel";
-            this.yLabel.Size = new System.Drawing.Size(20, 20);
+            this.yLabel.Size = new System.Drawing.Size(28, 25);
             this.yLabel.TabIndex = 0;
             this.yLabel.Text = "y:";
             // 
@@ -388,7 +388,7 @@
             this.xLabel.AutoSize = true;
             this.xLabel.Location = new System.Drawing.Point(17, 35);
             this.xLabel.Name = "xLabel";
-            this.xLabel.Size = new System.Drawing.Size(20, 20);
+            this.xLabel.Size = new System.Drawing.Size(28, 25);
             this.xLabel.TabIndex = 0;
             this.xLabel.Text = "x:";
             // 
@@ -398,7 +398,7 @@
             this.groupComboBox.FormattingEnabled = true;
             this.groupComboBox.Location = new System.Drawing.Point(177, 66);
             this.groupComboBox.Name = "groupComboBox";
-            this.groupComboBox.Size = new System.Drawing.Size(200, 28);
+            this.groupComboBox.Size = new System.Drawing.Size(200, 33);
             this.groupComboBox.TabIndex = 2;
             // 
             // yComboBox
@@ -407,7 +407,7 @@
             this.yComboBox.FormattingEnabled = true;
             this.yComboBox.Location = new System.Drawing.Point(283, 32);
             this.yComboBox.Name = "yComboBox";
-            this.yComboBox.Size = new System.Drawing.Size(200, 28);
+            this.yComboBox.Size = new System.Drawing.Size(200, 33);
             this.yComboBox.TabIndex = 1;
             // 
             // xComboBox
@@ -416,16 +416,16 @@
             this.xComboBox.FormattingEnabled = true;
             this.xComboBox.Location = new System.Drawing.Point(43, 32);
             this.xComboBox.Name = "xComboBox";
-            this.xComboBox.Size = new System.Drawing.Size(200, 28);
+            this.xComboBox.Size = new System.Drawing.Size(200, 33);
             this.xComboBox.TabIndex = 0;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 702);
             this.Controls.Add(this.inputAndOutputGroupBox);
-            this.Controls.Add(this.modalGroupBox);
+            this.Controls.Add(this.modelGroupBox);
             this.Controls.Add(this.visualizationGroupBox);
             this.Controls.Add(this.inputDataGroupBox);
             this.Controls.Add(this.mainStatusStrip);
@@ -440,8 +440,8 @@
             this.Text = "Machine Learning";
             this.inputDataGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.inputDataGridView)).EndInit();
-            this.modalGroupBox.ResumeLayout(false);
-            this.modalGroupBox.PerformLayout();
+            this.modelGroupBox.ResumeLayout(false);
+            this.modelGroupBox.PerformLayout();
             this.mainStatusStrip.ResumeLayout(false);
             this.mainStatusStrip.PerformLayout();
             this.mainMenuStrip.ResumeLayout(false);
@@ -459,7 +459,7 @@
         private System.Windows.Forms.GroupBox inputDataGroupBox;
         private System.Windows.Forms.OpenFileDialog importDatabaseFileDialog;
         private System.Windows.Forms.DataGridView inputDataGridView;
-        private System.Windows.Forms.GroupBox modalGroupBox;
+        private System.Windows.Forms.GroupBox modelGroupBox;
         private System.Windows.Forms.ComboBox modelComboBox;
         private System.Windows.Forms.Button editModelButton;
         private System.Windows.Forms.StatusStrip mainStatusStrip;

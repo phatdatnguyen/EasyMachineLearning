@@ -20,7 +20,8 @@ namespace MachineLearning
         private double[] computedOutputs;
 
         private PolynomialRegression polynomialRegression;
-
+        
+        private bool machineTrained = false;
         //Constructor
         public PolynomialRegressionModelForm(DataTable inputData, string inputColumnName, string outputColumnName)
         {
@@ -134,6 +135,8 @@ namespace MachineLearning
             
             toolStripStatusLabel.Text = "Training completed!";
             Cursor = Cursors.Arrow;
+
+            machineTrained = true;
         }
 
         private void ShowFitCurve()
@@ -218,7 +221,7 @@ namespace MachineLearning
         private void testingXComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox comboBox = (ComboBox)sender;
-            if (comboBox.SelectedIndex < 0)
+            if (comboBox.SelectedIndex < 0 || !machineTrained)
                 return;
 
             ShowTestingScatterPlot();

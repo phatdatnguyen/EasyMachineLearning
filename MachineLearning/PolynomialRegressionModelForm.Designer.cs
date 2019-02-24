@@ -122,10 +122,10 @@
             this.modelTestingTabPage.Controls.Add(this.testingVisualizationGroupBox);
             this.modelTestingTabPage.Controls.Add(this.predictionGroupBox);
             this.modelTestingTabPage.Controls.Add(this.testingDataGroupBox);
-            this.modelTestingTabPage.Location = new System.Drawing.Point(4, 29);
+            this.modelTestingTabPage.Location = new System.Drawing.Point(4, 34);
             this.modelTestingTabPage.Name = "modelTestingTabPage";
             this.modelTestingTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.modelTestingTabPage.Size = new System.Drawing.Size(976, 524);
+            this.modelTestingTabPage.Size = new System.Drawing.Size(976, 519);
             this.modelTestingTabPage.TabIndex = 2;
             this.modelTestingTabPage.Text = "Model Testing";
             this.modelTestingTabPage.UseVisualStyleBackColor = true;
@@ -137,7 +137,7 @@
             this.testingVisualizationGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.testingVisualizationGroupBox.Location = new System.Drawing.Point(443, 153);
             this.testingVisualizationGroupBox.Name = "testingVisualizationGroupBox";
-            this.testingVisualizationGroupBox.Size = new System.Drawing.Size(530, 368);
+            this.testingVisualizationGroupBox.Size = new System.Drawing.Size(530, 363);
             this.testingVisualizationGroupBox.TabIndex = 2;
             this.testingVisualizationGroupBox.TabStop = false;
             this.testingVisualizationGroupBox.Text = "2D Visualization";
@@ -145,7 +145,7 @@
             // testingZedGraphControl
             // 
             this.testingZedGraphControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.testingZedGraphControl.Location = new System.Drawing.Point(3, 77);
+            this.testingZedGraphControl.Location = new System.Drawing.Point(3, 81);
             this.testingZedGraphControl.Margin = new System.Windows.Forms.Padding(8);
             this.testingZedGraphControl.Name = "testingZedGraphControl";
             this.testingZedGraphControl.ScrollGrace = 0D;
@@ -155,7 +155,7 @@
             this.testingZedGraphControl.ScrollMinX = 0D;
             this.testingZedGraphControl.ScrollMinY = 0D;
             this.testingZedGraphControl.ScrollMinY2 = 0D;
-            this.testingZedGraphControl.Size = new System.Drawing.Size(524, 288);
+            this.testingZedGraphControl.Size = new System.Drawing.Size(524, 279);
             this.testingZedGraphControl.TabIndex = 1;
             this.testingZedGraphControl.UseExtendedPrintDialog = true;
             // 
@@ -166,7 +166,7 @@
             this.testingVisualizationPanel.Controls.Add(this.testingYLabel);
             this.testingVisualizationPanel.Controls.Add(this.testingXLabel);
             this.testingVisualizationPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.testingVisualizationPanel.Location = new System.Drawing.Point(3, 22);
+            this.testingVisualizationPanel.Location = new System.Drawing.Point(3, 26);
             this.testingVisualizationPanel.Name = "testingVisualizationPanel";
             this.testingVisualizationPanel.Size = new System.Drawing.Size(524, 55);
             this.testingVisualizationPanel.TabIndex = 0;
@@ -178,7 +178,7 @@
             this.testingXComboBox.FormattingEnabled = true;
             this.testingXComboBox.Location = new System.Drawing.Point(38, 11);
             this.testingXComboBox.Name = "testingXComboBox";
-            this.testingXComboBox.Size = new System.Drawing.Size(200, 28);
+            this.testingXComboBox.Size = new System.Drawing.Size(200, 33);
             this.testingXComboBox.TabIndex = 0;
             this.testingXComboBox.SelectedIndexChanged += new System.EventHandler(this.testingXComboBox_SelectedIndexChanged);
             // 
@@ -189,7 +189,7 @@
             this.testingYComboBox.FormattingEnabled = true;
             this.testingYComboBox.Location = new System.Drawing.Point(280, 11);
             this.testingYComboBox.Name = "testingYComboBox";
-            this.testingYComboBox.Size = new System.Drawing.Size(200, 28);
+            this.testingYComboBox.Size = new System.Drawing.Size(200, 33);
             this.testingYComboBox.TabIndex = 1;
             // 
             // testingYLabel
@@ -197,7 +197,7 @@
             this.testingYLabel.AutoSize = true;
             this.testingYLabel.Location = new System.Drawing.Point(254, 14);
             this.testingYLabel.Name = "testingYLabel";
-            this.testingYLabel.Size = new System.Drawing.Size(20, 20);
+            this.testingYLabel.Size = new System.Drawing.Size(28, 25);
             this.testingYLabel.TabIndex = 0;
             this.testingYLabel.Text = "y:";
             // 
@@ -206,7 +206,7 @@
             this.testingXLabel.AutoSize = true;
             this.testingXLabel.Location = new System.Drawing.Point(12, 14);
             this.testingXLabel.Name = "testingXLabel";
-            this.testingXLabel.Size = new System.Drawing.Size(20, 20);
+            this.testingXLabel.Size = new System.Drawing.Size(28, 25);
             this.testingXLabel.TabIndex = 0;
             this.testingXLabel.Text = "x:";
             // 
@@ -228,7 +228,7 @@
             this.predictionDataGridView.AllowUserToDeleteRows = false;
             this.predictionDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.predictionDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.predictionDataGridView.Location = new System.Drawing.Point(3, 22);
+            this.predictionDataGridView.Location = new System.Drawing.Point(3, 26);
             this.predictionDataGridView.Name = "predictionDataGridView";
             this.predictionDataGridView.RowHeadersVisible = false;
             this.predictionDataGridView.RowTemplate.Height = 24;
@@ -236,16 +236,16 @@
             this.predictionDataGridView.ShowCellErrors = false;
             this.predictionDataGridView.ShowEditingIcon = false;
             this.predictionDataGridView.ShowRowErrors = false;
-            this.predictionDataGridView.Size = new System.Drawing.Size(444, 125);
+            this.predictionDataGridView.Size = new System.Drawing.Size(444, 121);
             this.predictionDataGridView.TabIndex = 0;
             // 
             // predictButton
             // 
             this.predictButton.Dock = System.Windows.Forms.DockStyle.Right;
             this.predictButton.Enabled = false;
-            this.predictButton.Location = new System.Drawing.Point(447, 22);
+            this.predictButton.Location = new System.Drawing.Point(447, 26);
             this.predictButton.Name = "predictButton";
-            this.predictButton.Size = new System.Drawing.Size(80, 125);
+            this.predictButton.Size = new System.Drawing.Size(80, 121);
             this.predictButton.TabIndex = 1;
             this.predictButton.Text = "Predict";
             this.predictButton.UseVisualStyleBackColor = true;
@@ -260,7 +260,7 @@
             this.testingDataGroupBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.testingDataGroupBox.Name = "testingDataGroupBox";
             this.testingDataGroupBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.testingDataGroupBox.Size = new System.Drawing.Size(440, 518);
+            this.testingDataGroupBox.Size = new System.Drawing.Size(440, 513);
             this.testingDataGroupBox.TabIndex = 0;
             this.testingDataGroupBox.TabStop = false;
             this.testingDataGroupBox.Text = "Testing Data";
@@ -272,7 +272,7 @@
             this.testingDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.testingDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.testingDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.testingDataGridView.Location = new System.Drawing.Point(4, 24);
+            this.testingDataGridView.Location = new System.Drawing.Point(4, 28);
             this.testingDataGridView.Name = "testingDataGridView";
             this.testingDataGridView.ReadOnly = true;
             this.testingDataGridView.RowHeadersVisible = false;
@@ -281,7 +281,7 @@
             this.testingDataGridView.ShowCellErrors = false;
             this.testingDataGridView.ShowEditingIcon = false;
             this.testingDataGridView.ShowRowErrors = false;
-            this.testingDataGridView.Size = new System.Drawing.Size(432, 439);
+            this.testingDataGridView.Size = new System.Drawing.Size(432, 430);
             this.testingDataGridView.TabIndex = 0;
             // 
             // testingPanel
@@ -289,7 +289,7 @@
             this.testingPanel.Controls.Add(this.rSquareLabel);
             this.testingPanel.Controls.Add(this.testButton);
             this.testingPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.testingPanel.Location = new System.Drawing.Point(4, 463);
+            this.testingPanel.Location = new System.Drawing.Point(4, 458);
             this.testingPanel.Name = "testingPanel";
             this.testingPanel.Size = new System.Drawing.Size(432, 50);
             this.testingPanel.TabIndex = 4;
@@ -299,7 +299,7 @@
             this.rSquareLabel.AutoSize = true;
             this.rSquareLabel.Location = new System.Drawing.Point(14, 15);
             this.rSquareLabel.Name = "rSquareLabel";
-            this.rSquareLabel.Size = new System.Drawing.Size(39, 20);
+            this.rSquareLabel.Size = new System.Drawing.Size(49, 25);
             this.rSquareLabel.TabIndex = 0;
             this.rSquareLabel.Text = "R² =";
             // 
@@ -318,10 +318,10 @@
             // 
             this.learningTabPage.Controls.Add(this.learningVisualizationGroupBox);
             this.learningTabPage.Controls.Add(this.learningPanel);
-            this.learningTabPage.Location = new System.Drawing.Point(4, 29);
+            this.learningTabPage.Location = new System.Drawing.Point(4, 34);
             this.learningTabPage.Name = "learningTabPage";
             this.learningTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.learningTabPage.Size = new System.Drawing.Size(976, 524);
+            this.learningTabPage.Size = new System.Drawing.Size(976, 519);
             this.learningTabPage.TabIndex = 3;
             this.learningTabPage.Text = "Learning";
             this.learningTabPage.UseVisualStyleBackColor = true;
@@ -333,7 +333,7 @@
             this.learningVisualizationGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.learningVisualizationGroupBox.Location = new System.Drawing.Point(383, 3);
             this.learningVisualizationGroupBox.Name = "learningVisualizationGroupBox";
-            this.learningVisualizationGroupBox.Size = new System.Drawing.Size(590, 518);
+            this.learningVisualizationGroupBox.Size = new System.Drawing.Size(590, 513);
             this.learningVisualizationGroupBox.TabIndex = 2;
             this.learningVisualizationGroupBox.TabStop = false;
             this.learningVisualizationGroupBox.Text = "2D Visualization";
@@ -341,7 +341,7 @@
             // learningZedGraphControl
             // 
             this.learningZedGraphControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.learningZedGraphControl.Location = new System.Drawing.Point(3, 77);
+            this.learningZedGraphControl.Location = new System.Drawing.Point(3, 81);
             this.learningZedGraphControl.Margin = new System.Windows.Forms.Padding(12);
             this.learningZedGraphControl.Name = "learningZedGraphControl";
             this.learningZedGraphControl.ScrollGrace = 0D;
@@ -351,7 +351,7 @@
             this.learningZedGraphControl.ScrollMinX = 0D;
             this.learningZedGraphControl.ScrollMinY = 0D;
             this.learningZedGraphControl.ScrollMinY2 = 0D;
-            this.learningZedGraphControl.Size = new System.Drawing.Size(584, 438);
+            this.learningZedGraphControl.Size = new System.Drawing.Size(584, 429);
             this.learningZedGraphControl.TabIndex = 1;
             this.learningZedGraphControl.UseExtendedPrintDialog = true;
             // 
@@ -362,7 +362,7 @@
             this.learningVisualizationPanel.Controls.Add(this.learningYLabel);
             this.learningVisualizationPanel.Controls.Add(this.learningXLabel);
             this.learningVisualizationPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.learningVisualizationPanel.Location = new System.Drawing.Point(3, 22);
+            this.learningVisualizationPanel.Location = new System.Drawing.Point(3, 26);
             this.learningVisualizationPanel.Name = "learningVisualizationPanel";
             this.learningVisualizationPanel.Size = new System.Drawing.Size(584, 55);
             this.learningVisualizationPanel.TabIndex = 0;
@@ -374,7 +374,7 @@
             this.learningXComboBox.FormattingEnabled = true;
             this.learningXComboBox.Location = new System.Drawing.Point(38, 11);
             this.learningXComboBox.Name = "learningXComboBox";
-            this.learningXComboBox.Size = new System.Drawing.Size(200, 28);
+            this.learningXComboBox.Size = new System.Drawing.Size(200, 33);
             this.learningXComboBox.TabIndex = 0;
             // 
             // learningYComboBox
@@ -384,7 +384,7 @@
             this.learningYComboBox.FormattingEnabled = true;
             this.learningYComboBox.Location = new System.Drawing.Point(278, 11);
             this.learningYComboBox.Name = "learningYComboBox";
-            this.learningYComboBox.Size = new System.Drawing.Size(200, 28);
+            this.learningYComboBox.Size = new System.Drawing.Size(200, 33);
             this.learningYComboBox.TabIndex = 1;
             // 
             // learningYLabel
@@ -392,7 +392,7 @@
             this.learningYLabel.AutoSize = true;
             this.learningYLabel.Location = new System.Drawing.Point(252, 14);
             this.learningYLabel.Name = "learningYLabel";
-            this.learningYLabel.Size = new System.Drawing.Size(20, 20);
+            this.learningYLabel.Size = new System.Drawing.Size(28, 25);
             this.learningYLabel.TabIndex = 0;
             this.learningYLabel.Text = "y:";
             // 
@@ -401,7 +401,7 @@
             this.learningXLabel.AutoSize = true;
             this.learningXLabel.Location = new System.Drawing.Point(12, 14);
             this.learningXLabel.Name = "learningXLabel";
-            this.learningXLabel.Size = new System.Drawing.Size(20, 20);
+            this.learningXLabel.Size = new System.Drawing.Size(28, 25);
             this.learningXLabel.TabIndex = 0;
             this.learningXLabel.Text = "x:";
             // 
@@ -412,7 +412,7 @@
             this.learningPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.learningPanel.Location = new System.Drawing.Point(3, 3);
             this.learningPanel.Name = "learningPanel";
-            this.learningPanel.Size = new System.Drawing.Size(380, 518);
+            this.learningPanel.Size = new System.Drawing.Size(380, 513);
             this.learningPanel.TabIndex = 2;
             // 
             // fittingGroupBox
@@ -422,7 +422,7 @@
             this.fittingGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fittingGroupBox.Location = new System.Drawing.Point(0, 106);
             this.fittingGroupBox.Name = "fittingGroupBox";
-            this.fittingGroupBox.Size = new System.Drawing.Size(380, 412);
+            this.fittingGroupBox.Size = new System.Drawing.Size(380, 407);
             this.fittingGroupBox.TabIndex = 2;
             this.fittingGroupBox.TabStop = false;
             this.fittingGroupBox.Text = "Fitting";
@@ -434,21 +434,21 @@
             this.fittingDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.fittingDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fittingDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.fittingDataGridView.Location = new System.Drawing.Point(3, 42);
+            this.fittingDataGridView.Location = new System.Drawing.Point(3, 51);
             this.fittingDataGridView.Name = "fittingDataGridView";
             this.fittingDataGridView.ReadOnly = true;
             this.fittingDataGridView.RowHeadersVisible = false;
             this.fittingDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.fittingDataGridView.Size = new System.Drawing.Size(374, 367);
+            this.fittingDataGridView.Size = new System.Drawing.Size(374, 353);
             this.fittingDataGridView.TabIndex = 2;
             // 
             // fitCurveLabel
             // 
             this.fitCurveLabel.AutoSize = true;
             this.fitCurveLabel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.fitCurveLabel.Location = new System.Drawing.Point(3, 22);
+            this.fitCurveLabel.Location = new System.Drawing.Point(3, 26);
             this.fitCurveLabel.Name = "fitCurveLabel";
-            this.fitCurveLabel.Size = new System.Drawing.Size(237, 20);
+            this.fitCurveLabel.Size = new System.Drawing.Size(299, 25);
             this.fitCurveLabel.TabIndex = 1;
             this.fitCurveLabel.Text = "Fitting curve: y = b0 + sum(bi*x^i)";
             // 
@@ -472,7 +472,7 @@
             this.degreeLabel.AutoSize = true;
             this.degreeLabel.Location = new System.Drawing.Point(29, 66);
             this.degreeLabel.Name = "degreeLabel";
-            this.degreeLabel.Size = new System.Drawing.Size(62, 20);
+            this.degreeLabel.Size = new System.Drawing.Size(76, 25);
             this.degreeLabel.TabIndex = 0;
             this.degreeLabel.Text = "Degree";
             // 
@@ -490,7 +490,7 @@
             0,
             0});
             this.degreeNumericUpDown.Name = "degreeNumericUpDown";
-            this.degreeNumericUpDown.Size = new System.Drawing.Size(120, 26);
+            this.degreeNumericUpDown.Size = new System.Drawing.Size(120, 30);
             this.degreeNumericUpDown.TabIndex = 1;
             this.degreeNumericUpDown.Value = new decimal(new int[] {
             2,
@@ -506,7 +506,7 @@
             "Polynomial Least Squares"});
             this.methodComboBox.Location = new System.Drawing.Point(97, 27);
             this.methodComboBox.Name = "methodComboBox";
-            this.methodComboBox.Size = new System.Drawing.Size(242, 28);
+            this.methodComboBox.Size = new System.Drawing.Size(242, 33);
             this.methodComboBox.TabIndex = 0;
             // 
             // methodLabel
@@ -514,7 +514,7 @@
             this.methodLabel.AutoSize = true;
             this.methodLabel.Location = new System.Drawing.Point(28, 30);
             this.methodLabel.Name = "methodLabel";
-            this.methodLabel.Size = new System.Drawing.Size(63, 20);
+            this.methodLabel.Size = new System.Drawing.Size(78, 25);
             this.methodLabel.TabIndex = 0;
             this.methodLabel.Text = "Method";
             // 
@@ -532,10 +532,10 @@
             // 
             this.inputDataTabPage.Controls.Add(this.inputDataVisualizationGroupBox);
             this.inputDataTabPage.Controls.Add(this.inputDataGroupBox);
-            this.inputDataTabPage.Location = new System.Drawing.Point(4, 29);
+            this.inputDataTabPage.Location = new System.Drawing.Point(4, 34);
             this.inputDataTabPage.Name = "inputDataTabPage";
             this.inputDataTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.inputDataTabPage.Size = new System.Drawing.Size(976, 524);
+            this.inputDataTabPage.Size = new System.Drawing.Size(976, 519);
             this.inputDataTabPage.TabIndex = 0;
             this.inputDataTabPage.Text = "Input Data";
             this.inputDataTabPage.UseVisualStyleBackColor = true;
@@ -547,7 +547,7 @@
             this.inputDataVisualizationGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.inputDataVisualizationGroupBox.Location = new System.Drawing.Point(422, 3);
             this.inputDataVisualizationGroupBox.Name = "inputDataVisualizationGroupBox";
-            this.inputDataVisualizationGroupBox.Size = new System.Drawing.Size(551, 518);
+            this.inputDataVisualizationGroupBox.Size = new System.Drawing.Size(551, 513);
             this.inputDataVisualizationGroupBox.TabIndex = 1;
             this.inputDataVisualizationGroupBox.TabStop = false;
             this.inputDataVisualizationGroupBox.Text = "2D Visualization";
@@ -555,7 +555,7 @@
             // inputDataZedGraphControl
             // 
             this.inputDataZedGraphControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.inputDataZedGraphControl.Location = new System.Drawing.Point(3, 77);
+            this.inputDataZedGraphControl.Location = new System.Drawing.Point(3, 81);
             this.inputDataZedGraphControl.Margin = new System.Windows.Forms.Padding(8);
             this.inputDataZedGraphControl.Name = "inputDataZedGraphControl";
             this.inputDataZedGraphControl.ScrollGrace = 0D;
@@ -565,7 +565,7 @@
             this.inputDataZedGraphControl.ScrollMinX = 0D;
             this.inputDataZedGraphControl.ScrollMinY = 0D;
             this.inputDataZedGraphControl.ScrollMinY2 = 0D;
-            this.inputDataZedGraphControl.Size = new System.Drawing.Size(545, 438);
+            this.inputDataZedGraphControl.Size = new System.Drawing.Size(545, 429);
             this.inputDataZedGraphControl.TabIndex = 1;
             this.inputDataZedGraphControl.UseExtendedPrintDialog = true;
             // 
@@ -576,7 +576,7 @@
             this.inputDataVisualizationPanel.Controls.Add(this.inputDataYLabel);
             this.inputDataVisualizationPanel.Controls.Add(this.inputDataXLabel);
             this.inputDataVisualizationPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.inputDataVisualizationPanel.Location = new System.Drawing.Point(3, 22);
+            this.inputDataVisualizationPanel.Location = new System.Drawing.Point(3, 26);
             this.inputDataVisualizationPanel.Name = "inputDataVisualizationPanel";
             this.inputDataVisualizationPanel.Size = new System.Drawing.Size(545, 55);
             this.inputDataVisualizationPanel.TabIndex = 0;
@@ -588,7 +588,7 @@
             this.inputDataXComboBox.FormattingEnabled = true;
             this.inputDataXComboBox.Location = new System.Drawing.Point(38, 11);
             this.inputDataXComboBox.Name = "inputDataXComboBox";
-            this.inputDataXComboBox.Size = new System.Drawing.Size(200, 28);
+            this.inputDataXComboBox.Size = new System.Drawing.Size(200, 33);
             this.inputDataXComboBox.TabIndex = 0;
             // 
             // inputDataYComboBox
@@ -598,7 +598,7 @@
             this.inputDataYComboBox.FormattingEnabled = true;
             this.inputDataYComboBox.Location = new System.Drawing.Point(278, 11);
             this.inputDataYComboBox.Name = "inputDataYComboBox";
-            this.inputDataYComboBox.Size = new System.Drawing.Size(200, 28);
+            this.inputDataYComboBox.Size = new System.Drawing.Size(200, 33);
             this.inputDataYComboBox.TabIndex = 1;
             // 
             // inputDataYLabel
@@ -606,7 +606,7 @@
             this.inputDataYLabel.AutoSize = true;
             this.inputDataYLabel.Location = new System.Drawing.Point(252, 14);
             this.inputDataYLabel.Name = "inputDataYLabel";
-            this.inputDataYLabel.Size = new System.Drawing.Size(20, 20);
+            this.inputDataYLabel.Size = new System.Drawing.Size(28, 25);
             this.inputDataYLabel.TabIndex = 0;
             this.inputDataYLabel.Text = "y:";
             // 
@@ -615,7 +615,7 @@
             this.inputDataXLabel.AutoSize = true;
             this.inputDataXLabel.Location = new System.Drawing.Point(12, 14);
             this.inputDataXLabel.Name = "inputDataXLabel";
-            this.inputDataXLabel.Size = new System.Drawing.Size(20, 20);
+            this.inputDataXLabel.Size = new System.Drawing.Size(28, 25);
             this.inputDataXLabel.TabIndex = 0;
             this.inputDataXLabel.Text = "x:";
             // 
@@ -627,7 +627,7 @@
             this.inputDataGroupBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.inputDataGroupBox.Name = "inputDataGroupBox";
             this.inputDataGroupBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.inputDataGroupBox.Size = new System.Drawing.Size(419, 518);
+            this.inputDataGroupBox.Size = new System.Drawing.Size(419, 513);
             this.inputDataGroupBox.TabIndex = 0;
             this.inputDataGroupBox.TabStop = false;
             this.inputDataGroupBox.Text = "Input Data";
@@ -639,7 +639,7 @@
             this.inputDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.inputDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.inputDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.inputDataGridView.Location = new System.Drawing.Point(4, 24);
+            this.inputDataGridView.Location = new System.Drawing.Point(4, 28);
             this.inputDataGridView.Name = "inputDataGridView";
             this.inputDataGridView.ReadOnly = true;
             this.inputDataGridView.RowHeadersVisible = false;
@@ -648,7 +648,7 @@
             this.inputDataGridView.ShowCellErrors = false;
             this.inputDataGridView.ShowEditingIcon = false;
             this.inputDataGridView.ShowRowErrors = false;
-            this.inputDataGridView.Size = new System.Drawing.Size(411, 489);
+            this.inputDataGridView.Size = new System.Drawing.Size(411, 480);
             this.inputDataGridView.TabIndex = 0;
             // 
             // mainTabControl
@@ -665,7 +665,7 @@
             // 
             // PolynomialRegressionModelForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 579);
             this.Controls.Add(this.mainTabControl);
@@ -678,7 +678,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Linear Regression";
+            this.Text = "Polynomial Regression";
             this.mainStatusStrip.ResumeLayout(false);
             this.mainStatusStrip.PerformLayout();
             this.modelTestingTabPage.ResumeLayout(false);
