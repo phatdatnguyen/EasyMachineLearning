@@ -1,5 +1,5 @@
 ﻿# Machine Learning
-A simple machine learning software for educational purpose. This software is based on [Accord.net](https://accord-framework.net/) framework.
+A simple machine learning software for educational purpose. This software is based on [Accord.net](http://accord-framework.net/) framework.
 ## Installer
  Download [link](https://www.dropbox.com/s/gdntecocoudrf9z/EasyMachineLearning.rar?dl=0)
 ## 3 easy steps to Machine Learning
